@@ -102,21 +102,21 @@ export class GameScene extends Phaser.Scene {
         this.currentLevelIndex = 0;
       } else {
         // 1. Cố gắng fetch theo ngôn ngữ và độ tuổi bé chọn
-        let response = await fetch(`/content/${lang}/${age}/${this.selectedCategory}.json`);
+        let response = await fetch(`content/${lang}/${age}/${this.selectedCategory}.json`);
         let contentType = response.headers.get("content-type");
         
         // 2. Nếu không có cấu hình ngôn ngữ này, chuyển sang Tiếng Anh của tuổi này
         if (!response.ok || !contentType || !contentType.includes("application/json")) {
           console.warn(`Level config for '${lang}' and age '${age}' not found. Falling back to English.`);
           lang = 'en';
-          response = await fetch(`/content/en/${age}/${this.selectedCategory}.json`);
+          response = await fetch(`content/en/${age}/${this.selectedCategory}.json`);
           contentType = response.headers.get("content-type");
           
           // 3. Nếu Tiếng Anh tuổi này cũng chưa có, chuyển về Tiếng Anh của nhóm tuổi mặc định 2-3
           if (!response.ok || !contentType || !contentType.includes("application/json")) {
             console.warn(`English config for age '${age}' not found. Falling back to Age 2-3.`);
             age = '2-3';
-            response = await fetch(`/content/en/2-3/${this.selectedCategory}.json`);
+            response = await fetch(`content/en/2-3/${this.selectedCategory}.json`);
             contentType = response.headers.get("content-type");
             
             if (!response.ok || !contentType || !contentType.includes("application/json")) {
@@ -210,19 +210,19 @@ export class GameScene extends Phaser.Scene {
           lvl.voiceText = `${voicePrefix} ${cleanName}`;
         });
       } else {
-        let response = await fetch(`/content/${lang}/${age}/${this.selectedCategory}.json`);
+        let response = await fetch(`content/${lang}/${age}/${this.selectedCategory}.json`);
         let contentType = response.headers.get("content-type");
         
         if (!response.ok || !contentType || !contentType.includes("application/json")) {
           console.warn(`Reload level config for '${lang}' failed. Falling back to English.`);
           lang = 'en';
-          response = await fetch(`/content/en/${age}/${this.selectedCategory}.json`);
+          response = await fetch(`content/en/${age}/${this.selectedCategory}.json`);
           contentType = response.headers.get("content-type");
           
           if (!response.ok || !contentType || !contentType.includes("application/json")) {
             console.warn(`Reload English config for '${age}' failed. Falling back to Age 2-3.`);
             age = '2-3';
-            response = await fetch(`/content/en/2-3/${this.selectedCategory}.json`);
+            response = await fetch(`content/en/2-3/${this.selectedCategory}.json`);
             contentType = response.headers.get("content-type");
             if (!response.ok || !contentType || !contentType.includes("application/json")) {
               return;
@@ -385,12 +385,12 @@ export class GameScene extends Phaser.Scene {
         let lang = languageManager.getLanguage();
         let age = this.selectedAge;
         
-        let response = await fetch(`/content/${lang}/${age}/${this.selectedCategory}.json`);
+        let response = await fetch(`content/${lang}/${age}/${this.selectedCategory}.json`);
         let contentType = response.headers.get("content-type");
         
         if (!response.ok || !contentType || !contentType.includes("application/json")) {
           lang = 'en';
-          response = await fetch(`/content/en/${age}/${this.selectedCategory}.json`);
+          response = await fetch(`content/en/${age}/${this.selectedCategory}.json`);
         }
 
         const levelsData = await response.json() as LevelData[];

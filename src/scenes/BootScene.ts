@@ -26,6 +26,15 @@ export class BootScene extends Phaser.Scene {
       progressBar.fillRoundedRect(width / 2 - 150, height / 2 - 15, 300 * value, 30, 10);
     });
 
+    // Lắng nghe lỗi tải file (in ra chi tiết để dễ dàng debug)
+    this.load.on('loaderror', (fileObj: any) => {
+      console.error('❌ Phaser Loader Error! Failed to load asset:', {
+        key: fileObj.key,
+        url: fileObj.url,
+        type: fileObj.type
+      });
+    });
+
     this.load.on('complete', () => {
       progressBar.destroy();
       progressBox.destroy();
