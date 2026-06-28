@@ -1,7 +1,4 @@
-# Cloudflare Pages Redirects configuration for Single Page Applications (SPA)
-# Prevent static assets from being redirected to index.html (which causes XML parser crashes)
-/assets/* /assets/:splat 200
-/content/* /content/:splat 200
-
-# Redirect all other paths to index.html for SPA routing
+# Cloudflare Pages SPA routing — chỉ cần 1 rule duy nhất.
+# Static files (SVG, JS, CSS, JSON...) luôn được serve trực tiếp bởi Cloudflare Pages.
+# Chỉ khi file KHÔNG tồn tại mới fallback về index.html.
 /* /index.html 200

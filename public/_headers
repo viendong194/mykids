@@ -1,0 +1,20 @@
+# index.html: KHÔNG cho phép cache để browser luôn tải phiên bản mới nhất
+/index.html
+  Cache-Control: no-cache, no-store, must-revalidate
+  Pragma: no-cache
+
+# JavaScript chunks: cache lâu dài vì tên file có hash (Vite content hashing)
+/assets/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+# CSS: cache lâu dài vì tên file có hash
+/assets/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+# SVG assets: cache vừa phải (4 giờ)
+/assets/**/*.svg
+  Cache-Control: public, max-age=14400
+
+# JSON content configs: không cache để dễ cập nhật nội dung
+/content/**/*.json
+  Cache-Control: no-cache
