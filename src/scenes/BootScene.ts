@@ -2,24 +2,38 @@ import Phaser from 'phaser';
 import { SVG_ASSETS } from '../assets/SVGs';
 
 /**
- * Fetch một file SVG từ URL, validate nội dung, rồi trả về data URL base64.
- * Nếu server trả về HTML (SPA redirect) → throw Error thay vì crash Phaser.
+ * Xây dựng URL tuyệt đối từ đường dẫn tương đối, căn cứ vào base URL của app.
  */
-async function fetchSvgAsDataUrl(url: string): Promise<string | null> {
+function resolveUrl(relativePath: string): string {
+  const base = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
+  const cleanPath = relativePath.replace(/^\.\//, '').replace(/^\//, '');
+  return `${base}/${cleanPath}`;
+}
+
+/**
+ * Fetch SVG bằng ArrayBuffer, validate byte-level, trả về blob URL.
+ * Nếu server trả về HTML (SPA redirect/404) → bytes đầu không phải '<sv' → trả về null.
+ */
+async function fetchSvgAsBlobUrl(url: string): Promise<string | null> {
   try {
     const response = await fetch(url);
     if (!response.ok) {
       console.warn(`⚠️ BootScene: HTTP ${response.status} for ${url}`);
       return null;
     }
-    const text = await response.text();
-    const trimmed = text.trimStart();
-    if ((!trimmed.startsWith('<svg') && !trimmed.startsWith('<?xml')) || !text.includes('</svg>')) {
-      console.warn(`⚠️ BootScene: Invalid SVG content at ${url} — server returned HTML?`);
+
+    const buffer = await response.arrayBuffer();
+    const bytes = new Uint8Array(buffer);
+
+    // Validate byte-level: SVG bắt đầu bằng '<sv' hoặc '<?x', HTML bắt đầu bằng '<!D' hoặc '<ht'
+    const first3 = String.fromCharCode(bytes[0], bytes[1], bytes[2]);
+    if (first3 !== '<sv' && first3 !== '<?x') {
+      console.warn(`⚠️ BootScene: Not SVG at ${url} (starts with "${first3}")`);
       return null;
     }
-    const base64 = btoa(unescape(encodeURIComponent(text)));
-    return `data:image/svg+xml;base64,${base64}`;
+
+    const blob = new Blob([buffer], { type: 'image/svg+xml' });
+    return URL.createObjectURL(blob);
   } catch (err) {
     console.error(`❌ BootScene: fetch failed for ${url}:`, err);
     return null;
@@ -32,7 +46,6 @@ export class BootScene extends Phaser.Scene {
   }
 
   preload() {
-    // Thiết lập màu nền xanh bầu trời pastel dịu nhẹ trong lúc tải
     this.cameras.main.setBackgroundColor('#E3F2FD');
   }
 
@@ -55,35 +68,39 @@ export class BootScene extends Phaser.Scene {
 
     updateProgress(0);
 
-    // ── Bước 1: Pre-fetch tất cả SVG file-path → data URL (bỏ qua data URL có sẵn) ──
+    // Bước 1: Pre-fetch và validate tất cả SVG file-path → blob URL
     const entries = Object.entries(SVG_ASSETS);
     const resolvedAssets: Record<string, string> = {};
     let done = 0;
 
     const fetchPromises = entries.map(async ([key, value]) => {
-      if (value.startsWith('data:')) {
+      if (value.startsWith('data:') || value.startsWith('blob:')) {
+        // data URL inline → dùng thẳng
         resolvedAssets[key] = value;
       } else if (value.toLowerCase().endsWith('.svg') || value.toLowerCase().includes('.svg?')) {
-        const dataUrl = await fetchSvgAsDataUrl(value);
-        if (dataUrl) {
-          resolvedAssets[key] = dataUrl;
+        // SVG file path → fetch với absolute URL, validate, tạo blob URL
+        const absoluteUrl = resolveUrl(value);
+        const blobUrl = await fetchSvgAsBlobUrl(absoluteUrl);
+        if (blobUrl) {
+          resolvedAssets[key] = blobUrl;
         }
+        // Nếu null → bỏ qua key này (không crash game)
       } else {
         resolvedAssets[key] = value;
       }
       done++;
-      updateProgress(done / entries.length * 0.7); // 0-70% cho fetch phase
+      updateProgress((done / entries.length) * 0.7); // 0-70% cho fetch phase
     });
 
     await Promise.all(fetchPromises);
 
-    // ── Bước 2: Nạp vào Phaser qua scene.load.image (không có load.svg!) ──
+    // Bước 2: Nạp vào Phaser qua scene.load.image (KHÔNG dùng load.svg)
     await new Promise<void>((resolve) => {
       let needsLoad = false;
 
-      for (const [key, dataUrl] of Object.entries(resolvedAssets)) {
+      for (const [key, url] of Object.entries(resolvedAssets)) {
         if (!this.textures.exists(key)) {
-          this.load.image(key, dataUrl);
+          this.load.image(key, url);
           needsLoad = true;
         }
       }
