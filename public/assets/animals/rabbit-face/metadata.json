@@ -1,0 +1,19 @@
+{
+  "id": "rabbit-face",
+  "name": "rabbit face",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "rabbit face",
+    "vi": "Mặt thỏ",
+    "ja": "うさぎの顔",
+    "zh": "兔脸"
+  },
+  "tags": [
+    "animal",
+    "bunny",
+    "face",
+    "pet",
+    "rabbit"
+  ]
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "drag_round_1",
+    "type": "drag",
+    "voiceText": "Match the animals with their shadows",
+    "items": [
+      { "id": "item_cat", "asset": "cat", "targetId": "target_cat" },
+      { "id": "item_dog", "asset": "dog", "targetId": "target_dog" },
+      { "id": "item_panda", "asset": "panda", "targetId": "target_panda" }
+    ],
+    "targets": [
+      {
+        "id": "target_cat",
+        "asset": "cat",
+        "name": "Cat"
+      },
+      {
+        "id": "target_dog",
+        "asset": "dog",
+        "name": "Dog"
+      },
+      {
+        "id": "target_panda",
+        "asset": "panda",
+        "name": "Panda"
+      }
+    ]
+  },
+  {
+    "id": "drag_round_2",
+    "type": "drag",
+    "voiceText": "Find the correct shadows for lion, elephant, and rabbit",
+    "items": [
+      { "id": "item_lion", "asset": "lion", "targetId": "target_lion" },
+      { "id": "item_elephant", "asset": "elephant", "targetId": "target_elephant" },
+      { "id": "item_rabbit", "asset": "rabbit", "targetId": "target_rabbit" }
+    ],
+    "targets": [
+      {
+        "id": "target_lion",
+        "asset": "lion",
+        "name": "Lion"
+      },
+      {
+        "id": "target_elephant",
+        "asset": "elephant",
+        "name": "Elephant"
+      },
+      {
+        "id": "target_rabbit",
+        "asset": "rabbit",
+        "name": "Rabbit"
+      }
+    ]
+  }
+]

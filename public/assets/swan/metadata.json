@@ -1,0 +1,20 @@
+{
+  "id": "swan",
+  "name": "swan",
+  "category": "animals",
+  "subgroup": "animal-bird",
+  "translations": {
+    "en": "swan",
+    "vi": "Con thiên nga",
+    "ja": "はくちょう",
+    "zh": "天鹅"
+  },
+  "tags": [
+    "animal",
+    "bird",
+    "cygnet",
+    "duckling",
+    "ornithology",
+    "ugly"
+  ]
+}

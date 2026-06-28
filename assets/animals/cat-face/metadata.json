@@ -1,0 +1,20 @@
+{
+  "id": "cat-face",
+  "name": "cat face",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "cat face",
+    "vi": "Mặt mèo",
+    "ja": "ねこの顔",
+    "zh": "猫脸"
+  },
+  "tags": [
+    "animal",
+    "cat",
+    "face",
+    "kitten",
+    "kitty",
+    "pet"
+  ]
+}

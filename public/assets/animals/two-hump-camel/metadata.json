@@ -1,0 +1,21 @@
+{
+  "id": "two-hump-camel",
+  "name": "two-hump camel",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "two-hump camel",
+    "vi": "two-hump camel",
+    "ja": "two-hump camel",
+    "zh": "two-hump camel"
+  },
+  "tags": [
+    "animal",
+    "bactrian",
+    "camel",
+    "desert",
+    "hump",
+    "two",
+    "two-hump"
+  ]
+}

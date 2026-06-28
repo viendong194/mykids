@@ -1,0 +1,16 @@
+{
+  "id": "crocodile",
+  "name": "crocodile",
+  "category": "animals",
+  "subgroup": "animal-reptile",
+  "translations": {
+    "en": "crocodile",
+    "vi": "Cá sấu",
+    "ja": "わに",
+    "zh": "鳄鱼"
+  },
+  "tags": [
+    "animal",
+    "zoo"
+  ]
+}

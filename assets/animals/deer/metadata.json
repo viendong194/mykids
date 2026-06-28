@@ -1,0 +1,15 @@
+{
+  "id": "deer",
+  "name": "deer",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "deer",
+    "vi": "Con nai",
+    "ja": "しか",
+    "zh": "鹿"
+  },
+  "tags": [
+    "animal"
+  ]
+}

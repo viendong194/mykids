@@ -1,0 +1,18 @@
+{
+  "id": "water-buffalo",
+  "name": "water buffalo",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "water buffalo",
+    "vi": "water buffalo",
+    "ja": "water buffalo",
+    "zh": "water buffalo"
+  },
+  "tags": [
+    "animal",
+    "buffalo",
+    "water",
+    "zoo"
+  ]
+}

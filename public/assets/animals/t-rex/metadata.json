@@ -1,0 +1,19 @@
+{
+  "id": "t-rex",
+  "name": "T-Rex",
+  "category": "animals",
+  "subgroup": "animal-reptile",
+  "translations": {
+    "en": "T-Rex",
+    "vi": "T-Rex",
+    "ja": "T-Rex",
+    "zh": "T-Rex"
+  },
+  "tags": [
+    "dinosaur",
+    "rex",
+    "t",
+    "t-rex",
+    "tyrannosaurus"
+  ]
+}

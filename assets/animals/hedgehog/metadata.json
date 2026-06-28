@@ -1,0 +1,16 @@
+{
+  "id": "hedgehog",
+  "name": "hedgehog",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "hedgehog",
+    "vi": "Nhím",
+    "ja": "はりねずみ",
+    "zh": "刺猬"
+  },
+  "tags": [
+    "animal",
+    "spiny"
+  ]
+}

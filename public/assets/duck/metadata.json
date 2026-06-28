@@ -1,0 +1,17 @@
+{
+  "id": "duck",
+  "name": "duck",
+  "category": "animals",
+  "subgroup": "animal-bird",
+  "translations": {
+    "en": "duck",
+    "vi": "Con vịt",
+    "ja": "あひる",
+    "zh": "鸭子"
+  },
+  "tags": [
+    "animal",
+    "bird",
+    "ornithology"
+  ]
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "math_zh_01",
+    "type": "tap",
+    "correct": "5",
+    "options": ["3", "4", "5", "6"],
+    "voiceText": "两只猫加上三只猫，一共有几只猫？",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "cat", "count": 2 },
+        { "type": "text", "value": "+" },
+        { "type": "images", "asset": "cat", "count": 3 },
+        { "type": "text", "value": "= ?" }
+      ]
+    }
+  },
+  {
+    "id": "math_zh_02",
+    "type": "tap",
+    "correct": "3",
+    "options": ["2", "3", "4", "5"],
+    "voiceText": "五只兔子减去两只兔子，还剩几只兔子？",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "rabbit", "count": 5 },
+        { "type": "text", "value": "-" },
+        { "type": "images", "asset": "rabbit", "count": 2 },
+        { "type": "text", "value": "= ?" }
+      ]
+    }
+  },
+  {
+    "id": "math_zh_03",
+    "type": "tap",
+    "correct": "8",
+    "options": ["6", "7", "8", "9"],
+    "voiceText": "四只熊猫加上四只熊猫，一共有几只熊猫？",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "panda", "count": 4 },
+        { "type": "text", "value": "+" },
+        { "type": "images", "asset": "panda", "count": 4 },
+        { "type": "text", "value": "= ?" }
+      ]
+    }
+  },
+  {
+    "id": "math_zh_04",
+    "type": "tap",
+    "correct": "4",
+    "options": ["2", "3", "4", "5"],
+    "voiceText": "八只狮子减去四只狮子，还剩几只？",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "lion", "count": 8 },
+        { "type": "text", "value": "-" },
+        { "type": "images", "asset": "lion", "count": 4 },
+        { "type": "text", "value": "= ?" }
+      ]
+    }
+  },
+  {
+    "id": "math_zh_05",
+    "type": "tap",
+    "correct": "10",
+    "options": ["8", "9", "10", "11"],
+    "voiceText": "六只蜜蜂加上四只蜜蜂，一共有几只蜜蜂？",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "bee", "count": 6 },
+        { "type": "text", "value": "+" },
+        { "type": "images", "asset": "bee", "count": 4 },
+        { "type": "text", "value": "= ?" }
+      ]
+    }
+  },
+  {
+    "id": "math_zh_06",
+    "type": "tap",
+    "correct": "2",
+    "options": ["1", "2", "3", "4"],
+    "voiceText": "七只青蛙减去五只青蛙，还剩几只青蛙？",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "frog", "count": 7 },
+        { "type": "text", "value": "-" },
+        { "type": "images", "asset": "frog", "count": 5 },
+        { "type": "text", "value": "= ?" }
+      ]
+    }
+  }
+]

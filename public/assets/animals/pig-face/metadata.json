@@ -1,0 +1,20 @@
+{
+  "id": "pig-face",
+  "name": "pig face",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "pig face",
+    "vi": "Mặt heo",
+    "ja": "ぶたの顔",
+    "zh": "猪脸"
+  },
+  "tags": [
+    "animal",
+    "bacon",
+    "face",
+    "farm",
+    "pig",
+    "pork"
+  ]
+}

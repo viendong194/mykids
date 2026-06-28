@@ -1,0 +1,44 @@
+[
+  {
+    "id": "animal_tap_01",
+    "type": "tap",
+    "correct": "elephant",
+    "options": ["lion", "elephant", "cat", "dog"],
+    "voiceText": "Tap on the elephant"
+  },
+  {
+    "id": "animal_tap_02",
+    "type": "tap",
+    "correct": "cat",
+    "options": ["cat", "dog", "rabbit", "panda"],
+    "voiceText": "Find the cute little cat"
+  },
+  {
+    "id": "animal_tap_03",
+    "type": "tap",
+    "correct": "dog",
+    "options": ["lion", "panda", "dog", "elephant"],
+    "voiceText": "Where is the dog?"
+  },
+  {
+    "id": "animal_tap_04",
+    "type": "tap",
+    "correct": "rabbit",
+    "options": ["cat", "rabbit", "panda", "lion"],
+    "voiceText": "Tap on the fluffy rabbit"
+  },
+  {
+    "id": "animal_tap_05",
+    "type": "tap",
+    "correct": "lion",
+    "options": ["lion", "dog", "elephant", "rabbit"],
+    "voiceText": "Tap on the golden lion"
+  },
+  {
+    "id": "animal_tap_06",
+    "type": "tap",
+    "correct": "panda",
+    "options": ["panda", "cat", "elephant", "dog"],
+    "voiceText": "Find the cute panda"
+  }
+]

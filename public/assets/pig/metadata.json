@@ -1,0 +1,19 @@
+{
+  "id": "pig",
+  "name": "pig",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "pig",
+    "vi": "Con lợn",
+    "ja": "ぶた",
+    "zh": "猪"
+  },
+  "tags": [
+    "animal",
+    "bacon",
+    "farm",
+    "pork",
+    "sow"
+  ]
+}

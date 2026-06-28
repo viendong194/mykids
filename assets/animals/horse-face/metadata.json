@@ -1,0 +1,21 @@
+{
+  "id": "horse-face",
+  "name": "horse face",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "horse face",
+    "vi": "Mặt ngựa",
+    "ja": "うまの顔",
+    "zh": "马脸"
+  },
+  "tags": [
+    "animal",
+    "dressage",
+    "equine",
+    "face",
+    "farm",
+    "horse",
+    "horses"
+  ]
+}

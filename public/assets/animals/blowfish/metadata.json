@@ -1,0 +1,16 @@
+{
+  "id": "blowfish",
+  "name": "blowfish",
+  "category": "animals",
+  "subgroup": "animal-marine",
+  "translations": {
+    "en": "blowfish",
+    "vi": "Cá nóc",
+    "ja": "ふぐ",
+    "zh": "河豚"
+  },
+  "tags": [
+    "animal",
+    "fish"
+  ]
+}

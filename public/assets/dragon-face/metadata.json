@@ -1,0 +1,20 @@
+{
+  "id": "dragon-face",
+  "name": "dragon face",
+  "category": "animals",
+  "subgroup": "animal-reptile",
+  "translations": {
+    "en": "dragon face",
+    "vi": "dragon face",
+    "ja": "dragon face",
+    "zh": "dragon face"
+  },
+  "tags": [
+    "animal",
+    "dragon",
+    "face",
+    "fairy",
+    "fairytale",
+    "tale"
+  ]
+}

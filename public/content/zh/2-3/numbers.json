@@ -1,0 +1,67 @@
+[
+  {
+    "id": "count_animals_01",
+    "type": "count",
+    "mode": "count_objects",
+    "voiceText": "宝贝，请数数看有几只狮子",
+    "object": {
+      "type": "animal",
+      "id": "lion",
+      "asset": "lion"
+    },
+    "count": 2,
+    "choices": [1, 2, 3]
+  },
+  {
+    "id": "count_animals_02",
+    "type": "count",
+    "mode": "count_objects",
+    "voiceText": "这里有几只小狗呢？",
+    "object": {
+      "type": "animal",
+      "id": "dog",
+      "asset": "dog"
+    },
+    "count": 3,
+    "choices": [2, 3, 4]
+  },
+  {
+    "id": "count_animals_03",
+    "type": "count",
+    "mode": "count_objects",
+    "voiceText": "数一数可爱的小兔子吧",
+    "object": {
+      "type": "animal",
+      "id": "rabbit",
+      "asset": "rabbit"
+    },
+    "count": 5,
+    "choices": [3, 4, 5, 6]
+  },
+  {
+    "id": "count_animals_04",
+    "type": "count",
+    "mode": "count_objects",
+    "voiceText": "请仔细数一数有几只小猫咪呢？",
+    "object": {
+      "type": "animal",
+      "id": "cat",
+      "asset": "cat"
+    },
+    "count": 7,
+    "choices": [6, 7, 8, 9]
+  },
+  {
+    "id": "count_animals_05",
+    "type": "count",
+    "mode": "count_objects",
+    "voiceText": "这里有几只可爱的大熊猫呢？",
+    "object": {
+      "type": "animal",
+      "id": "panda",
+      "asset": "panda"
+    },
+    "count": 9,
+    "choices": [7, 8, 9, 10]
+  }
+]

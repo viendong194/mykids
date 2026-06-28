@@ -1,0 +1,19 @@
+{
+  "id": "service-dog",
+  "name": "service dog",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "service dog",
+    "vi": "service dog",
+    "ja": "service dog",
+    "zh": "service dog"
+  },
+  "tags": [
+    "accessibility",
+    "animal",
+    "assistance",
+    "dog",
+    "service"
+  ]
+}

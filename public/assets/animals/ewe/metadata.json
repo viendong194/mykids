@@ -1,0 +1,22 @@
+{
+  "id": "ewe",
+  "name": "ewe",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "ewe",
+    "vi": "Con cừu",
+    "ja": "ひつじ",
+    "zh": "羊"
+  },
+  "tags": [
+    "animal",
+    "baa",
+    "farm",
+    "female",
+    "fluffy",
+    "lamb",
+    "sheep",
+    "wool"
+  ]
+}

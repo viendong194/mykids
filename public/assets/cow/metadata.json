@@ -1,0 +1,19 @@
+{
+  "id": "cow",
+  "name": "cow",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "cow",
+    "vi": "Con bò",
+    "ja": "うし",
+    "zh": "牛"
+  },
+  "tags": [
+    "animal",
+    "animals",
+    "farm",
+    "milk",
+    "moo"
+  ]
+}

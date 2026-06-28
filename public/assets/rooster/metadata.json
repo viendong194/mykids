@@ -1,0 +1,17 @@
+{
+  "id": "rooster",
+  "name": "rooster",
+  "category": "animals",
+  "subgroup": "animal-bird",
+  "translations": {
+    "en": "rooster",
+    "vi": "Con gà trống",
+    "ja": "おんどり",
+    "zh": "公鸡"
+  },
+  "tags": [
+    "animal",
+    "bird",
+    "ornithology"
+  ]
+}

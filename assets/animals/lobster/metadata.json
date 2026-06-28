@@ -1,0 +1,18 @@
+{
+  "id": "lobster",
+  "name": "lobster",
+  "category": "animals",
+  "subgroup": "animal-marine",
+  "translations": {
+    "en": "lobster",
+    "vi": "Tôm hùm",
+    "ja": "ロブスター",
+    "zh": "龙虾"
+  },
+  "tags": [
+    "animal",
+    "bisque",
+    "claws",
+    "seafood"
+  ]
+}

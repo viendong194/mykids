@@ -1,0 +1,69 @@
+[
+  {
+    "id": "color_match_01",
+    "type": "match",
+    "mode": "select",
+    "voiceText": "请找到和上面一样的颜色吧",
+    "target": {
+      "type": "color",
+      "id": "pink",
+      "value": "#E91E63"
+    },
+    "choices": [
+      { "type": "color", "id": "pink", "value": "#E91E63" },
+      { "type": "color", "id": "blue", "value": "#2196F3" }
+    ]
+  },
+  {
+    "id": "color_match_02",
+    "type": "match",
+    "mode": "select",
+    "voiceText": "哪个是和上面一样的颜色呢？",
+    "target": {
+      "type": "color",
+      "id": "orange",
+      "value": "#FF9800"
+    },
+    "choices": [
+      { "type": "color", "id": "blue", "value": "#2196F3" },
+      { "type": "color", "id": "orange", "value": "#FF9800" },
+      { "type": "color", "id": "pink", "value": "#E91E63" }
+    ]
+  },
+  {
+    "id": "color_match_03",
+    "type": "match",
+    "mode": "select",
+    "voiceText": "请点击和上面相同的颜色卡片",
+    "target": {
+      "type": "color",
+      "id": "teal",
+      "value": "#009688"
+    },
+    "choices": [
+      { "type": "color", "id": "blue", "value": "#2196F3" },
+      { "type": "color", "id": "teal", "value": "#009688" },
+      { "type": "color", "id": "pink", "value": "#E91E63" },
+      { "type": "color", "id": "yellow", "value": "#FFEB3B" }
+    ]
+  },
+  {
+    "id": "color_match_04",
+    "type": "match",
+    "mode": "select",
+    "voiceText": "你真棒，请选出和上面匹配的颜色",
+    "target": {
+      "type": "color",
+      "id": "purple",
+      "value": "#9C27B0"
+    },
+    "choices": [
+      { "type": "color", "id": "orange", "value": "#FF9800" },
+      { "type": "color", "id": "teal", "value": "#009688" },
+      { "type": "color", "id": "purple", "value": "#9C27B0" },
+      { "type": "color", "id": "pink", "value": "#E91E63" },
+      { "type": "color", "id": "blue", "value": "#2196F3" },
+      { "type": "color", "id": "yellow", "value": "#FFEB3B" }
+    ]
+  }
+]

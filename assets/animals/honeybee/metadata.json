@@ -1,0 +1,21 @@
+{
+  "id": "honeybee",
+  "name": "honeybee",
+  "category": "animals",
+  "subgroup": "animal-bug",
+  "translations": {
+    "en": "honeybee",
+    "vi": "honeybee",
+    "ja": "honeybee",
+    "zh": "honeybee"
+  },
+  "tags": [
+    "animal",
+    "bee",
+    "bumblebee",
+    "honey",
+    "insect",
+    "nature",
+    "spring"
+  ]
+}

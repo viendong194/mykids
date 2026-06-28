@@ -1,0 +1,15 @@
+{
+  "id": "rat",
+  "name": "rat",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "rat",
+    "vi": "rat",
+    "ja": "rat",
+    "zh": "rat"
+  },
+  "tags": [
+    "animal"
+  ]
+}

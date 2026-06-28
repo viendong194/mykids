@@ -1,0 +1,18 @@
+{
+  "id": "cockroach",
+  "name": "cockroach",
+  "category": "animals",
+  "subgroup": "animal-bug",
+  "translations": {
+    "en": "cockroach",
+    "vi": "Con gián",
+    "ja": "ゴキブリ",
+    "zh": "蟑螂"
+  },
+  "tags": [
+    "animal",
+    "insect",
+    "pest",
+    "roach"
+  ]
+}

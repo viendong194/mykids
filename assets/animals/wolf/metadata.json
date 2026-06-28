@@ -1,0 +1,16 @@
+{
+  "id": "wolf",
+  "name": "wolf",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "wolf",
+    "vi": "Con sói",
+    "ja": "おおかみ",
+    "zh": "狼"
+  },
+  "tags": [
+    "animal",
+    "face"
+  ]
+}

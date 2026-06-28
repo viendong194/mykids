@@ -1,0 +1,16 @@
+{
+  "id": "skunk",
+  "name": "skunk",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "skunk",
+    "vi": "Con chồn hôi",
+    "ja": "スカンク",
+    "zh": "臭鼬"
+  },
+  "tags": [
+    "animal",
+    "stink"
+  ]
+}

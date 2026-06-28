@@ -1,0 +1,20 @@
+{
+  "id": "fly",
+  "name": "fly",
+  "category": "animals",
+  "subgroup": "animal-bug",
+  "translations": {
+    "en": "fly",
+    "vi": "Con ruồi",
+    "ja": "はえ",
+    "zh": "苍蝇"
+  },
+  "tags": [
+    "animal",
+    "disease",
+    "insect",
+    "maggot",
+    "pest",
+    "rotting"
+  ]
+}

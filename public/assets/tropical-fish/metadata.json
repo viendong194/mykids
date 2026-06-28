@@ -1,0 +1,18 @@
+{
+  "id": "tropical-fish",
+  "name": "tropical fish",
+  "category": "animals",
+  "subgroup": "animal-marine",
+  "translations": {
+    "en": "tropical fish",
+    "vi": "Cá nhiệt đới",
+    "ja": "ねったいぎょ",
+    "zh": "热带鱼"
+  },
+  "tags": [
+    "animal",
+    "fish",
+    "fishes",
+    "tropical"
+  ]
+}

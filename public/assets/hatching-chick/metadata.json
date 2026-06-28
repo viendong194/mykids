@@ -1,0 +1,20 @@
+{
+  "id": "hatching-chick",
+  "name": "hatching chick",
+  "category": "animals",
+  "subgroup": "animal-bird",
+  "translations": {
+    "en": "hatching chick",
+    "vi": "Gà con mới nở",
+    "ja": "ひよこ",
+    "zh": "小鸡"
+  },
+  "tags": [
+    "animal",
+    "baby",
+    "bird",
+    "chick",
+    "egg",
+    "hatching"
+  ]
+}

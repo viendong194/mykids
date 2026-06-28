@@ -1,0 +1,19 @@
+{
+  "id": "goat",
+  "name": "goat",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "goat",
+    "vi": "Con dê",
+    "ja": "やぎ",
+    "zh": "山羊"
+  },
+  "tags": [
+    "animal",
+    "capricorn",
+    "farm",
+    "milk",
+    "zodiac"
+  ]
+}

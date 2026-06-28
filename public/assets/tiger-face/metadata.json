@@ -1,0 +1,20 @@
+{
+  "id": "tiger-face",
+  "name": "tiger face",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "tiger face",
+    "vi": "Mặt hổ",
+    "ja": "とらの顔",
+    "zh": "虎脸"
+  },
+  "tags": [
+    "animal",
+    "big",
+    "cat",
+    "face",
+    "predator",
+    "tiger"
+  ]
+}

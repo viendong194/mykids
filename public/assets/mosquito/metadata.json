@@ -1,0 +1,21 @@
+{
+  "id": "mosquito",
+  "name": "mosquito",
+  "category": "animals",
+  "subgroup": "animal-bug",
+  "translations": {
+    "en": "mosquito",
+    "vi": "Con muỗi",
+    "ja": "か",
+    "zh": "蚊子"
+  },
+  "tags": [
+    "bite",
+    "disease",
+    "fever",
+    "insect",
+    "malaria",
+    "pest",
+    "virus"
+  ]
+}

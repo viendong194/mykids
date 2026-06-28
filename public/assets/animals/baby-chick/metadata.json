@@ -1,0 +1,19 @@
+{
+  "id": "baby-chick",
+  "name": "baby chick",
+  "category": "animals",
+  "subgroup": "animal-bird",
+  "translations": {
+    "en": "baby chick",
+    "vi": "baby chick",
+    "ja": "baby chick",
+    "zh": "baby chick"
+  },
+  "tags": [
+    "animal",
+    "baby",
+    "bird",
+    "chick",
+    "ornithology"
+  ]
+}

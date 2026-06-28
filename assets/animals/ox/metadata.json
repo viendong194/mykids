@@ -1,0 +1,20 @@
+{
+  "id": "ox",
+  "name": "ox",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "ox",
+    "vi": "ox",
+    "ja": "ox",
+    "zh": "ox"
+  },
+  "tags": [
+    "animal",
+    "animals",
+    "bull",
+    "farm",
+    "taurus",
+    "zodiac"
+  ]
+}

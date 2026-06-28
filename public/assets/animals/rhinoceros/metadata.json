@@ -1,0 +1,15 @@
+{
+  "id": "rhinoceros",
+  "name": "rhinoceros",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "rhinoceros",
+    "vi": "Tê giác",
+    "ja": "サイ",
+    "zh": "犀牛"
+  },
+  "tags": [
+    "animal"
+  ]
+}

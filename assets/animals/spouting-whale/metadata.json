@@ -1,0 +1,20 @@
+{
+  "id": "spouting-whale",
+  "name": "spouting whale",
+  "category": "animals",
+  "subgroup": "animal-marine",
+  "translations": {
+    "en": "spouting whale",
+    "vi": "spouting whale",
+    "ja": "spouting whale",
+    "zh": "spouting whale"
+  },
+  "tags": [
+    "animal",
+    "beach",
+    "face",
+    "ocean",
+    "spouting",
+    "whale"
+  ]
+}

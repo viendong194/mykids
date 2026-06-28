@@ -1,0 +1,18 @@
+{
+  "id": "worm",
+  "name": "worm",
+  "category": "animals",
+  "subgroup": "animal-bug",
+  "translations": {
+    "en": "worm",
+    "vi": "Con giun",
+    "ja": "みみず",
+    "zh": "蠕虫"
+  },
+  "tags": [
+    "animal",
+    "annelid",
+    "earthworm",
+    "parasite"
+  ]
+}

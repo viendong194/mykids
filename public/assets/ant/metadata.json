@@ -1,0 +1,17 @@
+{
+  "id": "ant",
+  "name": "ant",
+  "category": "animals",
+  "subgroup": "animal-bug",
+  "translations": {
+    "en": "ant",
+    "vi": "Con kiến",
+    "ja": "あり",
+    "zh": "蚂蚁"
+  },
+  "tags": [
+    "animal",
+    "garden",
+    "insect"
+  ]
+}

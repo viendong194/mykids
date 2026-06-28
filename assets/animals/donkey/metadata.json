@@ -1,0 +1,21 @@
+{
+  "id": "donkey",
+  "name": "donkey",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "donkey",
+    "vi": "donkey",
+    "ja": "donkey",
+    "zh": "donkey"
+  },
+  "tags": [
+    "animal",
+    "ass",
+    "burro",
+    "hinny",
+    "mammal",
+    "mule",
+    "stubborn"
+  ]
+}

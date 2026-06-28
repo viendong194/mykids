@@ -1,0 +1,17 @@
+{
+  "id": "chicken",
+  "name": "chicken",
+  "category": "animals",
+  "subgroup": "animal-bird",
+  "translations": {
+    "en": "chicken",
+    "vi": "Con gà",
+    "ja": "にわとり",
+    "zh": "鸡"
+  },
+  "tags": [
+    "animal",
+    "bird",
+    "ornithology"
+  ]
+}

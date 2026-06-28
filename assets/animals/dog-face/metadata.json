@@ -1,0 +1,21 @@
+{
+  "id": "dog-face",
+  "name": "dog face",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "dog face",
+    "vi": "Mặt chó",
+    "ja": "いぬの顔",
+    "zh": "狗脸"
+  },
+  "tags": [
+    "adorbs",
+    "animal",
+    "dog",
+    "face",
+    "pet",
+    "puppies",
+    "puppy"
+  ]
+}

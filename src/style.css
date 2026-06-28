@@ -1,0 +1,43 @@
+/* Thiết lập CSS cơ bản cho trò chơi của bé */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  
+  /* Vô hiệu hóa tính năng chọn chữ để tránh bối rối khi bé chạm nhiều */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  
+  /* Tắt menu ngữ cảnh chạm giữ trên thiết bị iOS */
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #E0F2F1; /* Trùng với màu nền game */
+  font-family: 'Fredoka', sans-serif;
+  margin: 0;
+}
+
+#game-container {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* Canvas lấp đầy 100% container để Phaser RESIZE mode đo đúng kích thước */
+canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+

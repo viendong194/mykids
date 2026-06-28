@@ -1,0 +1,16 @@
+{
+  "id": "mouse",
+  "name": "mouse",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "mouse",
+    "vi": "Con chuột nhắt",
+    "ja": "ねずみ",
+    "zh": "鼠"
+  },
+  "tags": [
+    "animal",
+    "animals"
+  ]
+}

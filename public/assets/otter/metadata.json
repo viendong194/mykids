@@ -1,0 +1,17 @@
+{
+  "id": "otter",
+  "name": "otter",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "otter",
+    "vi": "Rái cá",
+    "ja": "かわうそ",
+    "zh": "水獭"
+  },
+  "tags": [
+    "animal",
+    "fishing",
+    "playful"
+  ]
+}

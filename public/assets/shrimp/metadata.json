@@ -1,0 +1,17 @@
+{
+  "id": "shrimp",
+  "name": "shrimp",
+  "category": "animals",
+  "subgroup": "animal-marine",
+  "translations": {
+    "en": "shrimp",
+    "vi": "Con tôm",
+    "ja": "えび",
+    "zh": "虾"
+  },
+  "tags": [
+    "food",
+    "shellfish",
+    "small"
+  ]
+}

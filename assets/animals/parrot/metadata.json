@@ -1,0 +1,19 @@
+{
+  "id": "parrot",
+  "name": "parrot",
+  "category": "animals",
+  "subgroup": "animal-bird",
+  "translations": {
+    "en": "parrot",
+    "vi": "Con vẹt",
+    "ja": "おうむ",
+    "zh": "鹦鹉"
+  },
+  "tags": [
+    "animal",
+    "bird",
+    "ornithology",
+    "pirate",
+    "talk"
+  ]
+}

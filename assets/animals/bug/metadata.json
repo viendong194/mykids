@@ -1,0 +1,17 @@
+{
+  "id": "bug",
+  "name": "bug",
+  "category": "animals",
+  "subgroup": "animal-bug",
+  "translations": {
+    "en": "bug",
+    "vi": "Con bọ",
+    "ja": "むし",
+    "zh": "虫子"
+  },
+  "tags": [
+    "animal",
+    "garden",
+    "insect"
+  ]
+}

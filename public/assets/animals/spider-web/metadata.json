@@ -1,0 +1,16 @@
+{
+  "id": "spider-web",
+  "name": "spider web",
+  "category": "animals",
+  "subgroup": "animal-bug",
+  "translations": {
+    "en": "spider web",
+    "vi": "spider web",
+    "ja": "spider web",
+    "zh": "spider web"
+  },
+  "tags": [
+    "spider",
+    "web"
+  ]
+}

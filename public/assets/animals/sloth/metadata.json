@@ -1,0 +1,16 @@
+{
+  "id": "sloth",
+  "name": "sloth",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "sloth",
+    "vi": "Con lười",
+    "ja": "ナマケモノ",
+    "zh": "树懒"
+  },
+  "tags": [
+    "lazy",
+    "slow"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "bird",
+  "name": "bird",
+  "category": "animals",
+  "subgroup": "animal-bird",
+  "translations": {
+    "en": "bird",
+    "vi": "bird",
+    "ja": "bird",
+    "zh": "bird"
+  },
+  "tags": [
+    "animal",
+    "ornithology"
+  ]
+}

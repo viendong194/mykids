@@ -1,0 +1,17 @@
+{
+  "id": "orca",
+  "name": "orca",
+  "category": "animals",
+  "subgroup": "animal-marine",
+  "translations": {
+    "en": "orca",
+    "vi": "orca",
+    "ja": "orca",
+    "zh": "orca"
+  },
+  "tags": [
+    "marine",
+    "ocean",
+    "whale"
+  ]
+}

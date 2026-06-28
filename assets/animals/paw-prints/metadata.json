@@ -1,0 +1,19 @@
+{
+  "id": "paw-prints",
+  "name": "paw prints",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "paw prints",
+    "vi": "paw prints",
+    "ja": "paw prints",
+    "zh": "paw prints"
+  },
+  "tags": [
+    "feet",
+    "paw",
+    "paws",
+    "print",
+    "prints"
+  ]
+}

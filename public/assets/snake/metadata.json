@@ -1,0 +1,19 @@
+{
+  "id": "snake",
+  "name": "snake",
+  "category": "animals",
+  "subgroup": "animal-reptile",
+  "translations": {
+    "en": "snake",
+    "vi": "Con rắn",
+    "ja": "へび",
+    "zh": "蛇"
+  },
+  "tags": [
+    "animal",
+    "bearer",
+    "ophiuchus",
+    "serpent",
+    "zodiac"
+  ]
+}

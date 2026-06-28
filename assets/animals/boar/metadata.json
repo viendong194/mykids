@@ -1,0 +1,16 @@
+{
+  "id": "boar",
+  "name": "boar",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "boar",
+    "vi": "boar",
+    "ja": "boar",
+    "zh": "boar"
+  },
+  "tags": [
+    "animal",
+    "pig"
+  ]
+}

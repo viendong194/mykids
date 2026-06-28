@@ -1,0 +1,16 @@
+{
+  "id": "fox",
+  "name": "fox",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "fox",
+    "vi": "Con cáo",
+    "ja": "きつね",
+    "zh": "狐狸"
+  },
+  "tags": [
+    "animal",
+    "face"
+  ]
+}

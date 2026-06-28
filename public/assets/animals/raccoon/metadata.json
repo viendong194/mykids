@@ -1,0 +1,17 @@
+{
+  "id": "raccoon",
+  "name": "raccoon",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "raccoon",
+    "vi": "Con gấu mèo",
+    "ja": "たぬき",
+    "zh": "浣熊"
+  },
+  "tags": [
+    "animal",
+    "curious",
+    "sly"
+  ]
+}

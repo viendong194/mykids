@@ -1,0 +1,17 @@
+{
+  "id": "hamster",
+  "name": "hamster",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "hamster",
+    "vi": "Chuột hamster",
+    "ja": "ハムスター",
+    "zh": "仓鼠"
+  },
+  "tags": [
+    "animal",
+    "face",
+    "pet"
+  ]
+}

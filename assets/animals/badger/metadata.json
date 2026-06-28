@@ -1,0 +1,17 @@
+{
+  "id": "badger",
+  "name": "badger",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "badger",
+    "vi": "Con lửng",
+    "ja": "あなぐま",
+    "zh": "獾"
+  },
+  "tags": [
+    "animal",
+    "honey",
+    "pester"
+  ]
+}

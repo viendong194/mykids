@@ -1,0 +1,18 @@
+{
+  "id": "dolphin",
+  "name": "dolphin",
+  "category": "animals",
+  "subgroup": "animal-marine",
+  "translations": {
+    "en": "dolphin",
+    "vi": "Cá heo",
+    "ja": "イルカ",
+    "zh": "海豚"
+  },
+  "tags": [
+    "animal",
+    "beach",
+    "flipper",
+    "ocean"
+  ]
+}

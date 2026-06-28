@@ -1,0 +1,18 @@
+{
+  "id": "owl",
+  "name": "owl",
+  "category": "animals",
+  "subgroup": "animal-bird",
+  "translations": {
+    "en": "owl",
+    "vi": "Con cú",
+    "ja": "ふくろう",
+    "zh": "猫头鹰"
+  },
+  "tags": [
+    "animal",
+    "bird",
+    "ornithology",
+    "wise"
+  ]
+}

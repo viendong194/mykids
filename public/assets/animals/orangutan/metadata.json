@@ -1,0 +1,17 @@
+{
+  "id": "orangutan",
+  "name": "orangutan",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "orangutan",
+    "vi": "orangutan",
+    "ja": "orangutan",
+    "zh": "orangutan"
+  },
+  "tags": [
+    "animal",
+    "ape",
+    "monkey"
+  ]
+}

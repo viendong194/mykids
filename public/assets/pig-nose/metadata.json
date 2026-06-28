@@ -1,0 +1,21 @@
+{
+  "id": "pig-nose",
+  "name": "pig nose",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "pig nose",
+    "vi": "pig nose",
+    "ja": "pig nose",
+    "zh": "pig nose"
+  },
+  "tags": [
+    "animal",
+    "face",
+    "farm",
+    "nose",
+    "pig",
+    "smell",
+    "snout"
+  ]
+}

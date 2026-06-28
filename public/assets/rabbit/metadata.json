@@ -1,0 +1,17 @@
+{
+  "id": "rabbit",
+  "name": "rabbit",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "rabbit",
+    "vi": "Con thỏ",
+    "ja": "うさぎ",
+    "zh": "兔子"
+  },
+  "tags": [
+    "animal",
+    "bunny",
+    "pet"
+  ]
+}

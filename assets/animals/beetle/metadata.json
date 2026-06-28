@@ -1,0 +1,17 @@
+{
+  "id": "beetle",
+  "name": "beetle",
+  "category": "animals",
+  "subgroup": "animal-bug",
+  "translations": {
+    "en": "beetle",
+    "vi": "beetle",
+    "ja": "beetle",
+    "zh": "beetle"
+  },
+  "tags": [
+    "animal",
+    "bug",
+    "insect"
+  ]
+}

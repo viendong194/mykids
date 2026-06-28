@@ -1,0 +1,15 @@
+{
+  "id": "elephant",
+  "name": "elephant",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "elephant",
+    "vi": "Con voi",
+    "ja": "ぞう",
+    "zh": "大象"
+  },
+  "tags": [
+    "animal"
+  ]
+}

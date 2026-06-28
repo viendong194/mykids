@@ -1,0 +1,17 @@
+{
+  "id": "turtle",
+  "name": "turtle",
+  "category": "animals",
+  "subgroup": "animal-reptile",
+  "translations": {
+    "en": "turtle",
+    "vi": "Con rùa",
+    "ja": "かめ",
+    "zh": "乌龟"
+  },
+  "tags": [
+    "animal",
+    "terrapin",
+    "tortoise"
+  ]
+}

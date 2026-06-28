@@ -1,0 +1,44 @@
+[
+  {
+    "id": "animal_tap_01",
+    "type": "tap",
+    "correct": "elephant",
+    "options": ["lion", "elephant", "cat", "dog"],
+    "voiceText": "ゾウさんをタッチしてね"
+  },
+  {
+    "id": "animal_tap_02",
+    "type": "tap",
+    "correct": "cat",
+    "options": ["cat", "dog", "rabbit", "panda"],
+    "voiceText": "かわいい子猫はどこかな？"
+  },
+  {
+    "id": "animal_tap_03",
+    "type": "tap",
+    "correct": "dog",
+    "options": ["lion", "panda", "dog", "elephant"],
+    "voiceText": "ワンちゃんをタッチしてね"
+  },
+  {
+    "id": "animal_tap_04",
+    "type": "tap",
+    "correct": "rabbit",
+    "options": ["cat", "rabbit", "panda", "lion"],
+    "voiceText": "ふわふわのウサギさんをタッチしてね"
+  },
+  {
+    "id": "animal_tap_05",
+    "type": "tap",
+    "correct": "lion",
+    "options": ["lion", "dog", "elephant", "rabbit"],
+    "voiceText": "かっこいいライオンさんをタッチしてね"
+  },
+  {
+    "id": "animal_tap_06",
+    "type": "tap",
+    "correct": "panda",
+    "options": ["panda", "cat", "elephant", "dog"],
+    "voiceText": "かわいいパンダさんをタッチしてね"
+  }
+]

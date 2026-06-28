@@ -1,0 +1,18 @@
+{
+  "id": "dog",
+  "name": "dog",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "dog",
+    "vi": "Con chó",
+    "ja": "いぬ",
+    "zh": "狗"
+  },
+  "tags": [
+    "animal",
+    "animals",
+    "dogs",
+    "pet"
+  ]
+}

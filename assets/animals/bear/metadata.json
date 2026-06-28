@@ -1,0 +1,19 @@
+{
+  "id": "bear",
+  "name": "bear",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "bear",
+    "vi": "Con gấu",
+    "ja": "くま",
+    "zh": "熊"
+  },
+  "tags": [
+    "animal",
+    "face",
+    "grizzly",
+    "growl",
+    "honey"
+  ]
+}

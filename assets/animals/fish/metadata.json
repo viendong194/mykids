@@ -1,0 +1,20 @@
+{
+  "id": "fish",
+  "name": "fish",
+  "category": "animals",
+  "subgroup": "animal-marine",
+  "translations": {
+    "en": "fish",
+    "vi": "Con cá",
+    "ja": "さかな",
+    "zh": "鱼"
+  },
+  "tags": [
+    "animal",
+    "dinner",
+    "fishes",
+    "fishing",
+    "pisces",
+    "zodiac"
+  ]
+}

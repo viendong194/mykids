@@ -1,0 +1,18 @@
+{
+  "id": "kangaroo",
+  "name": "kangaroo",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "kangaroo",
+    "vi": "Chuột túi",
+    "ja": "カンガルー",
+    "zh": "袋鼠"
+  },
+  "tags": [
+    "animal",
+    "joey",
+    "jump",
+    "marsupial"
+  ]
+}

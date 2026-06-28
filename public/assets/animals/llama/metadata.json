@@ -1,0 +1,19 @@
+{
+  "id": "llama",
+  "name": "llama",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "llama",
+    "vi": "Lạc đà không bướu",
+    "ja": "ラマ",
+    "zh": "骆马"
+  },
+  "tags": [
+    "alpaca",
+    "animal",
+    "guanaco",
+    "vicuña",
+    "wool"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "feather",
+  "name": "feather",
+  "category": "animals",
+  "subgroup": "animal-bird",
+  "translations": {
+    "en": "feather",
+    "vi": "Lông chim",
+    "ja": "はね",
+    "zh": "羽毛"
+  },
+  "tags": [
+    "bird",
+    "flight",
+    "light",
+    "plumage"
+  ]
+}

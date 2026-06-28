@@ -1,0 +1,18 @@
+{
+  "id": "penguin",
+  "name": "penguin",
+  "category": "animals",
+  "subgroup": "animal-bird",
+  "translations": {
+    "en": "penguin",
+    "vi": "Chim cánh cụt",
+    "ja": "ペンギン",
+    "zh": "企鹅"
+  },
+  "tags": [
+    "animal",
+    "antarctica",
+    "bird",
+    "ornithology"
+  ]
+}

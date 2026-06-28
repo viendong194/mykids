@@ -1,0 +1,19 @@
+{
+  "id": "guide-dog",
+  "name": "guide dog",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "guide dog",
+    "vi": "guide dog",
+    "ja": "guide dog",
+    "zh": "guide dog"
+  },
+  "tags": [
+    "accessibility",
+    "animal",
+    "blind",
+    "dog",
+    "guide"
+  ]
+}

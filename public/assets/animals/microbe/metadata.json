@@ -1,0 +1,18 @@
+{
+  "id": "microbe",
+  "name": "microbe",
+  "category": "animals",
+  "subgroup": "animal-bug",
+  "translations": {
+    "en": "microbe",
+    "vi": "microbe",
+    "ja": "microbe",
+    "zh": "microbe"
+  },
+  "tags": [
+    "amoeba",
+    "bacteria",
+    "science",
+    "virus"
+  ]
+}

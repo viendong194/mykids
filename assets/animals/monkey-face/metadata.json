@@ -1,0 +1,18 @@
+{
+  "id": "monkey-face",
+  "name": "monkey face",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "monkey face",
+    "vi": "Mặt khỉ",
+    "ja": "さるの顔",
+    "zh": "猴脸"
+  },
+  "tags": [
+    "animal",
+    "banana",
+    "face",
+    "monkey"
+  ]
+}

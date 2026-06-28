@@ -1,0 +1,16 @@
+{
+  "id": "butterfly",
+  "name": "butterfly",
+  "category": "animals",
+  "subgroup": "animal-bug",
+  "translations": {
+    "en": "butterfly",
+    "vi": "Con bướm",
+    "ja": "ちょうちょ",
+    "zh": "蝴蝶"
+  },
+  "tags": [
+    "insect",
+    "pretty"
+  ]
+}

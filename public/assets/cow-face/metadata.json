@@ -1,0 +1,20 @@
+{
+  "id": "cow-face",
+  "name": "cow face",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "cow face",
+    "vi": "Mặt bò",
+    "ja": "うしの顔",
+    "zh": "牛脸"
+  },
+  "tags": [
+    "animal",
+    "cow",
+    "face",
+    "farm",
+    "milk",
+    "moo"
+  ]
+}

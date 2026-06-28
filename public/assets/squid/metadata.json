@@ -1,0 +1,17 @@
+{
+  "id": "squid",
+  "name": "squid",
+  "category": "animals",
+  "subgroup": "animal-marine",
+  "translations": {
+    "en": "squid",
+    "vi": "Mực ống",
+    "ja": "いか",
+    "zh": "鱿鱼"
+  },
+  "tags": [
+    "animal",
+    "food",
+    "mollusk"
+  ]
+}

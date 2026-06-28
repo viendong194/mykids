@@ -1,0 +1,18 @@
+{
+  "id": "seal",
+  "name": "seal",
+  "category": "animals",
+  "subgroup": "animal-marine",
+  "translations": {
+    "en": "seal",
+    "vi": "Hải cẩu",
+    "ja": "アザラシ",
+    "zh": "海豹"
+  },
+  "tags": [
+    "animal",
+    "lion",
+    "ocean",
+    "sea"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "leopard",
+  "name": "leopard",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "leopard",
+    "vi": "leopard",
+    "ja": "leopard",
+    "zh": "leopard"
+  },
+  "tags": [
+    "animal",
+    "big",
+    "cat",
+    "predator",
+    "zoo"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "giraffe",
+  "name": "giraffe",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "giraffe",
+    "vi": "Hươu cao cổ",
+    "ja": "きりん",
+    "zh": "长颈鹿"
+  },
+  "tags": [
+    "animal",
+    "spots"
+  ]
+}

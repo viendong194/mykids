@@ -1,0 +1,18 @@
+{
+  "id": "bison",
+  "name": "bison",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "bison",
+    "vi": "bison",
+    "ja": "bison",
+    "zh": "bison"
+  },
+  "tags": [
+    "animal",
+    "buffalo",
+    "herd",
+    "wisent"
+  ]
+}

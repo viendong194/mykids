@@ -1,0 +1,21 @@
+{
+  "id": "ram",
+  "name": "ram",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "ram",
+    "vi": "Con cừu",
+    "ja": "ひつじ",
+    "zh": "羊"
+  },
+  "tags": [
+    "animal",
+    "aries",
+    "horns",
+    "male",
+    "sheep",
+    "zodiac",
+    "zoo"
+  ]
+}

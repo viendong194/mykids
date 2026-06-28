@@ -1,0 +1,56 @@
+[
+  {
+    "id": "drag_round_1",
+    "type": "drag",
+    "voiceText": "Bé hãy ghép các con vật vào bóng của chúng nhé",
+    "items": [
+      { "id": "item_cat", "asset": "cat", "targetId": "target_cat" },
+      { "id": "item_dog", "asset": "dog", "targetId": "target_dog" },
+      { "id": "item_panda", "asset": "panda", "targetId": "target_panda" }
+    ],
+    "targets": [
+      {
+        "id": "target_cat",
+        "asset": "cat",
+        "name": "Mèo con"
+      },
+      {
+        "id": "target_dog",
+        "asset": "dog",
+        "name": "Chú chó"
+      },
+      {
+        "id": "target_panda",
+        "asset": "panda",
+        "name": "Gấu trúc"
+      }
+    ]
+  },
+  {
+    "id": "drag_round_2",
+    "type": "drag",
+    "voiceText": "Hãy tìm đúng bóng cho sư tử, voi và thỏ nào",
+    "items": [
+      { "id": "item_lion", "asset": "lion", "targetId": "target_lion" },
+      { "id": "item_elephant", "asset": "elephant", "targetId": "target_elephant" },
+      { "id": "item_rabbit", "asset": "rabbit", "targetId": "target_rabbit" }
+    ],
+    "targets": [
+      {
+        "id": "target_lion",
+        "asset": "lion",
+        "name": "Sư tử"
+      },
+      {
+        "id": "target_elephant",
+        "asset": "elephant",
+        "name": "Con voi"
+      },
+      {
+        "id": "target_rabbit",
+        "asset": "rabbit",
+        "name": "Thỏ con"
+      }
+    ]
+  }
+]

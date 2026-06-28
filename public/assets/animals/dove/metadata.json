@@ -1,0 +1,18 @@
+{
+  "id": "dove",
+  "name": "dove",
+  "category": "animals",
+  "subgroup": "animal-bird",
+  "translations": {
+    "en": "dove",
+    "vi": "dove",
+    "ja": "dove",
+    "zh": "dove"
+  },
+  "tags": [
+    "bird",
+    "fly",
+    "ornithology",
+    "peace"
+  ]
+}

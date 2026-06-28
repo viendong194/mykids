@@ -1,0 +1,19 @@
+{
+  "id": "camel",
+  "name": "camel",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "camel",
+    "vi": "Con lạc đà",
+    "ja": "らくだ",
+    "zh": "骆驼"
+  },
+  "tags": [
+    "animal",
+    "desert",
+    "dromedary",
+    "hump",
+    "one"
+  ]
+}

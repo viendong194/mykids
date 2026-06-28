@@ -1,0 +1,15 @@
+{
+  "id": "gorilla",
+  "name": "gorilla",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "gorilla",
+    "vi": "Con khỉ đột",
+    "ja": "ゴリラ",
+    "zh": "大猩猩"
+  },
+  "tags": [
+    "animal"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "turkey",
+  "name": "turkey",
+  "category": "animals",
+  "subgroup": "animal-bird",
+  "translations": {
+    "en": "turkey",
+    "vi": "turkey",
+    "ja": "turkey",
+    "zh": "turkey"
+  },
+  "tags": [
+    "bird",
+    "gobble",
+    "thanksgiving"
+  ]
+}

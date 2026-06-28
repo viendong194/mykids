@@ -1,0 +1,21 @@
+{
+  "id": "front-facing-baby-chick",
+  "name": "front-facing baby chick",
+  "category": "animals",
+  "subgroup": "animal-bird",
+  "translations": {
+    "en": "front-facing baby chick",
+    "vi": "front-facing baby chick",
+    "ja": "front-facing baby chick",
+    "zh": "front-facing baby chick"
+  },
+  "tags": [
+    "animal",
+    "baby",
+    "bird",
+    "chick",
+    "front-facing",
+    "newborn",
+    "ornithology"
+  ]
+}

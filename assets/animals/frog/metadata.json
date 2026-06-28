@@ -1,0 +1,16 @@
+{
+  "id": "frog",
+  "name": "frog",
+  "category": "animals",
+  "subgroup": "animal-amphibian",
+  "translations": {
+    "en": "frog",
+    "vi": "Con ếch",
+    "ja": "かえる",
+    "zh": "青蛙"
+  },
+  "tags": [
+    "animal",
+    "face"
+  ]
+}

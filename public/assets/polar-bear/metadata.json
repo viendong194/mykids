@@ -1,0 +1,19 @@
+{
+  "id": "polar-bear",
+  "name": "polar bear",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "polar bear",
+    "vi": "polar bear",
+    "ja": "polar bear",
+    "zh": "polar bear"
+  },
+  "tags": [
+    "animal",
+    "arctic",
+    "bear",
+    "polar",
+    "white"
+  ]
+}

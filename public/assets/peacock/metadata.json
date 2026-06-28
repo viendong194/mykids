@@ -1,0 +1,22 @@
+{
+  "id": "peacock",
+  "name": "peacock",
+  "category": "animals",
+  "subgroup": "animal-bird",
+  "translations": {
+    "en": "peacock",
+    "vi": "Con công",
+    "ja": "くじゃく",
+    "zh": "孔雀"
+  },
+  "tags": [
+    "animal",
+    "bird",
+    "colorful",
+    "ornithology",
+    "ostentatious",
+    "peahen",
+    "pretty",
+    "proud"
+  ]
+}

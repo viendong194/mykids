@@ -1,0 +1,24 @@
+{
+  "id": "black-bird",
+  "name": "black bird",
+  "category": "animals",
+  "subgroup": "animal-bird",
+  "translations": {
+    "en": "black bird",
+    "vi": "black bird",
+    "ja": "black bird",
+    "zh": "black bird"
+  },
+  "tags": [
+    "animal",
+    "beak",
+    "bird",
+    "black",
+    "caw",
+    "corvid",
+    "crow",
+    "ornithology",
+    "raven",
+    "rook"
+  ]
+}

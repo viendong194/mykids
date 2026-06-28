@@ -1,0 +1,17 @@
+{
+  "id": "panda",
+  "name": "panda",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "panda",
+    "vi": "Gấu trúc",
+    "ja": "パンダ",
+    "zh": "熊猫"
+  },
+  "tags": [
+    "animal",
+    "bamboo",
+    "face"
+  ]
+}

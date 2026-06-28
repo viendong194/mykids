@@ -1,0 +1,20 @@
+{
+  "id": "spiral-shell",
+  "name": "spiral shell",
+  "category": "animals",
+  "subgroup": "animal-marine",
+  "translations": {
+    "en": "spiral shell",
+    "vi": "spiral shell",
+    "ja": "spiral shell",
+    "zh": "spiral shell"
+  },
+  "tags": [
+    "animal",
+    "beach",
+    "conch",
+    "sea",
+    "shell",
+    "spiral"
+  ]
+}

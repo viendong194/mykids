@@ -1,0 +1,15 @@
+{
+  "id": "unicorn",
+  "name": "unicorn",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "unicorn",
+    "vi": "unicorn",
+    "ja": "unicorn",
+    "zh": "unicorn"
+  },
+  "tags": [
+    "face"
+  ]
+}

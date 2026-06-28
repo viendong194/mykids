@@ -1,0 +1,19 @@
+{
+  "id": "tiger",
+  "name": "tiger",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "tiger",
+    "vi": "Con hổ",
+    "ja": "とら",
+    "zh": "老虎"
+  },
+  "tags": [
+    "animal",
+    "big",
+    "cat",
+    "predator",
+    "zoo"
+  ]
+}

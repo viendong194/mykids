@@ -1,0 +1,16 @@
+{
+  "id": "bat",
+  "name": "bat",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "bat",
+    "vi": "Con dơi",
+    "ja": "こうもり",
+    "zh": "蝙蝠"
+  },
+  "tags": [
+    "animal",
+    "vampire"
+  ]
+}

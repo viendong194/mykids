@@ -1,0 +1,25 @@
+{
+  "id": "lion",
+  "name": "lion",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "lion",
+    "vi": "Sư tử",
+    "ja": "ライオン",
+    "zh": "狮子"
+  },
+  "tags": [
+    "alpha",
+    "animal",
+    "face",
+    "leo",
+    "mane",
+    "order",
+    "rawr",
+    "roar",
+    "safari",
+    "strong",
+    "zodiac"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "wing",
+  "name": "wing",
+  "category": "animals",
+  "subgroup": "animal-bird",
+  "translations": {
+    "en": "wing",
+    "vi": "wing",
+    "ja": "wing",
+    "zh": "wing"
+  },
+  "tags": [
+    "angelic",
+    "ascend",
+    "aviation",
+    "bird",
+    "fly",
+    "flying",
+    "heavenly",
+    "mythology",
+    "soar"
+  ]
+}

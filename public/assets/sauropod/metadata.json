@@ -1,0 +1,18 @@
+{
+  "id": "sauropod",
+  "name": "sauropod",
+  "category": "animals",
+  "subgroup": "animal-reptile",
+  "translations": {
+    "en": "sauropod",
+    "vi": "sauropod",
+    "ja": "sauropod",
+    "zh": "sauropod"
+  },
+  "tags": [
+    "brachiosaurus",
+    "brontosaurus",
+    "dinosaur",
+    "diplodocus"
+  ]
+}

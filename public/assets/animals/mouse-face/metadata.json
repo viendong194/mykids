@@ -1,0 +1,17 @@
+{
+  "id": "mouse-face",
+  "name": "mouse face",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "mouse face",
+    "vi": "mouse face",
+    "ja": "mouse face",
+    "zh": "mouse face"
+  },
+  "tags": [
+    "animal",
+    "face",
+    "mouse"
+  ]
+}

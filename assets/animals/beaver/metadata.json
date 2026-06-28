@@ -1,0 +1,17 @@
+{
+  "id": "beaver",
+  "name": "beaver",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "beaver",
+    "vi": "beaver",
+    "ja": "beaver",
+    "zh": "beaver"
+  },
+  "tags": [
+    "animal",
+    "dam",
+    "teeth"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "crab",
+  "name": "crab",
+  "category": "animals",
+  "subgroup": "animal-marine",
+  "translations": {
+    "en": "crab",
+    "vi": "Con cua",
+    "ja": "かに",
+    "zh": "螃蟹"
+  },
+  "tags": [
+    "cancer",
+    "zodiac"
+  ]
+}

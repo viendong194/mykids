@@ -1,0 +1,16 @@
+{
+  "id": "shark",
+  "name": "shark",
+  "category": "animals",
+  "subgroup": "animal-marine",
+  "translations": {
+    "en": "shark",
+    "vi": "Cá mập",
+    "ja": "さめ",
+    "zh": "鲨鱼"
+  },
+  "tags": [
+    "animal",
+    "fish"
+  ]
+}

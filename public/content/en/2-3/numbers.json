@@ -1,0 +1,67 @@
+[
+  {
+    "id": "count_animals_01",
+    "type": "count",
+    "mode": "count_objects",
+    "voiceText": "Count the lions",
+    "object": {
+      "type": "animal",
+      "id": "lion",
+      "asset": "lion"
+    },
+    "count": 2,
+    "choices": [1, 2, 3]
+  },
+  {
+    "id": "count_animals_02",
+    "type": "count",
+    "mode": "count_objects",
+    "voiceText": "How many dogs are here?",
+    "object": {
+      "type": "animal",
+      "id": "dog",
+      "asset": "dog"
+    },
+    "count": 3,
+    "choices": [2, 3, 4]
+  },
+  {
+    "id": "count_animals_03",
+    "type": "count",
+    "mode": "count_objects",
+    "voiceText": "Count the cute rabbits",
+    "object": {
+      "type": "animal",
+      "id": "rabbit",
+      "asset": "rabbit"
+    },
+    "count": 5,
+    "choices": [3, 4, 5, 6]
+  },
+  {
+    "id": "count_animals_04",
+    "type": "count",
+    "mode": "count_objects",
+    "voiceText": "Can you count the kittens?",
+    "object": {
+      "type": "animal",
+      "id": "cat",
+      "asset": "cat"
+    },
+    "count": 7,
+    "choices": [6, 7, 8, 9]
+  },
+  {
+    "id": "count_animals_05",
+    "type": "count",
+    "mode": "count_objects",
+    "voiceText": "How many pandas can you count?",
+    "object": {
+      "type": "animal",
+      "id": "panda",
+      "asset": "panda"
+    },
+    "count": 9,
+    "choices": [7, 8, 9, 10]
+  }
+]

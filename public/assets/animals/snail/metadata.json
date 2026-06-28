@@ -1,0 +1,19 @@
+{
+  "id": "snail",
+  "name": "snail",
+  "category": "animals",
+  "subgroup": "animal-bug",
+  "translations": {
+    "en": "snail",
+    "vi": "Con ốc sên",
+    "ja": "かたつむり",
+    "zh": "蜗牛"
+  },
+  "tags": [
+    "animal",
+    "escargot",
+    "garden",
+    "nature",
+    "slug"
+  ]
+}

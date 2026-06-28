@@ -1,0 +1,22 @@
+{
+  "name": "mykids",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "build-tools": "tsc -p tsconfig.tools.json",
+    "sync-assets": "npm run build-tools && node dist-tools/tools/openmoji/cli.js",
+    "sync-assets:dry": "npm run build-tools && node dist-tools/tools/openmoji/cli.js --dry-run"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.1",
+    "typescript": "~6.0.2",
+    "vite": "^8.1.0"
+  },
+  "dependencies": {
+    "phaser": "^4.2.0"
+  }
+}

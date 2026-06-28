@@ -1,0 +1,16 @@
+{
+  "id": "zebra",
+  "name": "zebra",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "zebra",
+    "vi": "Ngựa vằn",
+    "ja": "しまうま",
+    "zh": "斑马"
+  },
+  "tags": [
+    "animal",
+    "stripe"
+  ]
+}

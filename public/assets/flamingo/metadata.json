@@ -1,0 +1,19 @@
+{
+  "id": "flamingo",
+  "name": "flamingo",
+  "category": "animals",
+  "subgroup": "animal-bird",
+  "translations": {
+    "en": "flamingo",
+    "vi": "Hồng hạc",
+    "ja": "フラミンゴ",
+    "zh": "火烈鸟"
+  },
+  "tags": [
+    "animal",
+    "bird",
+    "flamboyant",
+    "ornithology",
+    "tropical"
+  ]
+}

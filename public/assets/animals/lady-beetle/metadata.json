@@ -1,0 +1,22 @@
+{
+  "id": "lady-beetle",
+  "name": "lady beetle",
+  "category": "animals",
+  "subgroup": "animal-bug",
+  "translations": {
+    "en": "lady beetle",
+    "vi": "lady beetle",
+    "ja": "lady beetle",
+    "zh": "lady beetle"
+  },
+  "tags": [
+    "animal",
+    "beetle",
+    "garden",
+    "insect",
+    "lady",
+    "ladybird",
+    "ladybug",
+    "nature"
+  ]
+}

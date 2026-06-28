@@ -1,0 +1,19 @@
+{
+  "id": "horse",
+  "name": "horse",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "horse",
+    "vi": "Con ngựa",
+    "ja": "うま",
+    "zh": "马"
+  },
+  "tags": [
+    "animal",
+    "equestrian",
+    "farm",
+    "racehorse",
+    "racing"
+  ]
+}

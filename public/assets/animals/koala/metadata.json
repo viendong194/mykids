@@ -1,0 +1,21 @@
+{
+  "id": "koala",
+  "name": "koala",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "koala",
+    "vi": "Gấu túi",
+    "ja": "コアラ",
+    "zh": "考拉"
+  },
+  "tags": [
+    "animal",
+    "australia",
+    "bear",
+    "down",
+    "face",
+    "marsupial",
+    "under"
+  ]
+}

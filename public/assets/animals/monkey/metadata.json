@@ -1,0 +1,16 @@
+{
+  "id": "monkey",
+  "name": "monkey",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "monkey",
+    "vi": "Con khỉ",
+    "ja": "さる",
+    "zh": "猴子"
+  },
+  "tags": [
+    "animal",
+    "banana"
+  ]
+}

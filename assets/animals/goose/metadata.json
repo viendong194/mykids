@@ -1,0 +1,25 @@
+{
+  "id": "goose",
+  "name": "goose",
+  "category": "animals",
+  "subgroup": "animal-bird",
+  "translations": {
+    "en": "goose",
+    "vi": "goose",
+    "ja": "goose",
+    "zh": "goose"
+  },
+  "tags": [
+    "animal",
+    "bird",
+    "duck",
+    "flock",
+    "fowl",
+    "gaggle",
+    "gander",
+    "geese",
+    "honk",
+    "ornithology",
+    "silly"
+  ]
+}

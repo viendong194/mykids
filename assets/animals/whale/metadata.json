@@ -1,0 +1,17 @@
+{
+  "id": "whale",
+  "name": "whale",
+  "category": "animals",
+  "subgroup": "animal-marine",
+  "translations": {
+    "en": "whale",
+    "vi": "Cá voi",
+    "ja": "くじら",
+    "zh": "鲸鱼"
+  },
+  "tags": [
+    "animal",
+    "beach",
+    "ocean"
+  ]
+}

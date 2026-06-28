@@ -1,0 +1,16 @@
+{
+  "id": "lizard",
+  "name": "lizard",
+  "category": "animals",
+  "subgroup": "animal-reptile",
+  "translations": {
+    "en": "lizard",
+    "vi": "Thằn lằn",
+    "ja": "とかげ",
+    "zh": "蜥蜴"
+  },
+  "tags": [
+    "animal",
+    "reptile"
+  ]
+}

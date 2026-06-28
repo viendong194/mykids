@@ -1,0 +1,28 @@
+{
+  "id": "jellyfish",
+  "name": "jellyfish",
+  "category": "animals",
+  "subgroup": "animal-marine",
+  "translations": {
+    "en": "jellyfish",
+    "vi": "Con sứa",
+    "ja": "くらげ",
+    "zh": "水母"
+  },
+  "tags": [
+    "animal",
+    "aquarium",
+    "burn",
+    "invertebrate",
+    "jelly",
+    "life",
+    "marine",
+    "ocean",
+    "ouch",
+    "plankton",
+    "sea",
+    "sting",
+    "stinger",
+    "tentacles"
+  ]
+}

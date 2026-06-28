@@ -1,0 +1,29 @@
+{
+  "id": "phoenix",
+  "name": "phoenix",
+  "category": "animals",
+  "subgroup": "animal-bird",
+  "translations": {
+    "en": "phoenix",
+    "vi": "phoenix",
+    "ja": "phoenix",
+    "zh": "phoenix"
+  },
+  "tags": [
+    "ascend",
+    "ascension",
+    "emerge",
+    "fantasy",
+    "firebird",
+    "glory",
+    "immortal",
+    "rebirth",
+    "reincarnation",
+    "reinvent",
+    "renewal",
+    "revival",
+    "revive",
+    "rise",
+    "transform"
+  ]
+}

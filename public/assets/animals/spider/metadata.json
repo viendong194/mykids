@@ -1,0 +1,16 @@
+{
+  "id": "spider",
+  "name": "spider",
+  "category": "animals",
+  "subgroup": "animal-bug",
+  "translations": {
+    "en": "spider",
+    "vi": "Con nhện",
+    "ja": "くも",
+    "zh": "蜘蛛"
+  },
+  "tags": [
+    "animal",
+    "insect"
+  ]
+}

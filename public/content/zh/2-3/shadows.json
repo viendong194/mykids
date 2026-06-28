@@ -1,0 +1,56 @@
+[
+  {
+    "id": "drag_round_1",
+    "type": "drag",
+    "voiceText": "请把小动物们拖到它们对应的影子里吧",
+    "items": [
+      { "id": "item_cat", "asset": "cat", "targetId": "target_cat" },
+      { "id": "item_dog", "asset": "dog", "targetId": "target_dog" },
+      { "id": "item_panda", "asset": "panda", "targetId": "target_panda" }
+    ],
+    "targets": [
+      {
+        "id": "target_cat",
+        "asset": "cat",
+        "name": "小猫"
+      },
+      {
+        "id": "target_dog",
+        "asset": "dog",
+        "name": "小狗"
+      },
+      {
+        "id": "target_panda",
+        "asset": "panda",
+        "name": "熊猫"
+      }
+    ]
+  },
+  {
+    "id": "drag_round_2",
+    "type": "drag",
+    "voiceText": "请为狮子、大象和兔子找到正确的影子吧",
+    "items": [
+      { "id": "item_lion", "asset": "lion", "targetId": "target_lion" },
+      { "id": "item_elephant", "asset": "elephant", "targetId": "target_elephant" },
+      { "id": "item_rabbit", "asset": "rabbit", "targetId": "target_rabbit" }
+    ],
+    "targets": [
+      {
+        "id": "target_lion",
+        "asset": "lion",
+        "name": "狮子"
+      },
+      {
+        "id": "target_elephant",
+        "asset": "elephant",
+        "name": "大象"
+      },
+      {
+        "id": "target_rabbit",
+        "asset": "rabbit",
+        "name": "兔子"
+      }
+    ]
+  }
+]

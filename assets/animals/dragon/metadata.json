@@ -1,0 +1,19 @@
+{
+  "id": "dragon",
+  "name": "dragon",
+  "category": "animals",
+  "subgroup": "animal-reptile",
+  "translations": {
+    "en": "dragon",
+    "vi": "Con rồng",
+    "ja": "りゅう",
+    "zh": "龙"
+  },
+  "tags": [
+    "animal",
+    "fairy",
+    "fairytale",
+    "knights",
+    "tale"
+  ]
+}

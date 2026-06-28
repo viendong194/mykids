@@ -1,0 +1,17 @@
+{
+  "id": "octopus",
+  "name": "octopus",
+  "category": "animals",
+  "subgroup": "animal-marine",
+  "translations": {
+    "en": "octopus",
+    "vi": "Bạch tuộc",
+    "ja": "たこ",
+    "zh": "章鱼"
+  },
+  "tags": [
+    "animal",
+    "creature",
+    "ocean"
+  ]
+}

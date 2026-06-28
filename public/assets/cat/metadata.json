@@ -1,0 +1,19 @@
+{
+  "id": "cat",
+  "name": "cat",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "cat",
+    "vi": "Con mèo",
+    "ja": "ねこ",
+    "zh": "猫"
+  },
+  "tags": [
+    "animal",
+    "animals",
+    "cats",
+    "kitten",
+    "pet"
+  ]
+}

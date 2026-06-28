@@ -1,0 +1,526 @@
+[
+  {
+    "id": "monkey-face",
+    "asset": "animals/monkey-face/asset.svg"
+  },
+  {
+    "id": "monkey",
+    "asset": "animals/monkey/asset.svg"
+  },
+  {
+    "id": "gorilla",
+    "asset": "animals/gorilla/asset.svg"
+  },
+  {
+    "id": "orangutan",
+    "asset": "animals/orangutan/asset.svg"
+  },
+  {
+    "id": "dog-face",
+    "asset": "animals/dog-face/asset.svg"
+  },
+  {
+    "id": "dog",
+    "asset": "animals/dog/asset.svg"
+  },
+  {
+    "id": "guide-dog",
+    "asset": "animals/guide-dog/asset.svg"
+  },
+  {
+    "id": "service-dog",
+    "asset": "animals/service-dog/asset.svg"
+  },
+  {
+    "id": "poodle",
+    "asset": "animals/poodle/asset.svg"
+  },
+  {
+    "id": "wolf",
+    "asset": "animals/wolf/asset.svg"
+  },
+  {
+    "id": "fox",
+    "asset": "animals/fox/asset.svg"
+  },
+  {
+    "id": "raccoon",
+    "asset": "animals/raccoon/asset.svg"
+  },
+  {
+    "id": "cat-face",
+    "asset": "animals/cat-face/asset.svg"
+  },
+  {
+    "id": "cat",
+    "asset": "animals/cat/asset.svg"
+  },
+  {
+    "id": "black-cat",
+    "asset": "animals/black-cat/asset.svg"
+  },
+  {
+    "id": "lion",
+    "asset": "animals/lion/asset.svg"
+  },
+  {
+    "id": "tiger-face",
+    "asset": "animals/tiger-face/asset.svg"
+  },
+  {
+    "id": "tiger",
+    "asset": "animals/tiger/asset.svg"
+  },
+  {
+    "id": "leopard",
+    "asset": "animals/leopard/asset.svg"
+  },
+  {
+    "id": "horse-face",
+    "asset": "animals/horse-face/asset.svg"
+  },
+  {
+    "id": "moose",
+    "asset": "animals/moose/asset.svg"
+  },
+  {
+    "id": "donkey",
+    "asset": "animals/donkey/asset.svg"
+  },
+  {
+    "id": "horse",
+    "asset": "animals/horse/asset.svg"
+  },
+  {
+    "id": "unicorn",
+    "asset": "animals/unicorn/asset.svg"
+  },
+  {
+    "id": "zebra",
+    "asset": "animals/zebra/asset.svg"
+  },
+  {
+    "id": "deer",
+    "asset": "animals/deer/asset.svg"
+  },
+  {
+    "id": "bison",
+    "asset": "animals/bison/asset.svg"
+  },
+  {
+    "id": "cow-face",
+    "asset": "animals/cow-face/asset.svg"
+  },
+  {
+    "id": "ox",
+    "asset": "animals/ox/asset.svg"
+  },
+  {
+    "id": "water-buffalo",
+    "asset": "animals/water-buffalo/asset.svg"
+  },
+  {
+    "id": "cow",
+    "asset": "animals/cow/asset.svg"
+  },
+  {
+    "id": "pig-face",
+    "asset": "animals/pig-face/asset.svg"
+  },
+  {
+    "id": "pig",
+    "asset": "animals/pig/asset.svg"
+  },
+  {
+    "id": "boar",
+    "asset": "animals/boar/asset.svg"
+  },
+  {
+    "id": "pig-nose",
+    "asset": "animals/pig-nose/asset.svg"
+  },
+  {
+    "id": "ram",
+    "asset": "animals/ram/asset.svg"
+  },
+  {
+    "id": "ewe",
+    "asset": "animals/ewe/asset.svg"
+  },
+  {
+    "id": "goat",
+    "asset": "animals/goat/asset.svg"
+  },
+  {
+    "id": "camel",
+    "asset": "animals/camel/asset.svg"
+  },
+  {
+    "id": "two-hump-camel",
+    "asset": "animals/two-hump-camel/asset.svg"
+  },
+  {
+    "id": "llama",
+    "asset": "animals/llama/asset.svg"
+  },
+  {
+    "id": "giraffe",
+    "asset": "animals/giraffe/asset.svg"
+  },
+  {
+    "id": "elephant",
+    "asset": "animals/elephant/asset.svg"
+  },
+  {
+    "id": "mammoth",
+    "asset": "animals/mammoth/asset.svg"
+  },
+  {
+    "id": "rhinoceros",
+    "asset": "animals/rhinoceros/asset.svg"
+  },
+  {
+    "id": "hippopotamus",
+    "asset": "animals/hippopotamus/asset.svg"
+  },
+  {
+    "id": "mouse-face",
+    "asset": "animals/mouse-face/asset.svg"
+  },
+  {
+    "id": "mouse",
+    "asset": "animals/mouse/asset.svg"
+  },
+  {
+    "id": "rat",
+    "asset": "animals/rat/asset.svg"
+  },
+  {
+    "id": "hamster",
+    "asset": "animals/hamster/asset.svg"
+  },
+  {
+    "id": "rabbit-face",
+    "asset": "animals/rabbit-face/asset.svg"
+  },
+  {
+    "id": "rabbit",
+    "asset": "animals/rabbit/asset.svg"
+  },
+  {
+    "id": "chipmunk",
+    "asset": "animals/chipmunk/asset.svg"
+  },
+  {
+    "id": "beaver",
+    "asset": "animals/beaver/asset.svg"
+  },
+  {
+    "id": "hedgehog",
+    "asset": "animals/hedgehog/asset.svg"
+  },
+  {
+    "id": "bat",
+    "asset": "animals/bat/asset.svg"
+  },
+  {
+    "id": "bear",
+    "asset": "animals/bear/asset.svg"
+  },
+  {
+    "id": "polar-bear",
+    "asset": "animals/polar-bear/asset.svg"
+  },
+  {
+    "id": "koala",
+    "asset": "animals/koala/asset.svg"
+  },
+  {
+    "id": "panda",
+    "asset": "animals/panda/asset.svg"
+  },
+  {
+    "id": "sloth",
+    "asset": "animals/sloth/asset.svg"
+  },
+  {
+    "id": "otter",
+    "asset": "animals/otter/asset.svg"
+  },
+  {
+    "id": "skunk",
+    "asset": "animals/skunk/asset.svg"
+  },
+  {
+    "id": "kangaroo",
+    "asset": "animals/kangaroo/asset.svg"
+  },
+  {
+    "id": "badger",
+    "asset": "animals/badger/asset.svg"
+  },
+  {
+    "id": "paw-prints",
+    "asset": "animals/paw-prints/asset.svg"
+  },
+  {
+    "id": "turkey",
+    "asset": "animals/turkey/asset.svg"
+  },
+  {
+    "id": "chicken",
+    "asset": "animals/chicken/asset.svg"
+  },
+  {
+    "id": "rooster",
+    "asset": "animals/rooster/asset.svg"
+  },
+  {
+    "id": "hatching-chick",
+    "asset": "animals/hatching-chick/asset.svg"
+  },
+  {
+    "id": "baby-chick",
+    "asset": "animals/baby-chick/asset.svg"
+  },
+  {
+    "id": "front-facing-baby-chick",
+    "asset": "animals/front-facing-baby-chick/asset.svg"
+  },
+  {
+    "id": "bird",
+    "asset": "animals/bird/asset.svg"
+  },
+  {
+    "id": "penguin",
+    "asset": "animals/penguin/asset.svg"
+  },
+  {
+    "id": "dove",
+    "asset": "animals/dove/asset.svg"
+  },
+  {
+    "id": "eagle",
+    "asset": "animals/eagle/asset.svg"
+  },
+  {
+    "id": "duck",
+    "asset": "animals/duck/asset.svg"
+  },
+  {
+    "id": "swan",
+    "asset": "animals/swan/asset.svg"
+  },
+  {
+    "id": "owl",
+    "asset": "animals/owl/asset.svg"
+  },
+  {
+    "id": "dodo",
+    "asset": "animals/dodo/asset.svg"
+  },
+  {
+    "id": "feather",
+    "asset": "animals/feather/asset.svg"
+  },
+  {
+    "id": "flamingo",
+    "asset": "animals/flamingo/asset.svg"
+  },
+  {
+    "id": "peacock",
+    "asset": "animals/peacock/asset.svg"
+  },
+  {
+    "id": "parrot",
+    "asset": "animals/parrot/asset.svg"
+  },
+  {
+    "id": "wing",
+    "asset": "animals/wing/asset.svg"
+  },
+  {
+    "id": "black-bird",
+    "asset": "animals/black-bird/asset.svg"
+  },
+  {
+    "id": "goose",
+    "asset": "animals/goose/asset.svg"
+  },
+  {
+    "id": "phoenix",
+    "asset": "animals/phoenix/asset.svg"
+  },
+  {
+    "id": "frog",
+    "asset": "animals/frog/asset.svg"
+  },
+  {
+    "id": "crocodile",
+    "asset": "animals/crocodile/asset.svg"
+  },
+  {
+    "id": "turtle",
+    "asset": "animals/turtle/asset.svg"
+  },
+  {
+    "id": "lizard",
+    "asset": "animals/lizard/asset.svg"
+  },
+  {
+    "id": "snake",
+    "asset": "animals/snake/asset.svg"
+  },
+  {
+    "id": "dragon-face",
+    "asset": "animals/dragon-face/asset.svg"
+  },
+  {
+    "id": "dragon",
+    "asset": "animals/dragon/asset.svg"
+  },
+  {
+    "id": "sauropod",
+    "asset": "animals/sauropod/asset.svg"
+  },
+  {
+    "id": "t-rex",
+    "asset": "animals/t-rex/asset.svg"
+  },
+  {
+    "id": "spouting-whale",
+    "asset": "animals/spouting-whale/asset.svg"
+  },
+  {
+    "id": "whale",
+    "asset": "animals/whale/asset.svg"
+  },
+  {
+    "id": "dolphin",
+    "asset": "animals/dolphin/asset.svg"
+  },
+  {
+    "id": "orca",
+    "asset": "animals/orca/asset.svg"
+  },
+  {
+    "id": "seal",
+    "asset": "animals/seal/asset.svg"
+  },
+  {
+    "id": "fish",
+    "asset": "animals/fish/asset.svg"
+  },
+  {
+    "id": "tropical-fish",
+    "asset": "animals/tropical-fish/asset.svg"
+  },
+  {
+    "id": "blowfish",
+    "asset": "animals/blowfish/asset.svg"
+  },
+  {
+    "id": "shark",
+    "asset": "animals/shark/asset.svg"
+  },
+  {
+    "id": "octopus",
+    "asset": "animals/octopus/asset.svg"
+  },
+  {
+    "id": "spiral-shell",
+    "asset": "animals/spiral-shell/asset.svg"
+  },
+  {
+    "id": "coral",
+    "asset": "animals/coral/asset.svg"
+  },
+  {
+    "id": "jellyfish",
+    "asset": "animals/jellyfish/asset.svg"
+  },
+  {
+    "id": "crab",
+    "asset": "animals/crab/asset.svg"
+  },
+  {
+    "id": "lobster",
+    "asset": "animals/lobster/asset.svg"
+  },
+  {
+    "id": "shrimp",
+    "asset": "animals/shrimp/asset.svg"
+  },
+  {
+    "id": "squid",
+    "asset": "animals/squid/asset.svg"
+  },
+  {
+    "id": "oyster",
+    "asset": "animals/oyster/asset.svg"
+  },
+  {
+    "id": "snail",
+    "asset": "animals/snail/asset.svg"
+  },
+  {
+    "id": "butterfly",
+    "asset": "animals/butterfly/asset.svg"
+  },
+  {
+    "id": "bug",
+    "asset": "animals/bug/asset.svg"
+  },
+  {
+    "id": "ant",
+    "asset": "animals/ant/asset.svg"
+  },
+  {
+    "id": "honeybee",
+    "asset": "animals/honeybee/asset.svg"
+  },
+  {
+    "id": "beetle",
+    "asset": "animals/beetle/asset.svg"
+  },
+  {
+    "id": "lady-beetle",
+    "asset": "animals/lady-beetle/asset.svg"
+  },
+  {
+    "id": "cricket",
+    "asset": "animals/cricket/asset.svg"
+  },
+  {
+    "id": "cockroach",
+    "asset": "animals/cockroach/asset.svg"
+  },
+  {
+    "id": "spider",
+    "asset": "animals/spider/asset.svg"
+  },
+  {
+    "id": "spider-web",
+    "asset": "animals/spider-web/asset.svg"
+  },
+  {
+    "id": "scorpion",
+    "asset": "animals/scorpion/asset.svg"
+  },
+  {
+    "id": "mosquito",
+    "asset": "animals/mosquito/asset.svg"
+  },
+  {
+    "id": "fly",
+    "asset": "animals/fly/asset.svg"
+  },
+  {
+    "id": "worm",
+    "asset": "animals/worm/asset.svg"
+  },
+  {
+    "id": "microbe",
+    "asset": "animals/microbe/asset.svg"
+  }
+]

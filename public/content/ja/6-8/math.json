@@ -1,0 +1,92 @@
+[
+  {
+    "id": "math_ja_01",
+    "type": "tap",
+    "correct": "5",
+    "options": ["3", "4", "5", "6"],
+    "voiceText": "ねこがにひき。そこにさんびきプラスすると、ぜんぶでなんびきかな？",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "cat", "count": 2 },
+        { "type": "text", "value": "+" },
+        { "type": "images", "asset": "cat", "count": 3 },
+        { "type": "text", "value": "= ?" }
+      ]
+    }
+  },
+  {
+    "id": "math_ja_02",
+    "type": "tap",
+    "correct": "3",
+    "options": ["2", "3", "4", "5"],
+    "voiceText": "うさぎがごひき。にひきいなくなると、のこりはなんびきかな？",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "rabbit", "count": 5 },
+        { "type": "text", "value": "-" },
+        { "type": "images", "asset": "rabbit", "count": 2 },
+        { "type": "text", "value": "= ?" }
+      ]
+    }
+  },
+  {
+    "id": "math_ja_03",
+    "type": "tap",
+    "correct": "8",
+    "options": ["6", "7", "8", "9"],
+    "voiceText": "パンダがよんひき。さらによんひきくると、ぜんぶでなんびきかな？",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "panda", "count": 4 },
+        { "type": "text", "value": "+" },
+        { "type": "images", "asset": "panda", "count": 4 },
+        { "type": "text", "value": "= ?" }
+      ]
+    }
+  },
+  {
+    "id": "math_ja_04",
+    "type": "tap",
+    "correct": "4",
+    "options": ["2", "3", "4", "5"],
+    "voiceText": "ライオンがはちひき。よんひきかえると、のこりはなんびきかな？",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "lion", "count": 8 },
+        { "type": "text", "value": "-" },
+        { "type": "images", "asset": "lion", "count": 4 },
+        { "type": "text", "value": "= ?" }
+      ]
+    }
+  },
+  {
+    "id": "math_ja_05",
+    "type": "tap",
+    "correct": "10",
+    "options": ["8", "9", "10", "11"],
+    "voiceText": "はちがろっぴき。さらによんひきくると、ぜんぶでなんびきかな？",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "bee", "count": 6 },
+        { "type": "text", "value": "+" },
+        { "type": "images", "asset": "bee", "count": 4 },
+        { "type": "text", "value": "= ?" }
+      ]
+    }
+  },
+  {
+    "id": "math_ja_06",
+    "type": "tap",
+    "correct": "2",
+    "options": ["1", "2", "3", "4"],
+    "voiceText": "かえるがななひき。ごひきぴょーんといくと、のこりはなんびきかな？",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "frog", "count": 7 },
+        { "type": "text", "value": "-" },
+        { "type": "images", "asset": "frog", "count": 5 },
+        { "type": "text", "value": "= ?" }
+      ]
+    }
+  }
+]

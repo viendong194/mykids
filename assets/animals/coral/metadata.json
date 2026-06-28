@@ -1,0 +1,19 @@
+{
+  "id": "coral",
+  "name": "coral",
+  "category": "animals",
+  "subgroup": "animal-marine",
+  "translations": {
+    "en": "coral",
+    "vi": "San hô",
+    "ja": "さんご",
+    "zh": "珊瑚"
+  },
+  "tags": [
+    "change",
+    "climate",
+    "ocean",
+    "reef",
+    "sea"
+  ]
+}

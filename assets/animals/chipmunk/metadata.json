@@ -1,0 +1,16 @@
+{
+  "id": "chipmunk",
+  "name": "chipmunk",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "chipmunk",
+    "vi": "Sóc vằn",
+    "ja": "しまりす",
+    "zh": "花栗鼠"
+  },
+  "tags": [
+    "animal",
+    "squirrel"
+  ]
+}

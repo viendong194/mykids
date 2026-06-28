@@ -1,0 +1,19 @@
+{
+  "id": "dodo",
+  "name": "dodo",
+  "category": "animals",
+  "subgroup": "animal-bird",
+  "translations": {
+    "en": "dodo",
+    "vi": "dodo",
+    "ja": "dodo",
+    "zh": "dodo"
+  },
+  "tags": [
+    "animal",
+    "bird",
+    "extinction",
+    "large",
+    "ornithology"
+  ]
+}

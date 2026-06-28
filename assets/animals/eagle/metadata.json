@@ -1,0 +1,17 @@
+{
+  "id": "eagle",
+  "name": "eagle",
+  "category": "animals",
+  "subgroup": "animal-bird",
+  "translations": {
+    "en": "eagle",
+    "vi": "Đại bàng",
+    "ja": "わし",
+    "zh": "鹰"
+  },
+  "tags": [
+    "animal",
+    "bird",
+    "ornithology"
+  ]
+}

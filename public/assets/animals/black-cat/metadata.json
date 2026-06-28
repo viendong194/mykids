@@ -1,0 +1,21 @@
+{
+  "id": "black-cat",
+  "name": "black cat",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "black cat",
+    "vi": "black cat",
+    "ja": "black cat",
+    "zh": "black cat"
+  },
+  "tags": [
+    "animal",
+    "black",
+    "cat",
+    "feline",
+    "halloween",
+    "meow",
+    "unlucky"
+  ]
+}

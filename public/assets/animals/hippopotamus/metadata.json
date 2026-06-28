@@ -1,0 +1,16 @@
+{
+  "id": "hippopotamus",
+  "name": "hippopotamus",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "hippopotamus",
+    "vi": "Hà mã",
+    "ja": "カバ",
+    "zh": "河马"
+  },
+  "tags": [
+    "animal",
+    "hippo"
+  ]
+}

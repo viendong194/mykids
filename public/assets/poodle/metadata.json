@@ -1,0 +1,17 @@
+{
+  "id": "poodle",
+  "name": "poodle",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "poodle",
+    "vi": "poodle",
+    "ja": "poodle",
+    "zh": "poodle"
+  },
+  "tags": [
+    "animal",
+    "dog",
+    "fluffy"
+  ]
+}

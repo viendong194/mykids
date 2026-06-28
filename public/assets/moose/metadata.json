@@ -1,0 +1,19 @@
+{
+  "id": "moose",
+  "name": "moose",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "moose",
+    "vi": "moose",
+    "ja": "moose",
+    "zh": "moose"
+  },
+  "tags": [
+    "alces",
+    "animal",
+    "antlers",
+    "elk",
+    "mammal"
+  ]
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "animal_tap_01",
+    "type": "tap",
+    "correct": "elephant",
+    "options": ["lion", "elephant", "cat", "dog"],
+    "voiceText": "Bé hãy chạm vào con voi nhé"
+  },
+  {
+    "id": "animal_tap_02",
+    "type": "tap",
+    "correct": "cat",
+    "options": ["cat", "dog", "rabbit", "panda"],
+    "voiceText": "Hãy tìm chú mèo con đáng yêu nào"
+  },
+  {
+    "id": "animal_tap_03",
+    "type": "tap",
+    "correct": "dog",
+    "options": ["lion", "panda", "dog", "elephant"],
+    "voiceText": "Con chó nhỏ đang ở đâu thế nhỉ"
+  },
+  {
+    "id": "animal_tap_04",
+    "type": "tap",
+    "correct": "rabbit",
+    "options": ["cat", "rabbit", "panda", "lion"],
+    "voiceText": "Bé chạm vào chú thỏ ngộ nghĩnh đi"
+  },
+  {
+    "id": "animal_tap_05",
+    "type": "tap",
+    "correct": "lion",
+    "options": ["lion", "dog", "elephant", "rabbit"],
+    "voiceText": "Sư tử bờm vàng ở ô nào thế bé"
+  },
+  {
+    "id": "animal_tap_06",
+    "type": "tap",
+    "correct": "panda",
+    "options": ["panda", "cat", "elephant", "dog"],
+    "voiceText": "Hãy tìm chú gấu trúc dễ thương nào"
+  }
+]

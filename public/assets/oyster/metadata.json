@@ -1,0 +1,16 @@
+{
+  "id": "oyster",
+  "name": "oyster",
+  "category": "animals",
+  "subgroup": "animal-marine",
+  "translations": {
+    "en": "oyster",
+    "vi": "Con hàu",
+    "ja": "かき",
+    "zh": "牡蛎"
+  },
+  "tags": [
+    "diving",
+    "pearl"
+  ]
+}

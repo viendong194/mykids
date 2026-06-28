@@ -1,0 +1,19 @@
+{
+  "id": "cricket",
+  "name": "cricket",
+  "category": "animals",
+  "subgroup": "animal-bug",
+  "translations": {
+    "en": "cricket",
+    "vi": "Con dế",
+    "ja": "こおろぎ",
+    "zh": "蟋蟀"
+  },
+  "tags": [
+    "animal",
+    "bug",
+    "grasshopper",
+    "insect",
+    "orthoptera"
+  ]
+}

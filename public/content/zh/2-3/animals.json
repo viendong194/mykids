@@ -1,0 +1,44 @@
+[
+  {
+    "id": "animal_tap_01",
+    "type": "tap",
+    "correct": "elephant",
+    "options": ["lion", "elephant", "cat", "dog"],
+    "voiceText": "宝贝，请点击大象"
+  },
+  {
+    "id": "animal_tap_02",
+    "type": "tap",
+    "correct": "cat",
+    "options": ["cat", "dog", "rabbit", "panda"],
+    "voiceText": "请找到可爱的小猫咪"
+  },
+  {
+    "id": "animal_tap_03",
+    "type": "tap",
+    "correct": "dog",
+    "options": ["lion", "panda", "dog", "elephant"],
+    "voiceText": "小狗在哪里呢？"
+  },
+  {
+    "id": "animal_tap_04",
+    "type": "tap",
+    "correct": "rabbit",
+    "options": ["cat", "rabbit", "panda", "lion"],
+    "voiceText": "请点击毛茸茸的小兔子"
+  },
+  {
+    "id": "animal_tap_05",
+    "type": "tap",
+    "correct": "lion",
+    "options": ["lion", "dog", "elephant", "rabbit"],
+    "voiceText": "请点击金黄色的狮子"
+  },
+  {
+    "id": "animal_tap_06",
+    "type": "tap",
+    "correct": "panda",
+    "options": ["panda", "cat", "elephant", "dog"],
+    "voiceText": "请找到可爱的大熊猫"
+  }
+]

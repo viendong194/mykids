@@ -1,0 +1,19 @@
+{
+  "id": "mammoth",
+  "name": "mammoth",
+  "category": "animals",
+  "subgroup": "animal-mammal",
+  "translations": {
+    "en": "mammoth",
+    "vi": "mammoth",
+    "ja": "mammoth",
+    "zh": "mammoth"
+  },
+  "tags": [
+    "animal",
+    "extinction",
+    "large",
+    "tusk",
+    "wooly"
+  ]
+}
