@@ -1,0 +1,17 @@
+{
+  "id": "custard",
+  "name": "custard",
+  "category": "foods",
+  "subgroup": "food-sweet",
+  "translations": {
+    "en": "custard",
+    "vi": "custard",
+    "ja": "custard",
+    "zh": "custard"
+  },
+  "tags": [
+    "dessert",
+    "pudding",
+    "sweet"
+  ]
+}

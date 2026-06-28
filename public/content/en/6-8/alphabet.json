@@ -1,0 +1,80 @@
+[
+  {
+    "id": "alpha_en_68_01",
+    "type": "tap",
+    "correct": "N",
+    "options": ["N", "M", "H", "U"],
+    "voiceText": "Find the missing letter for: ant",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "ant", "count": 1 },
+        { "type": "text", "value": "A _ T" }
+      ]
+    }
+  },
+  {
+    "id": "alpha_en_68_02",
+    "type": "tap",
+    "correct": "I",
+    "options": ["I", "E", "Y", "A"],
+    "voiceText": "Which letter is missing in the word: fish?",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "fish", "count": 1 },
+        { "type": "text", "value": "F _ S H" }
+      ]
+    }
+  },
+  {
+    "id": "alpha_en_68_03",
+    "type": "tap",
+    "correct": "A",
+    "options": ["A", "E", "O", "I"],
+    "voiceText": "Find the missing letter for: panda",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "panda", "count": 1 },
+        { "type": "text", "value": "P _ N D A" }
+      ]
+    }
+  },
+  {
+    "id": "alpha_en_68_04",
+    "type": "tap",
+    "correct": "E",
+    "options": ["E", "A", "I", "O"],
+    "voiceText": "Which letter is missing in: lemon?",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "lemon", "count": 1 },
+        { "type": "text", "value": "L _ M O N" }
+      ]
+    }
+  },
+  {
+    "id": "alpha_en_68_05",
+    "type": "tap",
+    "correct": "R",
+    "options": ["R", "L", "D", "T"],
+    "voiceText": "Fill in the missing letter for: bread",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "bread", "count": 1 },
+        { "type": "text", "value": "B _ E A D" }
+      ]
+    }
+  },
+  {
+    "id": "alpha_en_68_06",
+    "type": "tap",
+    "correct": "I",
+    "options": ["I", "E", "O", "U"],
+    "voiceText": "What letter is missing in the word: pig?",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "pig", "count": 1 },
+        { "type": "text", "value": "P _ G" }
+      ]
+    }
+  }
+]

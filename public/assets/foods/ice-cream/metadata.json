@@ -1,0 +1,20 @@
+{
+  "id": "ice-cream",
+  "name": "ice cream",
+  "category": "foods",
+  "subgroup": "food-sweet",
+  "translations": {
+    "en": "ice cream",
+    "vi": "Kem que",
+    "ja": "アイスクリーム",
+    "zh": "冰淇淋"
+  },
+  "tags": [
+    "cream",
+    "dessert",
+    "food",
+    "ice",
+    "restaurant",
+    "sweet"
+  ]
+}

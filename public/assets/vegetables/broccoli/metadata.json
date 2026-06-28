@@ -1,0 +1,16 @@
+{
+  "id": "broccoli",
+  "name": "broccoli",
+  "category": "vegetables",
+  "subgroup": "food-vegetable",
+  "translations": {
+    "en": "broccoli",
+    "vi": "Súp lơ xanh",
+    "ja": "ブロッコリー",
+    "zh": "西兰花"
+  },
+  "tags": [
+    "cabbage",
+    "wild"
+  ]
+}

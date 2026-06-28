@@ -1,0 +1,18 @@
+{
+  "id": "pot-of-food",
+  "name": "pot of food",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "pot of food",
+    "vi": "pot of food",
+    "ja": "pot of food",
+    "zh": "pot of food"
+  },
+  "tags": [
+    "food",
+    "pot",
+    "soup",
+    "stew"
+  ]
+}

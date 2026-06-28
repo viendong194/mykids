@@ -1,0 +1,16 @@
+{
+  "id": "meat-on-bone",
+  "name": "meat on bone",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "meat on bone",
+    "vi": "meat on bone",
+    "ja": "meat on bone",
+    "zh": "meat on bone"
+  },
+  "tags": [
+    "bone",
+    "meat"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "eggplant",
+  "name": "eggplant",
+  "category": "vegetables",
+  "subgroup": "food-vegetable",
+  "translations": {
+    "en": "eggplant",
+    "vi": "Quả cà tím",
+    "ja": "なす",
+    "zh": "茄子"
+  },
+  "tags": [
+    "aubergine",
+    "vegetable"
+  ]
+}

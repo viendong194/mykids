@@ -1,0 +1,15 @@
+{
+  "id": "pear",
+  "name": "pear",
+  "category": "fruits",
+  "subgroup": "food-fruit",
+  "translations": {
+    "en": "pear",
+    "vi": "Quả lê",
+    "ja": "なし",
+    "zh": "梨"
+  },
+  "tags": [
+    "fruit"
+  ]
+}

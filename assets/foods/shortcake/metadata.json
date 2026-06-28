@@ -1,0 +1,19 @@
+{
+  "id": "shortcake",
+  "name": "shortcake",
+  "category": "foods",
+  "subgroup": "food-sweet",
+  "translations": {
+    "en": "shortcake",
+    "vi": "shortcake",
+    "ja": "shortcake",
+    "zh": "shortcake"
+  },
+  "tags": [
+    "cake",
+    "dessert",
+    "pastry",
+    "slice",
+    "sweet"
+  ]
+}

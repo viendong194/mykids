@@ -1,0 +1,16 @@
+{
+  "id": "banana",
+  "name": "banana",
+  "category": "fruits",
+  "subgroup": "food-fruit",
+  "translations": {
+    "en": "banana",
+    "vi": "Quả chuối",
+    "ja": "バナナ",
+    "zh": "香蕉"
+  },
+  "tags": [
+    "fruit",
+    "potassium"
+  ]
+}

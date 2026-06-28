@@ -1,0 +1,19 @@
+{
+  "id": "dango",
+  "name": "dango",
+  "category": "foods",
+  "subgroup": "food-asian",
+  "translations": {
+    "en": "dango",
+    "vi": "dango",
+    "ja": "dango",
+    "zh": "dango"
+  },
+  "tags": [
+    "dessert",
+    "japanese",
+    "skewer",
+    "stick",
+    "sweet"
+  ]
+}

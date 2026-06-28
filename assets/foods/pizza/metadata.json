@@ -1,0 +1,19 @@
+{
+  "id": "pizza",
+  "name": "pizza",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "pizza",
+    "vi": "Bánh pizza",
+    "ja": "ピザ",
+    "zh": "披萨"
+  },
+  "tags": [
+    "cheese",
+    "food",
+    "hungry",
+    "pepperoni",
+    "slice"
+  ]
+}

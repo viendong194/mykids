@@ -1,0 +1,21 @@
+{
+  "id": "blueberries",
+  "name": "blueberries",
+  "category": "fruits",
+  "subgroup": "food-fruit",
+  "translations": {
+    "en": "blueberries",
+    "vi": "Quả việt quất",
+    "ja": "ブルーベリー",
+    "zh": "蓝莓"
+  },
+  "tags": [
+    "berries",
+    "berry",
+    "bilberry",
+    "blue",
+    "blueberry",
+    "food",
+    "fruit"
+  ]
+}

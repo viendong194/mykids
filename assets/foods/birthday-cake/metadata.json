@@ -1,0 +1,22 @@
+{
+  "id": "birthday-cake",
+  "name": "birthday cake",
+  "category": "foods",
+  "subgroup": "food-sweet",
+  "translations": {
+    "en": "birthday cake",
+    "vi": "Bánh sinh nhật",
+    "ja": "バースデーケーキ",
+    "zh": "生日蛋糕"
+  },
+  "tags": [
+    "bday",
+    "birthday",
+    "cake",
+    "celebration",
+    "dessert",
+    "happy",
+    "pastry",
+    "sweet"
+  ]
+}

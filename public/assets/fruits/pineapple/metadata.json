@@ -1,0 +1,18 @@
+{
+  "id": "pineapple",
+  "name": "pineapple",
+  "category": "fruits",
+  "subgroup": "food-fruit",
+  "translations": {
+    "en": "pineapple",
+    "vi": "Quả dứa",
+    "ja": "パイナップル",
+    "zh": "菠萝"
+  },
+  "tags": [
+    "colada",
+    "fruit",
+    "pina",
+    "tropical"
+  ]
+}

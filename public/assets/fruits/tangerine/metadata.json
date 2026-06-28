@@ -1,0 +1,20 @@
+{
+  "id": "tangerine",
+  "name": "tangerine",
+  "category": "fruits",
+  "subgroup": "food-fruit",
+  "translations": {
+    "en": "tangerine",
+    "vi": "Quả quýt",
+    "ja": "みかん",
+    "zh": "橘子"
+  },
+  "tags": [
+    "c",
+    "citrus",
+    "fruit",
+    "nectarine",
+    "orange",
+    "vitamin"
+  ]
+}

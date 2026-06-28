@@ -1,0 +1,20 @@
+{
+  "id": "ear-of-corn",
+  "name": "ear of corn",
+  "category": "vegetables",
+  "subgroup": "food-vegetable",
+  "translations": {
+    "en": "ear of corn",
+    "vi": "ear of corn",
+    "ja": "ear of corn",
+    "zh": "ear of corn"
+  },
+  "tags": [
+    "corn",
+    "crops",
+    "ear",
+    "farm",
+    "maize",
+    "maze"
+  ]
+}

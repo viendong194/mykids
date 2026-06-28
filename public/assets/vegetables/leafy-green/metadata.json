@@ -1,0 +1,23 @@
+{
+  "id": "leafy-green",
+  "name": "leafy green",
+  "category": "vegetables",
+  "subgroup": "food-vegetable",
+  "translations": {
+    "en": "leafy green",
+    "vi": "Rau xanh lá",
+    "ja": "はっぱやさい",
+    "zh": "叶菜"
+  },
+  "tags": [
+    "bok",
+    "burgers",
+    "cabbage",
+    "choy",
+    "green",
+    "kale",
+    "leafy",
+    "lettuce",
+    "salad"
+  ]
+}

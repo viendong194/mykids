@@ -1,0 +1,17 @@
+{
+  "id": "popcorn",
+  "name": "popcorn",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "popcorn",
+    "vi": "Bỏng ngô",
+    "ja": "ポップコーン",
+    "zh": "爆米花"
+  },
+  "tags": [
+    "corn",
+    "movie",
+    "pop"
+  ]
+}

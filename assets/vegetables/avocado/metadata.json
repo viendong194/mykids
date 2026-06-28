@@ -1,0 +1,16 @@
+{
+  "id": "avocado",
+  "name": "avocado",
+  "category": "vegetables",
+  "subgroup": "food-vegetable",
+  "translations": {
+    "en": "avocado",
+    "vi": "Quả bơ",
+    "ja": "アボカド",
+    "zh": "牛油果"
+  },
+  "tags": [
+    "food",
+    "fruit"
+  ]
+}

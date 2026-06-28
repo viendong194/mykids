@@ -1,0 +1,18 @@
+{
+  "id": "bagel",
+  "name": "bagel",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "bagel",
+    "vi": "bagel",
+    "ja": "bagel",
+    "zh": "bagel"
+  },
+  "tags": [
+    "bakery",
+    "bread",
+    "breakfast",
+    "schmear"
+  ]
+}

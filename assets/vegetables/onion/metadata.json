@@ -1,0 +1,15 @@
+{
+  "id": "onion",
+  "name": "onion",
+  "category": "vegetables",
+  "subgroup": "food-vegetable",
+  "translations": {
+    "en": "onion",
+    "vi": "Hành tây",
+    "ja": "たまねぎ",
+    "zh": "洋葱"
+  },
+  "tags": [
+    "flavoring"
+  ]
+}

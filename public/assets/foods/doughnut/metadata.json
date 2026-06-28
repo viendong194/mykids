@@ -1,0 +1,19 @@
+{
+  "id": "doughnut",
+  "name": "doughnut",
+  "category": "foods",
+  "subgroup": "food-sweet",
+  "translations": {
+    "en": "doughnut",
+    "vi": "doughnut",
+    "ja": "doughnut",
+    "zh": "doughnut"
+  },
+  "tags": [
+    "breakfast",
+    "dessert",
+    "donut",
+    "food",
+    "sweet"
+  ]
+}

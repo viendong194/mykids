@@ -1,0 +1,20 @@
+{
+  "id": "stuffed-flatbread",
+  "name": "stuffed flatbread",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "stuffed flatbread",
+    "vi": "stuffed flatbread",
+    "ja": "stuffed flatbread",
+    "zh": "stuffed flatbread"
+  },
+  "tags": [
+    "falafel",
+    "flatbread",
+    "food",
+    "gyro",
+    "kebab",
+    "stuffed"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "spaghetti",
+  "name": "spaghetti",
+  "category": "foods",
+  "subgroup": "food-asian",
+  "translations": {
+    "en": "spaghetti",
+    "vi": "Mì spaghetti",
+    "ja": "スパゲッティ",
+    "zh": "意大利面"
+  },
+  "tags": [
+    "food",
+    "meatballs",
+    "pasta",
+    "restaurant"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "beans",
+  "name": "beans",
+  "category": "vegetables",
+  "subgroup": "food-vegetable",
+  "translations": {
+    "en": "beans",
+    "vi": "beans",
+    "ja": "beans",
+    "zh": "beans"
+  },
+  "tags": [
+    "food",
+    "kidney",
+    "legume",
+    "small"
+  ]
+}

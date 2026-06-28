@@ -1,0 +1,20 @@
+{
+  "id": "croissant",
+  "name": "croissant",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "croissant",
+    "vi": "Bánh sừng bò",
+    "ja": "クロワッサン",
+    "zh": "可颂"
+  },
+  "tags": [
+    "bread",
+    "breakfast",
+    "crescent",
+    "food",
+    "french",
+    "roll"
+  ]
+}

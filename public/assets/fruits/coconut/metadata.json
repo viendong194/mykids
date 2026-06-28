@@ -1,0 +1,17 @@
+{
+  "id": "coconut",
+  "name": "coconut",
+  "category": "fruits",
+  "subgroup": "food-fruit",
+  "translations": {
+    "en": "coconut",
+    "vi": "Quả dừa",
+    "ja": "ヤシの実",
+    "zh": "椰子"
+  },
+  "tags": [
+    "colada",
+    "palm",
+    "piña"
+  ]
+}

@@ -125,6 +125,33 @@ export class CategoryScene extends Phaser.Scene {
         supportedAges: ['2-3', '4-6']
       },
       {
+        id: 'insects',
+        title: { vi: 'CÔN TRÙNG', en: 'INSECTS', zh: '昆虫', ja: 'こんちゅう' },
+        sub: { vi: 'Tìm chú côn trùng nhỏ', en: 'Find the tiny insects', zh: '寻找昆虫', ja: 'こんちゅうタッチ' },
+        color: 0x80DEEA,
+        borderColor: 0x00ACC1,
+        asset: 'ant',
+        supportedAges: ['2-3', '4-6']
+      },
+      {
+        id: 'fruits',
+        title: { vi: 'RAU QUẢ', en: 'FRUITS & VEG', zh: '果蔬', ja: 'やさいとくだもの' },
+        sub: { vi: 'Tìm quả chín thơm ngon', en: 'Find delicious fruits', zh: '寻找新鲜果蔬', ja: 'くだものタッチ' },
+        color: 0xFFD54F,
+        borderColor: 0xFFB300,
+        asset: 'strawberry',
+        supportedAges: ['2-3', '4-6']
+      },
+      {
+        id: 'foods',
+        title: { vi: 'ĐỒ ĂN', en: 'DELICIOUS FOOD', zh: '美味食物', ja: 'たべもの' },
+        sub: { vi: 'Tìm món ăn bé yêu', en: 'Find tasty food', zh: '寻找美味食物', ja: 'たべものタッチ' },
+        color: 0xFFAB91,
+        borderColor: 0xFF7043,
+        asset: 'pizza',
+        supportedAges: ['2-3', '4-6']
+      },
+      {
         id: 'shadows',
         title: { vi: 'GHÉP BÓNG', en: 'SHADOWS', zh: '匹配影子', ja: 'かげあわせ' },
         sub: { vi: 'Kéo thả ghép bóng hình', en: 'Drag to match shadows', zh: '拖曳匹配影子', ja: 'かげあわせパズル' },
@@ -152,12 +179,30 @@ export class CategoryScene extends Phaser.Scene {
         supportedAges: ['2-3', '4-6']
       },
       {
+        id: 'odd_one_out',
+        title: { vi: 'KHÁC BIỆT', en: 'ODD ONE OUT', zh: '寻找不同', ja: 'ちがいさがし' },
+        sub: { vi: 'Tìm con vật khác loại', en: 'Find the different animal', zh: '找出不同类动物', ja: 'ちがうどうぶつ' },
+        color: 0xBA68C8,
+        borderColor: 0xAB47BC,
+        asset: 'butterfly',
+        supportedAges: ['2-3', '4-6']
+      },
+      {
+        id: 'pairs',
+        title: { vi: 'TÌM CẶP', en: 'MATCH PAIRS', zh: '寻找相同', ja: 'ペアさがし' },
+        sub: { vi: 'Tìm con vật giống nhau', en: 'Find matching animals', zh: '找出相同动物', ja: 'おなじどうぶつ' },
+        color: 0xFF8A80,
+        borderColor: 0xFF5252,
+        asset: 'cat-face',
+        supportedAges: ['2-3', '4-6']
+      },
+      {
         id: 'alphabet',
         title: { vi: 'CHỮ CÁI', en: 'ALPHABET', zh: '英文字母', ja: 'アルファベット' },
         sub: { vi: 'Làm quen bảng chữ cái', en: 'Learn ABCs and words', zh: '学习英文字母', ja: 'もじあそび' },
         color: 0xBA68C8,
         borderColor: 0xAB47BC,
-        asset: 'panda', // Wait, since panda is used for numbers, we can use elephant or rabbit or cat for alphabet! Let's keep it simple or use rabbit/elephant.
+        asset: 'panda',
         supportedAges: ['4-6', '6-8']
       },
       {
@@ -175,7 +220,6 @@ export class CategoryScene extends Phaser.Scene {
     const categories = allCategories.filter(cat => cat.supportedAges.includes(selectedAge));
     const numCards = categories.length;
     const spacing = isLandscape ? 260 : 140;
-    const startIdx = -(numCards - 1) / 2;
     const centerY = height * 0.55;
 
     const cardW = isLandscape ? 220 : Math.min(width * 0.85, 340);
@@ -191,8 +235,24 @@ export class CategoryScene extends Phaser.Scene {
       let ly = 0;
 
       if (isLandscape) {
-        lx = (startIdx + idx) * spacing;
+        // Layout 2 dòng ngang
+        const C1 = Math.ceil(numCards / 2);
+        const C2 = numCards - C1;
+        const spacingX = 260;
+        const spacingY = 290;
+        
+        if (idx < C1) {
+          // Dòng 1: Căn giữa dòng
+          lx = (idx - (C1 - 1) / 2) * spacingX;
+          ly = -spacingY / 2;
+        } else {
+          // Dòng 2: Căn giữa dòng
+          const idxInRow = idx - C1;
+          lx = (idxInRow - (C2 - 1) / 2) * spacingX;
+          ly = spacingY / 2;
+        }
       } else {
+        // Layout 1 cột dọc như cũ
         ly = (idx - (numCards - 1) / 2) * spacing;
       }
 
@@ -252,8 +312,9 @@ export class CategoryScene extends Phaser.Scene {
           duration: 100,
           yoyo: true,
           onComplete: () => {
-            // Chỉ chạy các game đã có sẵn JSON config, các game khác báo Coming Soon
-            if (cat.id === 'animals' || cat.id === 'shadows' || cat.id === 'colors' || cat.id === 'numbers' || cat.id === 'math') {
+            // Khởi chạy các game đã có sẵn JSON config
+            const readyCategories = ['animals', 'shadows', 'colors', 'numbers', 'math', 'odd_one_out', 'pairs', 'insects', 'fruits', 'foods', 'alphabet'];
+            if (readyCategories.includes(cat.id)) {
               this.scene.start('GameScene', { age: selectedAge, category: cat.id });
             } else {
               this.showComingSoonNotification();
@@ -283,9 +344,10 @@ export class CategoryScene extends Phaser.Scene {
       this.cards.push(card);
     });
 
-    // Tự động scale-to-fit toàn bộ cardsContainer
-    const containerW = isLandscape ? ((numCards - 1) * spacing + cardW) : cardW;
-    const containerH = isLandscape ? cardH : ((numCards - 1) * spacing + cardH);
+    // Tự động scale-to-fit toàn bộ cardsContainer dựa trên kích thước lưới
+    const C1 = Math.ceil(numCards / 2);
+    const containerW = isLandscape ? ((C1 - 1) * spacing + cardW) : cardW;
+    const containerH = isLandscape ? (290 + cardH) : ((numCards - 1) * spacing + cardH);
 
     const availW = width * 0.92;
     const availH = height - 260; // Bớt phần header trên và nút phụ huynh ở dưới
@@ -324,8 +386,24 @@ export class CategoryScene extends Phaser.Scene {
       let ly = 0;
 
       if (isLandscape) {
-        lx = (-(numCards - 1) / 2 + idx) * spacing;
+        // Layout 2 dòng ngang
+        const C1 = Math.ceil(numCards / 2);
+        const C2 = numCards - C1;
+        const spacingX = 260;
+        const spacingY = 290;
+        
+        if (idx < C1) {
+          // Dòng 1: Căn giữa dòng
+          lx = (idx - (C1 - 1) / 2) * spacingX;
+          ly = -spacingY / 2;
+        } else {
+          // Dòng 2: Căn giữa dòng
+          const idxInRow = idx - C1;
+          lx = (idxInRow - (C2 - 1) / 2) * spacingX;
+          ly = spacingY / 2;
+        }
       } else {
+        // Layout 1 cột dọc như cũ
         ly = (idx - (numCards - 1) / 2) * spacing;
       }
 
@@ -333,8 +411,9 @@ export class CategoryScene extends Phaser.Scene {
     });
 
     // Tính toán lại scale-to-fit
-    const containerW = isLandscape ? ((numCards - 1) * spacing + cardW) : cardW;
-    const containerH = isLandscape ? cardH : ((numCards - 1) * spacing + cardH);
+    const C1 = Math.ceil(numCards / 2);
+    const containerW = isLandscape ? ((C1 - 1) * spacing + cardW) : cardW;
+    const containerH = isLandscape ? (290 + cardH) : ((numCards - 1) * spacing + cardH);
 
     const availW = width * 0.92;
     const availH = height - 260;

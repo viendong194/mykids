@@ -1,0 +1,16 @@
+{
+  "id": "falafel",
+  "name": "falafel",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "falafel",
+    "vi": "falafel",
+    "ja": "falafel",
+    "zh": "falafel"
+  },
+  "tags": [
+    "chickpea",
+    "meatball"
+  ]
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "odd_01",
+    "type": "tap",
+    "correct": "ant",
+    "options": ["rabbit", "rabbit", "rabbit", "ant"],
+    "voiceText": "Find the odd one out"
+  },
+  {
+    "id": "odd_02",
+    "type": "tap",
+    "correct": "lion",
+    "options": ["fish", "fish", "lion", "fish"],
+    "voiceText": "Which animal is different from the others?"
+  },
+  {
+    "id": "odd_03",
+    "type": "tap",
+    "correct": "eagle",
+    "options": ["turtle", "eagle", "turtle", "turtle"],
+    "voiceText": "Tap on the different picture"
+  },
+  {
+    "id": "odd_04",
+    "type": "tap",
+    "correct": "frog",
+    "options": ["frog", "panda", "panda", "panda"],
+    "voiceText": "Which one is different?"
+  },
+  {
+    "id": "odd_05",
+    "type": "tap",
+    "correct": "cat",
+    "options": ["butterfly", "butterfly", "butterfly", "cat"],
+    "voiceText": "Well done, find the different animal"
+  },
+  {
+    "id": "odd_06",
+    "type": "tap",
+    "correct": "monkey",
+    "options": ["crab", "crab", "monkey", "crab"],
+    "voiceText": "Find the different one"
+  }
+]

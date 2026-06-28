@@ -1,0 +1,13 @@
+{
+  "id": "jar-with-blue-content",
+  "name": "jar with blue content",
+  "category": "foods",
+  "subgroup": "food-drink",
+  "translations": {
+    "en": "jar with blue content",
+    "vi": "jar with blue content",
+    "ja": "jar with blue content",
+    "zh": "jar with blue content"
+  },
+  "tags": []
+}

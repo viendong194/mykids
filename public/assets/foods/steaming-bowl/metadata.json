@@ -1,0 +1,22 @@
+{
+  "id": "steaming-bowl",
+  "name": "steaming bowl",
+  "category": "foods",
+  "subgroup": "food-asian",
+  "translations": {
+    "en": "steaming bowl",
+    "vi": "steaming bowl",
+    "ja": "steaming bowl",
+    "zh": "steaming bowl"
+  },
+  "tags": [
+    "bowl",
+    "chopsticks",
+    "food",
+    "noodle",
+    "pho",
+    "ramen",
+    "soup",
+    "steaming"
+  ]
+}

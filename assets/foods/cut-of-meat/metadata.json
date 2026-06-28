@@ -1,0 +1,21 @@
+{
+  "id": "cut-of-meat",
+  "name": "cut of meat",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "cut of meat",
+    "vi": "cut of meat",
+    "ja": "cut of meat",
+    "zh": "cut of meat"
+  },
+  "tags": [
+    "chop",
+    "cut",
+    "lambchop",
+    "meat",
+    "porkchop",
+    "red",
+    "steak"
+  ]
+}

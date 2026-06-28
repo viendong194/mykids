@@ -1,0 +1,17 @@
+{
+  "id": "lemon",
+  "name": "lemon",
+  "category": "fruits",
+  "subgroup": "food-fruit",
+  "translations": {
+    "en": "lemon",
+    "vi": "Quả chanh vàng",
+    "ja": "レモン",
+    "zh": "柠檬"
+  },
+  "tags": [
+    "citrus",
+    "fruit",
+    "sour"
+  ]
+}

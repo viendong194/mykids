@@ -1,0 +1,18 @@
+{
+  "id": "cookie",
+  "name": "cookie",
+  "category": "foods",
+  "subgroup": "food-sweet",
+  "translations": {
+    "en": "cookie",
+    "vi": "Bánh quy",
+    "ja": "クッキー",
+    "zh": "饼干"
+  },
+  "tags": [
+    "chip",
+    "chocolate",
+    "dessert",
+    "sweet"
+  ]
+}

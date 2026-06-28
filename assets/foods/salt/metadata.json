@@ -1,0 +1,21 @@
+{
+  "id": "salt",
+  "name": "salt",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "salt",
+    "vi": "salt",
+    "ja": "salt",
+    "zh": "salt"
+  },
+  "tags": [
+    "condiment",
+    "flavor",
+    "mad",
+    "salty",
+    "shaker",
+    "taste",
+    "upset"
+  ]
+}

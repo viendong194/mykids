@@ -1,0 +1,21 @@
+{
+  "id": "bread",
+  "name": "bread",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "bread",
+    "vi": "Bánh mì",
+    "ja": "パン",
+    "zh": "面包"
+  },
+  "tags": [
+    "carbs",
+    "food",
+    "grain",
+    "loaf",
+    "restaurant",
+    "toast",
+    "wheat"
+  ]
+}

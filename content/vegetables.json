@@ -1,0 +1,78 @@
+[
+  {
+    "id": "avocado",
+    "asset": "vegetables/avocado/asset.svg"
+  },
+  {
+    "id": "eggplant",
+    "asset": "vegetables/eggplant/asset.svg"
+  },
+  {
+    "id": "potato",
+    "asset": "vegetables/potato/asset.svg"
+  },
+  {
+    "id": "carrot",
+    "asset": "vegetables/carrot/asset.svg"
+  },
+  {
+    "id": "ear-of-corn",
+    "asset": "vegetables/ear-of-corn/asset.svg"
+  },
+  {
+    "id": "hot-pepper",
+    "asset": "vegetables/hot-pepper/asset.svg"
+  },
+  {
+    "id": "bell-pepper",
+    "asset": "vegetables/bell-pepper/asset.svg"
+  },
+  {
+    "id": "cucumber",
+    "asset": "vegetables/cucumber/asset.svg"
+  },
+  {
+    "id": "leafy-green",
+    "asset": "vegetables/leafy-green/asset.svg"
+  },
+  {
+    "id": "broccoli",
+    "asset": "vegetables/broccoli/asset.svg"
+  },
+  {
+    "id": "garlic",
+    "asset": "vegetables/garlic/asset.svg"
+  },
+  {
+    "id": "onion",
+    "asset": "vegetables/onion/asset.svg"
+  },
+  {
+    "id": "peanuts",
+    "asset": "vegetables/peanuts/asset.svg"
+  },
+  {
+    "id": "beans",
+    "asset": "vegetables/beans/asset.svg"
+  },
+  {
+    "id": "chestnut",
+    "asset": "vegetables/chestnut/asset.svg"
+  },
+  {
+    "id": "ginger-root",
+    "asset": "vegetables/ginger-root/asset.svg"
+  },
+  {
+    "id": "pea-pod",
+    "asset": "vegetables/pea-pod/asset.svg"
+  },
+  {
+    "id": "brown-mushroom",
+    "asset": "vegetables/brown-mushroom/asset.svg"
+  },
+  {
+    "id": "root-vegetable",
+    "asset": "vegetables/root-vegetable/asset.svg"
+  }
+]

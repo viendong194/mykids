@@ -1,0 +1,13 @@
+{
+  "id": "boule-bread",
+  "name": "boule bread",
+  "category": "foods",
+  "subgroup": "food-drink",
+  "translations": {
+    "en": "boule bread",
+    "vi": "boule bread",
+    "ja": "boule bread",
+    "zh": "boule bread"
+  },
+  "tags": []
+}

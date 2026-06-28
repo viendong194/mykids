@@ -1,0 +1,17 @@
+{
+  "id": "curry-rice",
+  "name": "curry rice",
+  "category": "foods",
+  "subgroup": "food-asian",
+  "translations": {
+    "en": "curry rice",
+    "vi": "curry rice",
+    "ja": "curry rice",
+    "zh": "curry rice"
+  },
+  "tags": [
+    "curry",
+    "food",
+    "rice"
+  ]
+}

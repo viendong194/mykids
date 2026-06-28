@@ -1,0 +1,13 @@
+{
+  "id": "champignon-white",
+  "name": "champignon white",
+  "category": "foods",
+  "subgroup": "food-drink",
+  "translations": {
+    "en": "champignon white",
+    "vi": "champignon white",
+    "ja": "champignon white",
+    "zh": "champignon white"
+  },
+  "tags": []
+}

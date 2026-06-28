@@ -1,0 +1,19 @@
+{
+  "id": "lollipop",
+  "name": "lollipop",
+  "category": "foods",
+  "subgroup": "food-sweet",
+  "translations": {
+    "en": "lollipop",
+    "vi": "Kẹo mút",
+    "ja": "キャンディポップ",
+    "zh": "棒棒糖"
+  },
+  "tags": [
+    "candy",
+    "dessert",
+    "food",
+    "restaurant",
+    "sweet"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "cooked-rice",
+  "name": "cooked rice",
+  "category": "foods",
+  "subgroup": "food-asian",
+  "translations": {
+    "en": "cooked rice",
+    "vi": "cooked rice",
+    "ja": "cooked rice",
+    "zh": "cooked rice"
+  },
+  "tags": [
+    "cooked",
+    "food",
+    "rice"
+  ]
+}

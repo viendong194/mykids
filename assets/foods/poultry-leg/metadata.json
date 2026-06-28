@@ -1,0 +1,21 @@
+{
+  "id": "poultry-leg",
+  "name": "poultry leg",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "poultry leg",
+    "vi": "poultry leg",
+    "ja": "poultry leg",
+    "zh": "poultry leg"
+  },
+  "tags": [
+    "bone",
+    "chicken",
+    "drumstick",
+    "hungry",
+    "leg",
+    "poultry",
+    "turkey"
+  ]
+}

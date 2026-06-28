@@ -1,0 +1,15 @@
+{
+  "id": "butter",
+  "name": "butter",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "butter",
+    "vi": "butter",
+    "ja": "butter",
+    "zh": "butter"
+  },
+  "tags": [
+    "dairy"
+  ]
+}

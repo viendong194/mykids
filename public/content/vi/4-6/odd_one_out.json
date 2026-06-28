@@ -1,0 +1,44 @@
+[
+  {
+    "id": "odd_01",
+    "type": "tap",
+    "correct": "ant",
+    "options": ["rabbit", "rabbit", "rabbit", "ant"],
+    "voiceText": "Bé hãy tìm con vật khác biệt nhé"
+  },
+  {
+    "id": "odd_02",
+    "type": "tap",
+    "correct": "lion",
+    "options": ["fish", "fish", "lion", "fish"],
+    "voiceText": "Con vật nào khác với các con còn lại nhỉ?"
+  },
+  {
+    "id": "odd_03",
+    "type": "tap",
+    "correct": "eagle",
+    "options": ["turtle", "eagle", "turtle", "turtle"],
+    "voiceText": "Bé hãy chạm vào hình khác biệt nào"
+  },
+  {
+    "id": "odd_04",
+    "type": "tap",
+    "correct": "frog",
+    "options": ["frog", "panda", "panda", "panda"],
+    "voiceText": "Đâu là hình khác biệt hả bé?"
+  },
+  {
+    "id": "odd_05",
+    "type": "tap",
+    "correct": "cat",
+    "options": ["butterfly", "butterfly", "butterfly", "cat"],
+    "voiceText": "Bé giỏi lắm, hãy tìm con vật khác loại nhé"
+  },
+  {
+    "id": "odd_06",
+    "type": "tap",
+    "correct": "monkey",
+    "options": ["crab", "crab", "monkey", "crab"],
+    "voiceText": "Tìm hình khác biệt với các bạn nào bé ơi"
+  }
+]

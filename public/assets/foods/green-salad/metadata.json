@@ -1,0 +1,17 @@
+{
+  "id": "green-salad",
+  "name": "green salad",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "green salad",
+    "vi": "green salad",
+    "ja": "green salad",
+    "zh": "green salad"
+  },
+  "tags": [
+    "food",
+    "green",
+    "salad"
+  ]
+}

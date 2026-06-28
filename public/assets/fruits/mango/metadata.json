@@ -1,0 +1,17 @@
+{
+  "id": "mango",
+  "name": "mango",
+  "category": "fruits",
+  "subgroup": "food-fruit",
+  "translations": {
+    "en": "mango",
+    "vi": "Quả xoài",
+    "ja": "マンゴー",
+    "zh": "芒果"
+  },
+  "tags": [
+    "food",
+    "fruit",
+    "tropical"
+  ]
+}

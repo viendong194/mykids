@@ -1,0 +1,16 @@
+{
+  "id": "cheese-wedge",
+  "name": "cheese wedge",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "cheese wedge",
+    "vi": "cheese wedge",
+    "ja": "cheese wedge",
+    "zh": "cheese wedge"
+  },
+  "tags": [
+    "cheese",
+    "wedge"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "oden",
+  "name": "oden",
+  "category": "foods",
+  "subgroup": "food-asian",
+  "translations": {
+    "en": "oden",
+    "vi": "oden",
+    "ja": "oden",
+    "zh": "oden"
+  },
+  "tags": [
+    "food",
+    "kebab",
+    "restaurant",
+    "seafood",
+    "skewer",
+    "stick"
+  ]
+}

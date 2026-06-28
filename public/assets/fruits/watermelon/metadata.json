@@ -1,0 +1,15 @@
+{
+  "id": "watermelon",
+  "name": "watermelon",
+  "category": "fruits",
+  "subgroup": "food-fruit",
+  "translations": {
+    "en": "watermelon",
+    "vi": "Quả dưa hấu",
+    "ja": "すいか",
+    "zh": "西瓜"
+  },
+  "tags": [
+    "fruit"
+  ]
+}

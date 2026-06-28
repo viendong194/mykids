@@ -1,0 +1,21 @@
+{
+  "id": "ginger-root",
+  "name": "ginger root",
+  "category": "vegetables",
+  "subgroup": "food-vegetable",
+  "translations": {
+    "en": "ginger root",
+    "vi": "ginger root",
+    "ja": "ginger root",
+    "zh": "ginger root"
+  },
+  "tags": [
+    "beer",
+    "ginger",
+    "health",
+    "herb",
+    "natural",
+    "root",
+    "spice"
+  ]
+}

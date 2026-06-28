@@ -1,0 +1,16 @@
+{
+  "id": "strawberry",
+  "name": "strawberry",
+  "category": "fruits",
+  "subgroup": "food-fruit",
+  "translations": {
+    "en": "strawberry",
+    "vi": "Quả dâu tây",
+    "ja": "いちご",
+    "zh": "草莓"
+  },
+  "tags": [
+    "berry",
+    "fruit"
+  ]
+}

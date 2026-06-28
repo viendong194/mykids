@@ -1,0 +1,15 @@
+{
+  "id": "garlic",
+  "name": "garlic",
+  "category": "vegetables",
+  "subgroup": "food-vegetable",
+  "translations": {
+    "en": "garlic",
+    "vi": "Tỏi",
+    "ja": "にんにく",
+    "zh": "大蒜"
+  },
+  "tags": [
+    "flavoring"
+  ]
+}

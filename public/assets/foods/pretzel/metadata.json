@@ -1,0 +1,13 @@
+{
+  "id": "pretzel",
+  "name": "pretzel",
+  "category": "foods",
+  "subgroup": "food-drink",
+  "translations": {
+    "en": "pretzel",
+    "vi": "pretzel",
+    "ja": "pretzel",
+    "zh": "pretzel"
+  },
+  "tags": []
+}

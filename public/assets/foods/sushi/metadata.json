@@ -1,0 +1,15 @@
+{
+  "id": "sushi",
+  "name": "sushi",
+  "category": "foods",
+  "subgroup": "food-asian",
+  "translations": {
+    "en": "sushi",
+    "vi": "sushi",
+    "ja": "sushi",
+    "zh": "sushi"
+  },
+  "tags": [
+    "food"
+  ]
+}

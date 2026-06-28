@@ -1,0 +1,17 @@
+{
+  "id": "bacon",
+  "name": "bacon",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "bacon",
+    "vi": "bacon",
+    "ja": "bacon",
+    "zh": "bacon"
+  },
+  "tags": [
+    "breakfast",
+    "food",
+    "meat"
+  ]
+}

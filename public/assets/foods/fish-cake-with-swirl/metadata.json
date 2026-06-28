@@ -1,0 +1,20 @@
+{
+  "id": "fish-cake-with-swirl",
+  "name": "fish cake with swirl",
+  "category": "foods",
+  "subgroup": "food-asian",
+  "translations": {
+    "en": "fish cake with swirl",
+    "vi": "fish cake with swirl",
+    "ja": "fish cake with swirl",
+    "zh": "fish cake with swirl"
+  },
+  "tags": [
+    "cake",
+    "fish",
+    "food",
+    "pastry",
+    "restaurant",
+    "swirl"
+  ]
+}

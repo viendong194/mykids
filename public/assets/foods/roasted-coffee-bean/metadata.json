@@ -1,0 +1,13 @@
+{
+  "id": "roasted-coffee-bean",
+  "name": "roasted coffee bean",
+  "category": "foods",
+  "subgroup": "food-drink",
+  "translations": {
+    "en": "roasted coffee bean",
+    "vi": "roasted coffee bean",
+    "ja": "roasted coffee bean",
+    "zh": "roasted coffee bean"
+  },
+  "tags": []
+}

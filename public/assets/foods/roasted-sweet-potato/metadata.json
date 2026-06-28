@@ -1,0 +1,18 @@
+{
+  "id": "roasted-sweet-potato",
+  "name": "roasted sweet potato",
+  "category": "foods",
+  "subgroup": "food-asian",
+  "translations": {
+    "en": "roasted sweet potato",
+    "vi": "roasted sweet potato",
+    "ja": "roasted sweet potato",
+    "zh": "roasted sweet potato"
+  },
+  "tags": [
+    "food",
+    "potato",
+    "roasted",
+    "sweet"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "cupcake",
+  "name": "cupcake",
+  "category": "foods",
+  "subgroup": "food-sweet",
+  "translations": {
+    "en": "cupcake",
+    "vi": "Bánh cupcake",
+    "ja": "カップケーキ",
+    "zh": "纸杯蛋糕"
+  },
+  "tags": [
+    "bakery",
+    "dessert",
+    "sprinkles",
+    "sugar",
+    "sweet",
+    "treat"
+  ]
+}

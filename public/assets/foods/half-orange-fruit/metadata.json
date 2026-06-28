@@ -1,0 +1,13 @@
+{
+  "id": "half-orange-fruit",
+  "name": "half orange fruit",
+  "category": "foods",
+  "subgroup": "food-drink",
+  "translations": {
+    "en": "half orange fruit",
+    "vi": "half orange fruit",
+    "ja": "half orange fruit",
+    "zh": "half orange fruit"
+  },
+  "tags": []
+}

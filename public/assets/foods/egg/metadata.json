@@ -1,0 +1,16 @@
+{
+  "id": "egg",
+  "name": "egg",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "egg",
+    "vi": "egg",
+    "ja": "egg",
+    "zh": "egg"
+  },
+  "tags": [
+    "breakfast",
+    "food"
+  ]
+}

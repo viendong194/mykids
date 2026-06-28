@@ -1,0 +1,100 @@
+[
+  {
+    "id": "match_pairs_01",
+    "type": "match",
+    "mode": "select",
+    "voiceText": "Find the animal that matches the one above",
+    "target": {
+      "type": "asset",
+      "id": "cat",
+      "value": "cat"
+    },
+    "choices": [
+      { "type": "asset", "id": "cat", "value": "cat" },
+      { "type": "asset", "id": "dog", "value": "dog" }
+    ]
+  },
+  {
+    "id": "match_pairs_02",
+    "type": "match",
+    "mode": "select",
+    "voiceText": "Which animal looks like the one on top?",
+    "target": {
+      "type": "asset",
+      "id": "lion",
+      "value": "lion"
+    },
+    "choices": [
+      { "type": "asset", "id": "bear", "value": "bear" },
+      { "type": "asset", "id": "lion", "value": "lion" },
+      { "type": "asset", "id": "frog", "value": "frog" }
+    ]
+  },
+  {
+    "id": "match_pairs_03",
+    "type": "match",
+    "mode": "select",
+    "voiceText": "Find the matching panda card",
+    "target": {
+      "type": "asset",
+      "id": "panda",
+      "value": "panda"
+    },
+    "choices": [
+      { "type": "asset", "id": "panda", "value": "panda" },
+      { "type": "asset", "id": "rabbit", "value": "rabbit" },
+      { "type": "asset", "id": "koala", "value": "koala" }
+    ]
+  },
+  {
+    "id": "match_pairs_04",
+    "type": "match",
+    "mode": "select",
+    "voiceText": "Find the correct beautiful butterfly above",
+    "target": {
+      "type": "asset",
+      "id": "butterfly",
+      "value": "butterfly"
+    },
+    "choices": [
+      { "type": "asset", "id": "beetle", "value": "beetle" },
+      { "type": "asset", "id": "butterfly", "value": "butterfly" },
+      { "type": "asset", "id": "ant", "value": "ant" },
+      { "type": "asset", "id": "ant", "value": "ant" }
+    ]
+  },
+  {
+    "id": "match_pairs_05",
+    "type": "match",
+    "mode": "select",
+    "voiceText": "Where is the matching big elephant?",
+    "target": {
+      "type": "asset",
+      "id": "elephant",
+      "value": "elephant"
+    },
+    "choices": [
+      { "type": "asset", "id": "pig-face", "value": "pig-face" },
+      { "type": "asset", "id": "cow-face", "value": "cow-face" },
+      { "type": "asset", "id": "elephant", "value": "elephant" },
+      { "type": "asset", "id": "tiger-face", "value": "tiger-face" }
+    ]
+  },
+  {
+    "id": "match_pairs_06",
+    "type": "match",
+    "mode": "select",
+    "voiceText": "Find the playful monkey that looks like the one above",
+    "target": {
+      "type": "asset",
+      "id": "monkey",
+      "value": "monkey"
+    },
+    "choices": [
+      { "type": "asset", "id": "ram", "value": "ram" },
+      { "type": "asset", "id": "kangaroo", "value": "kangaroo" },
+      { "type": "asset", "id": "fox", "value": "fox" },
+      { "type": "asset", "id": "monkey", "value": "monkey" }
+    ]
+  }
+]

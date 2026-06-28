@@ -1,0 +1,82 @@
+[
+  {
+    "id": "grapes",
+    "asset": "fruits/grapes/asset.svg"
+  },
+  {
+    "id": "melon",
+    "asset": "fruits/melon/asset.svg"
+  },
+  {
+    "id": "watermelon",
+    "asset": "fruits/watermelon/asset.svg"
+  },
+  {
+    "id": "tangerine",
+    "asset": "fruits/tangerine/asset.svg"
+  },
+  {
+    "id": "lemon",
+    "asset": "fruits/lemon/asset.svg"
+  },
+  {
+    "id": "lime",
+    "asset": "fruits/lime/asset.svg"
+  },
+  {
+    "id": "banana",
+    "asset": "fruits/banana/asset.svg"
+  },
+  {
+    "id": "pineapple",
+    "asset": "fruits/pineapple/asset.svg"
+  },
+  {
+    "id": "mango",
+    "asset": "fruits/mango/asset.svg"
+  },
+  {
+    "id": "red-apple",
+    "asset": "fruits/red-apple/asset.svg"
+  },
+  {
+    "id": "green-apple",
+    "asset": "fruits/green-apple/asset.svg"
+  },
+  {
+    "id": "pear",
+    "asset": "fruits/pear/asset.svg"
+  },
+  {
+    "id": "peach",
+    "asset": "fruits/peach/asset.svg"
+  },
+  {
+    "id": "cherries",
+    "asset": "fruits/cherries/asset.svg"
+  },
+  {
+    "id": "strawberry",
+    "asset": "fruits/strawberry/asset.svg"
+  },
+  {
+    "id": "blueberries",
+    "asset": "fruits/blueberries/asset.svg"
+  },
+  {
+    "id": "kiwi-fruit",
+    "asset": "fruits/kiwi-fruit/asset.svg"
+  },
+  {
+    "id": "tomato",
+    "asset": "fruits/tomato/asset.svg"
+  },
+  {
+    "id": "olive",
+    "asset": "fruits/olive/asset.svg"
+  },
+  {
+    "id": "coconut",
+    "asset": "fruits/coconut/asset.svg"
+  }
+]

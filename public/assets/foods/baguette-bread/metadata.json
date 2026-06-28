@@ -1,0 +1,18 @@
+{
+  "id": "baguette-bread",
+  "name": "baguette bread",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "baguette bread",
+    "vi": "baguette bread",
+    "ja": "baguette bread",
+    "zh": "baguette bread"
+  },
+  "tags": [
+    "baguette",
+    "bread",
+    "food",
+    "french"
+  ]
+}

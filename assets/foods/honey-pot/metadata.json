@@ -1,0 +1,22 @@
+{
+  "id": "honey-pot",
+  "name": "honey pot",
+  "category": "foods",
+  "subgroup": "food-sweet",
+  "translations": {
+    "en": "honey pot",
+    "vi": "honey pot",
+    "ja": "honey pot",
+    "zh": "honey pot"
+  },
+  "tags": [
+    "barrel",
+    "bear",
+    "food",
+    "honey",
+    "honeypot",
+    "jar",
+    "pot",
+    "sweet"
+  ]
+}

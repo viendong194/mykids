@@ -1,0 +1,16 @@
+{
+  "id": "potato",
+  "name": "potato",
+  "category": "vegetables",
+  "subgroup": "food-vegetable",
+  "translations": {
+    "en": "potato",
+    "vi": "Khoai tây",
+    "ja": "じゃがいも",
+    "zh": "土豆"
+  },
+  "tags": [
+    "food",
+    "vegetable"
+  ]
+}

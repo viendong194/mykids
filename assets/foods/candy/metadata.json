@@ -1,0 +1,21 @@
+{
+  "id": "candy",
+  "name": "candy",
+  "category": "foods",
+  "subgroup": "food-sweet",
+  "translations": {
+    "en": "candy",
+    "vi": "Kẹo",
+    "ja": "キャンディ",
+    "zh": "糖果"
+  },
+  "tags": [
+    "cavities",
+    "dessert",
+    "halloween",
+    "restaurant",
+    "sweet",
+    "tooth",
+    "wrapper"
+  ]
+}

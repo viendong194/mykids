@@ -1,0 +1,16 @@
+{
+  "id": "chestnut",
+  "name": "chestnut",
+  "category": "vegetables",
+  "subgroup": "food-vegetable",
+  "translations": {
+    "en": "chestnut",
+    "vi": "chestnut",
+    "ja": "chestnut",
+    "zh": "chestnut"
+  },
+  "tags": [
+    "almond",
+    "plant"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "soft-ice-cream",
+  "name": "soft ice cream",
+  "category": "foods",
+  "subgroup": "food-sweet",
+  "translations": {
+    "en": "soft ice cream",
+    "vi": "soft ice cream",
+    "ja": "soft ice cream",
+    "zh": "soft ice cream"
+  },
+  "tags": [
+    "cream",
+    "dessert",
+    "food",
+    "ice",
+    "icecream",
+    "restaurant",
+    "serve",
+    "soft",
+    "sweet"
+  ]
+}

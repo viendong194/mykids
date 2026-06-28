@@ -1,0 +1,19 @@
+{
+  "id": "dumpling",
+  "name": "dumpling",
+  "category": "foods",
+  "subgroup": "food-asian",
+  "translations": {
+    "en": "dumpling",
+    "vi": "dumpling",
+    "ja": "dumpling",
+    "zh": "dumpling"
+  },
+  "tags": [
+    "empanada",
+    "gyōza",
+    "jiaozi",
+    "pierogi",
+    "potsticker"
+  ]
+}

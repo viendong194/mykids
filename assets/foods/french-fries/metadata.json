@@ -1,0 +1,18 @@
+{
+  "id": "french-fries",
+  "name": "french fries",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "french fries",
+    "vi": "Khoai tây chiên",
+    "ja": "フライドポテト",
+    "zh": "薯条"
+  },
+  "tags": [
+    "fast",
+    "food",
+    "french",
+    "fries"
+  ]
+}

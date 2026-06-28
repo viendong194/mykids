@@ -1,0 +1,16 @@
+{
+  "id": "melon",
+  "name": "melon",
+  "category": "fruits",
+  "subgroup": "food-fruit",
+  "translations": {
+    "en": "melon",
+    "vi": "Quả dưa vàng",
+    "ja": "メロン",
+    "zh": "甜瓜"
+  },
+  "tags": [
+    "cantaloupe",
+    "fruit"
+  ]
+}

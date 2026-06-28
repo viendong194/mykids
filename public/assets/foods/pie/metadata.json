@@ -1,0 +1,21 @@
+{
+  "id": "pie",
+  "name": "pie",
+  "category": "foods",
+  "subgroup": "food-sweet",
+  "translations": {
+    "en": "pie",
+    "vi": "pie",
+    "ja": "pie",
+    "zh": "pie"
+  },
+  "tags": [
+    "apple",
+    "filling",
+    "fruit",
+    "meat",
+    "pastry",
+    "pumpkin",
+    "slice"
+  ]
+}

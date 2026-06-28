@@ -1,0 +1,80 @@
+[
+  {
+    "id": "alpha_vi_68_01",
+    "type": "tap",
+    "correct": "o",
+    "options": ["o", "a", "u", "e"],
+    "voiceText": "Bé hãy tìm chữ cái còn thiếu trong từ: Con cá nhé",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "fish", "count": 1 },
+        { "type": "text", "value": "C _ n  C á" }
+      ]
+    }
+  },
+  {
+    "id": "alpha_vi_68_02",
+    "type": "tap",
+    "correct": "á",
+    "options": ["á", "a", "o", "u"],
+    "voiceText": "Chữ cái nào còn thiếu trong từ: Quả táo nhỉ?",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "red-apple", "count": 1 },
+        { "type": "text", "value": "Q u ả  T _ o" }
+      ]
+    }
+  },
+  {
+    "id": "alpha_vi_68_03",
+    "type": "tap",
+    "correct": "o",
+    "options": ["o", "a", "e", "i"],
+    "voiceText": "Hãy tìm chữ cái còn thiếu trong từ: Con mèo nào bé",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "cat", "count": 1 },
+        { "type": "text", "value": "C _ n  M è o" }
+      ]
+    }
+  },
+  {
+    "id": "alpha_vi_68_04",
+    "type": "tap",
+    "correct": "o",
+    "options": ["o", "a", "u", "e"],
+    "voiceText": "Chữ cái nào còn thiếu của chú voi to lớn đây bé ơi?",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "elephant", "count": 1 },
+        { "type": "text", "value": "C _ n  V o i" }
+      ]
+    }
+  },
+  {
+    "id": "alpha_vi_68_05",
+    "type": "tap",
+    "correct": "h",
+    "options": ["h", "g", "k", "n"],
+    "voiceText": "Bé hãy tìm chữ cái còn thiếu trong từ: Quả nho nào",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "grapes", "count": 1 },
+        { "type": "text", "value": "Q u ả  N _ o" }
+      ]
+    }
+  },
+  {
+    "id": "alpha_vi_68_06",
+    "type": "tap",
+    "correct": "á",
+    "options": ["á", "a", "o", "e"],
+    "voiceText": "Tìm chữ cái còn thiếu để tạo thành từ: Bánh mì nhé",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "bread", "count": 1 },
+        { "type": "text", "value": "B _ n h  M ì" }
+      ]
+    }
+  }
+]

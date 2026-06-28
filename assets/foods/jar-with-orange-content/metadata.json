@@ -1,0 +1,13 @@
+{
+  "id": "jar-with-orange-content",
+  "name": "jar with orange content",
+  "category": "foods",
+  "subgroup": "food-drink",
+  "translations": {
+    "en": "jar with orange content",
+    "vi": "jar with orange content",
+    "ja": "jar with orange content",
+    "zh": "jar with orange content"
+  },
+  "tags": []
+}

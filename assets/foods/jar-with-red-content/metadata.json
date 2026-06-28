@@ -1,0 +1,13 @@
+{
+  "id": "jar-with-red-content",
+  "name": "jar with red content",
+  "category": "foods",
+  "subgroup": "food-drink",
+  "translations": {
+    "en": "jar with red content",
+    "vi": "jar with red content",
+    "ja": "jar with red content",
+    "zh": "jar with red content"
+  },
+  "tags": []
+}

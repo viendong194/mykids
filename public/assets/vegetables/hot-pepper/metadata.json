@@ -1,0 +1,16 @@
+{
+  "id": "hot-pepper",
+  "name": "hot pepper",
+  "category": "vegetables",
+  "subgroup": "food-vegetable",
+  "translations": {
+    "en": "hot pepper",
+    "vi": "Ớt cay",
+    "ja": "とうがらし",
+    "zh": "辣椒"
+  },
+  "tags": [
+    "hot",
+    "pepper"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "cake",
+  "name": "cake",
+  "category": "foods",
+  "subgroup": "food-drink",
+  "translations": {
+    "en": "cake",
+    "vi": "cake",
+    "ja": "cake",
+    "zh": "cake"
+  },
+  "tags": []
+}

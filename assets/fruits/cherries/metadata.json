@@ -1,0 +1,18 @@
+{
+  "id": "cherries",
+  "name": "cherries",
+  "category": "fruits",
+  "subgroup": "food-fruit",
+  "translations": {
+    "en": "cherries",
+    "vi": "Quả anh đào",
+    "ja": "さくらんぼ",
+    "zh": "樱桃"
+  },
+  "tags": [
+    "berries",
+    "cherry",
+    "fruit",
+    "red"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "rice-cracker",
+  "name": "rice cracker",
+  "category": "foods",
+  "subgroup": "food-asian",
+  "translations": {
+    "en": "rice cracker",
+    "vi": "rice cracker",
+    "ja": "rice cracker",
+    "zh": "rice cracker"
+  },
+  "tags": [
+    "cracker",
+    "food",
+    "rice"
+  ]
+}

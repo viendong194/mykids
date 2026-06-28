@@ -1,0 +1,17 @@
+{
+  "id": "tomato",
+  "name": "tomato",
+  "category": "fruits",
+  "subgroup": "food-fruit",
+  "translations": {
+    "en": "tomato",
+    "vi": "Quả cà chua",
+    "ja": "トマト",
+    "zh": "西红柿"
+  },
+  "tags": [
+    "food",
+    "fruit",
+    "vegetable"
+  ]
+}

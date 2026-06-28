@@ -1,0 +1,13 @@
+{
+  "id": "champignon-brown",
+  "name": "champignon brown",
+  "category": "foods",
+  "subgroup": "food-drink",
+  "translations": {
+    "en": "champignon brown",
+    "vi": "champignon brown",
+    "ja": "champignon brown",
+    "zh": "champignon brown"
+  },
+  "tags": []
+}

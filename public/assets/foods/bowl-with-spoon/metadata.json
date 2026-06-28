@@ -1,0 +1,21 @@
+{
+  "id": "bowl-with-spoon",
+  "name": "bowl with spoon",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "bowl with spoon",
+    "vi": "bowl with spoon",
+    "ja": "bowl with spoon",
+    "zh": "bowl with spoon"
+  },
+  "tags": [
+    "bowl",
+    "breakfast",
+    "cereal",
+    "congee",
+    "oatmeal",
+    "porridge",
+    "spoon"
+  ]
+}

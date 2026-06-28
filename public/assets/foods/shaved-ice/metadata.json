@@ -1,0 +1,19 @@
+{
+  "id": "shaved-ice",
+  "name": "shaved ice",
+  "category": "foods",
+  "subgroup": "food-sweet",
+  "translations": {
+    "en": "shaved ice",
+    "vi": "shaved ice",
+    "ja": "shaved ice",
+    "zh": "shaved ice"
+  },
+  "tags": [
+    "dessert",
+    "ice",
+    "restaurant",
+    "shaved",
+    "sweet"
+  ]
+}

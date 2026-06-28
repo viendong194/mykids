@@ -1,0 +1,17 @@
+{
+  "id": "fortune-cookie",
+  "name": "fortune cookie",
+  "category": "foods",
+  "subgroup": "food-asian",
+  "translations": {
+    "en": "fortune cookie",
+    "vi": "fortune cookie",
+    "ja": "fortune cookie",
+    "zh": "fortune cookie"
+  },
+  "tags": [
+    "cookie",
+    "fortune",
+    "prophecy"
+  ]
+}

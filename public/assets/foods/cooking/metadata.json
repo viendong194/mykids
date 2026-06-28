@@ -1,0 +1,25 @@
+{
+  "id": "cooking",
+  "name": "cooking",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "cooking",
+    "vi": "cooking",
+    "ja": "cooking",
+    "zh": "cooking"
+  },
+  "tags": [
+    "breakfast",
+    "easy",
+    "egg",
+    "fry",
+    "frying",
+    "over",
+    "pan",
+    "restaurant",
+    "side",
+    "sunny",
+    "up"
+  ]
+}

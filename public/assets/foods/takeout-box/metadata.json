@@ -1,0 +1,21 @@
+{
+  "id": "takeout-box",
+  "name": "takeout box",
+  "category": "foods",
+  "subgroup": "food-asian",
+  "translations": {
+    "en": "takeout box",
+    "vi": "takeout box",
+    "ja": "takeout box",
+    "zh": "takeout box"
+  },
+  "tags": [
+    "box",
+    "chopsticks",
+    "delivery",
+    "food",
+    "oyster",
+    "pail",
+    "takeout"
+  ]
+}

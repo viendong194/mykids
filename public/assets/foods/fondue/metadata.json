@@ -1,0 +1,20 @@
+{
+  "id": "fondue",
+  "name": "fondue",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "fondue",
+    "vi": "fondue",
+    "ja": "fondue",
+    "zh": "fondue"
+  },
+  "tags": [
+    "cheese",
+    "chocolate",
+    "food",
+    "melted",
+    "pot",
+    "ski"
+  ]
+}

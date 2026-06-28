@@ -1,0 +1,15 @@
+{
+  "id": "sandwich",
+  "name": "sandwich",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "sandwich",
+    "vi": "Bánh sandwich",
+    "ja": "サンドイッチ",
+    "zh": "三明治"
+  },
+  "tags": [
+    "bread"
+  ]
+}

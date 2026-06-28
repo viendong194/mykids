@@ -1,0 +1,23 @@
+{
+  "id": "root-vegetable",
+  "name": "root vegetable",
+  "category": "vegetables",
+  "subgroup": "food-vegetable",
+  "translations": {
+    "en": "root vegetable",
+    "vi": "root vegetable",
+    "ja": "root vegetable",
+    "zh": "root vegetable"
+  },
+  "tags": [
+    "beet",
+    "food",
+    "garden",
+    "radish",
+    "root",
+    "salad",
+    "turnip",
+    "vegetable",
+    "vegetarian"
+  ]
+}

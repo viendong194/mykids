@@ -1,0 +1,13 @@
+{
+  "id": "jar-with-brown-content",
+  "name": "jar with brown content",
+  "category": "foods",
+  "subgroup": "food-drink",
+  "translations": {
+    "en": "jar with brown content",
+    "vi": "jar with brown content",
+    "ja": "jar with brown content",
+    "zh": "jar with brown content"
+  },
+  "tags": []
+}

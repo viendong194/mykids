@@ -1,0 +1,17 @@
+{
+  "id": "cucumber",
+  "name": "cucumber",
+  "category": "vegetables",
+  "subgroup": "food-vegetable",
+  "translations": {
+    "en": "cucumber",
+    "vi": "Dưa chuột",
+    "ja": "きゅうり",
+    "zh": "黄瓜"
+  },
+  "tags": [
+    "food",
+    "pickle",
+    "vegetable"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "chocolate-bar",
+  "name": "chocolate bar",
+  "category": "foods",
+  "subgroup": "food-sweet",
+  "translations": {
+    "en": "chocolate bar",
+    "vi": "chocolate bar",
+    "ja": "chocolate bar",
+    "zh": "chocolate bar"
+  },
+  "tags": [
+    "bar",
+    "candy",
+    "chocolate",
+    "dessert",
+    "halloween",
+    "sweet",
+    "tooth"
+  ]
+}

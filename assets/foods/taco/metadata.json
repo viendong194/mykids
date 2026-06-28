@@ -1,0 +1,15 @@
+{
+  "id": "taco",
+  "name": "taco",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "taco",
+    "vi": "Bánh taco",
+    "ja": "タコス",
+    "zh": "墨西哥卷饼"
+  },
+  "tags": [
+    "mexican"
+  ]
+}

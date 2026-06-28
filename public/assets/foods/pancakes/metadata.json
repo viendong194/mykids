@@ -1,0 +1,19 @@
+{
+  "id": "pancakes",
+  "name": "pancakes",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "pancakes",
+    "vi": "Bánh kếp",
+    "ja": "パンケーキ",
+    "zh": "煎饼"
+  },
+  "tags": [
+    "breakfast",
+    "crêpe",
+    "food",
+    "hotcake",
+    "pancake"
+  ]
+}

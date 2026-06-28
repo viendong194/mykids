@@ -1,0 +1,19 @@
+{
+  "id": "hot-dog",
+  "name": "hot dog",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "hot dog",
+    "vi": "Hot dog",
+    "ja": "ホットドッグ",
+    "zh": "热狗"
+  },
+  "tags": [
+    "dog",
+    "frankfurter",
+    "hot",
+    "hotdog",
+    "sausage"
+  ]
+}

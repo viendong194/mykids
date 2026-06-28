@@ -1,0 +1,17 @@
+{
+  "id": "kiwi-fruit",
+  "name": "kiwi fruit",
+  "category": "fruits",
+  "subgroup": "food-fruit",
+  "translations": {
+    "en": "kiwi fruit",
+    "vi": "Quả kiwi",
+    "ja": "キウイ",
+    "zh": "奇异果"
+  },
+  "tags": [
+    "food",
+    "fruit",
+    "kiwi"
+  ]
+}

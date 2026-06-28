@@ -1,0 +1,13 @@
+{
+  "id": "plastic-bottle",
+  "name": "plastic bottle",
+  "category": "foods",
+  "subgroup": "food-drink",
+  "translations": {
+    "en": "plastic bottle",
+    "vi": "plastic bottle",
+    "ja": "plastic bottle",
+    "zh": "plastic bottle"
+  },
+  "tags": []
+}

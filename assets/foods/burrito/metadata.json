@@ -1,0 +1,16 @@
+{
+  "id": "burrito",
+  "name": "burrito",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "burrito",
+    "vi": "Bánh burrito",
+    "ja": "ブリトー",
+    "zh": "卷饼"
+  },
+  "tags": [
+    "mexican",
+    "wrap"
+  ]
+}

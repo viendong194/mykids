@@ -1,0 +1,18 @@
+{
+  "id": "tamale",
+  "name": "tamale",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "tamale",
+    "vi": "tamale",
+    "ja": "tamale",
+    "zh": "tamale"
+  },
+  "tags": [
+    "food",
+    "mexican",
+    "pamonha",
+    "wrapped"
+  ]
+}

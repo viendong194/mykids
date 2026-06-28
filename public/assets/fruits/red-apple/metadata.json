@@ -1,0 +1,21 @@
+{
+  "id": "red-apple",
+  "name": "red apple",
+  "category": "fruits",
+  "subgroup": "food-fruit",
+  "translations": {
+    "en": "red apple",
+    "vi": "Táo đỏ",
+    "ja": "あかいりんご",
+    "zh": "红苹果"
+  },
+  "tags": [
+    "apple",
+    "diet",
+    "food",
+    "fruit",
+    "health",
+    "red",
+    "ripe"
+  ]
+}

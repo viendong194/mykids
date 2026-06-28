@@ -1,0 +1,29 @@
+{
+  "id": "lime",
+  "name": "lime",
+  "category": "fruits",
+  "subgroup": "food-fruit",
+  "translations": {
+    "en": "lime",
+    "vi": "Chanh xanh",
+    "ja": "ライム",
+    "zh": "酸橙"
+  },
+  "tags": [
+    "acidity",
+    "citrus",
+    "cocktail",
+    "fruit",
+    "garnish",
+    "key",
+    "margarita",
+    "mojito",
+    "refreshing",
+    "salsa",
+    "sour",
+    "tangy",
+    "tequila",
+    "tropical",
+    "zest"
+  ]
+}

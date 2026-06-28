@@ -1,0 +1,18 @@
+{
+  "id": "fried-shrimp",
+  "name": "fried shrimp",
+  "category": "foods",
+  "subgroup": "food-asian",
+  "translations": {
+    "en": "fried shrimp",
+    "vi": "fried shrimp",
+    "ja": "fried shrimp",
+    "zh": "fried shrimp"
+  },
+  "tags": [
+    "fried",
+    "prawn",
+    "shrimp",
+    "tempura"
+  ]
+}

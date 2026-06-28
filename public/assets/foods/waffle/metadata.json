@@ -1,0 +1,17 @@
+{
+  "id": "waffle",
+  "name": "waffle",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "waffle",
+    "vi": "Bánh waffle",
+    "ja": "ワッフル",
+    "zh": "华夫饼"
+  },
+  "tags": [
+    "breakfast",
+    "indecisive",
+    "iron"
+  ]
+}

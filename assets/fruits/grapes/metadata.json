@@ -1,0 +1,17 @@
+{
+  "id": "grapes",
+  "name": "grapes",
+  "category": "fruits",
+  "subgroup": "food-fruit",
+  "translations": {
+    "en": "grapes",
+    "vi": "Chùm nho",
+    "ja": "ぶどう",
+    "zh": "葡萄"
+  },
+  "tags": [
+    "dionysus",
+    "fruit",
+    "grape"
+  ]
+}

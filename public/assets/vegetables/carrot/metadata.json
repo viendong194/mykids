@@ -1,0 +1,16 @@
+{
+  "id": "carrot",
+  "name": "carrot",
+  "category": "vegetables",
+  "subgroup": "food-vegetable",
+  "translations": {
+    "en": "carrot",
+    "vi": "Củ cà rốt",
+    "ja": "にんじん",
+    "zh": "胡萝卜"
+  },
+  "tags": [
+    "food",
+    "vegetable"
+  ]
+}

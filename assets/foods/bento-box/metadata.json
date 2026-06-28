@@ -1,0 +1,17 @@
+{
+  "id": "bento-box",
+  "name": "bento box",
+  "category": "foods",
+  "subgroup": "food-asian",
+  "translations": {
+    "en": "bento box",
+    "vi": "bento box",
+    "ja": "bento box",
+    "zh": "bento box"
+  },
+  "tags": [
+    "bento",
+    "box",
+    "food"
+  ]
+}

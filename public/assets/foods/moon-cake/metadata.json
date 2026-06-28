@@ -1,0 +1,19 @@
+{
+  "id": "moon-cake",
+  "name": "moon cake",
+  "category": "foods",
+  "subgroup": "food-asian",
+  "translations": {
+    "en": "moon cake",
+    "vi": "moon cake",
+    "ja": "moon cake",
+    "zh": "moon cake"
+  },
+  "tags": [
+    "autumn",
+    "cake",
+    "festival",
+    "moon",
+    "yuèbǐng"
+  ]
+}

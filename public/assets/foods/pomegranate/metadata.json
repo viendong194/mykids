@@ -1,0 +1,13 @@
+{
+  "id": "pomegranate",
+  "name": "pomegranate",
+  "category": "foods",
+  "subgroup": "food-drink",
+  "translations": {
+    "en": "pomegranate",
+    "vi": "Quả lựu",
+    "ja": "ざくろ",
+    "zh": "石榴"
+  },
+  "tags": []
+}

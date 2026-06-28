@@ -1,0 +1,13 @@
+{
+  "id": "maultasche",
+  "name": "maultasche",
+  "category": "foods",
+  "subgroup": "food-drink",
+  "translations": {
+    "en": "maultasche",
+    "vi": "maultasche",
+    "ja": "maultasche",
+    "zh": "maultasche"
+  },
+  "tags": []
+}

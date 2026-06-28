@@ -1,0 +1,15 @@
+{
+  "id": "olive",
+  "name": "olive",
+  "category": "fruits",
+  "subgroup": "food-fruit",
+  "translations": {
+    "en": "olive",
+    "vi": "Quả ô liu",
+    "ja": "オリーブ",
+    "zh": "橄榄"
+  },
+  "tags": [
+    "food"
+  ]
+}

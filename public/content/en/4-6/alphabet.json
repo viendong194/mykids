@@ -1,0 +1,80 @@
+[
+  {
+    "id": "alpha_en_46_01",
+    "type": "tap",
+    "correct": "A",
+    "options": ["A", "B", "C", "D"],
+    "voiceText": "What letter does the word ant start with?",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "ant", "count": 1 },
+        { "type": "text", "value": "A N T" }
+      ]
+    }
+  },
+  {
+    "id": "alpha_en_46_02",
+    "type": "tap",
+    "correct": "F",
+    "options": ["F", "S", "W", "C"],
+    "voiceText": "Which letter starts the word fish?",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "fish", "count": 1 },
+        { "type": "text", "value": "F I S H" }
+      ]
+    }
+  },
+  {
+    "id": "alpha_en_46_03",
+    "type": "tap",
+    "correct": "M",
+    "options": ["M", "N", "H", "K"],
+    "voiceText": "What is the first letter of the word monkey?",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "monkey", "count": 1 },
+        { "type": "text", "value": "M O N K E Y" }
+      ]
+    }
+  },
+  {
+    "id": "alpha_en_46_04",
+    "type": "tap",
+    "correct": "P",
+    "options": ["P", "Q", "B", "D"],
+    "voiceText": "Find the starting letter for panda",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "panda", "count": 1 },
+        { "type": "text", "value": "P A N D A" }
+      ]
+    }
+  },
+  {
+    "id": "alpha_en_46_05",
+    "type": "tap",
+    "correct": "B",
+    "options": ["B", "P", "V", "R"],
+    "voiceText": "Which letter starts the word butterfly?",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "butterfly", "count": 1 },
+        { "type": "text", "value": "B U T T E R F L Y" }
+      ]
+    }
+  },
+  {
+    "id": "alpha_en_46_06",
+    "type": "tap",
+    "correct": "L",
+    "options": ["L", "I", "T", "O"],
+    "voiceText": "What is the starting letter of the word lemon?",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "lemon", "count": 1 },
+        { "type": "text", "value": "L E M O N" }
+      ]
+    }
+  }
+]

@@ -1,0 +1,342 @@
+[
+  {
+    "id": "bread",
+    "asset": "foods/bread/asset.svg"
+  },
+  {
+    "id": "croissant",
+    "asset": "foods/croissant/asset.svg"
+  },
+  {
+    "id": "baguette-bread",
+    "asset": "foods/baguette-bread/asset.svg"
+  },
+  {
+    "id": "flatbread",
+    "asset": "foods/flatbread/asset.svg"
+  },
+  {
+    "id": "pretzel",
+    "asset": "foods/pretzel/asset.svg"
+  },
+  {
+    "id": "bagel",
+    "asset": "foods/bagel/asset.svg"
+  },
+  {
+    "id": "pancakes",
+    "asset": "foods/pancakes/asset.svg"
+  },
+  {
+    "id": "waffle",
+    "asset": "foods/waffle/asset.svg"
+  },
+  {
+    "id": "cheese-wedge",
+    "asset": "foods/cheese-wedge/asset.svg"
+  },
+  {
+    "id": "meat-on-bone",
+    "asset": "foods/meat-on-bone/asset.svg"
+  },
+  {
+    "id": "poultry-leg",
+    "asset": "foods/poultry-leg/asset.svg"
+  },
+  {
+    "id": "cut-of-meat",
+    "asset": "foods/cut-of-meat/asset.svg"
+  },
+  {
+    "id": "bacon",
+    "asset": "foods/bacon/asset.svg"
+  },
+  {
+    "id": "hamburger",
+    "asset": "foods/hamburger/asset.svg"
+  },
+  {
+    "id": "french-fries",
+    "asset": "foods/french-fries/asset.svg"
+  },
+  {
+    "id": "pizza",
+    "asset": "foods/pizza/asset.svg"
+  },
+  {
+    "id": "hot-dog",
+    "asset": "foods/hot-dog/asset.svg"
+  },
+  {
+    "id": "sandwich",
+    "asset": "foods/sandwich/asset.svg"
+  },
+  {
+    "id": "taco",
+    "asset": "foods/taco/asset.svg"
+  },
+  {
+    "id": "burrito",
+    "asset": "foods/burrito/asset.svg"
+  },
+  {
+    "id": "tamale",
+    "asset": "foods/tamale/asset.svg"
+  },
+  {
+    "id": "stuffed-flatbread",
+    "asset": "foods/stuffed-flatbread/asset.svg"
+  },
+  {
+    "id": "falafel",
+    "asset": "foods/falafel/asset.svg"
+  },
+  {
+    "id": "egg",
+    "asset": "foods/egg/asset.svg"
+  },
+  {
+    "id": "cooking",
+    "asset": "foods/cooking/asset.svg"
+  },
+  {
+    "id": "shallow-pan-of-food",
+    "asset": "foods/shallow-pan-of-food/asset.svg"
+  },
+  {
+    "id": "pot-of-food",
+    "asset": "foods/pot-of-food/asset.svg"
+  },
+  {
+    "id": "fondue",
+    "asset": "foods/fondue/asset.svg"
+  },
+  {
+    "id": "bowl-with-spoon",
+    "asset": "foods/bowl-with-spoon/asset.svg"
+  },
+  {
+    "id": "green-salad",
+    "asset": "foods/green-salad/asset.svg"
+  },
+  {
+    "id": "popcorn",
+    "asset": "foods/popcorn/asset.svg"
+  },
+  {
+    "id": "butter",
+    "asset": "foods/butter/asset.svg"
+  },
+  {
+    "id": "salt",
+    "asset": "foods/salt/asset.svg"
+  },
+  {
+    "id": "canned-food",
+    "asset": "foods/canned-food/asset.svg"
+  },
+  {
+    "id": "bento-box",
+    "asset": "foods/bento-box/asset.svg"
+  },
+  {
+    "id": "rice-cracker",
+    "asset": "foods/rice-cracker/asset.svg"
+  },
+  {
+    "id": "rice-ball",
+    "asset": "foods/rice-ball/asset.svg"
+  },
+  {
+    "id": "cooked-rice",
+    "asset": "foods/cooked-rice/asset.svg"
+  },
+  {
+    "id": "curry-rice",
+    "asset": "foods/curry-rice/asset.svg"
+  },
+  {
+    "id": "steaming-bowl",
+    "asset": "foods/steaming-bowl/asset.svg"
+  },
+  {
+    "id": "spaghetti",
+    "asset": "foods/spaghetti/asset.svg"
+  },
+  {
+    "id": "roasted-sweet-potato",
+    "asset": "foods/roasted-sweet-potato/asset.svg"
+  },
+  {
+    "id": "oden",
+    "asset": "foods/oden/asset.svg"
+  },
+  {
+    "id": "sushi",
+    "asset": "foods/sushi/asset.svg"
+  },
+  {
+    "id": "fried-shrimp",
+    "asset": "foods/fried-shrimp/asset.svg"
+  },
+  {
+    "id": "fish-cake-with-swirl",
+    "asset": "foods/fish-cake-with-swirl/asset.svg"
+  },
+  {
+    "id": "moon-cake",
+    "asset": "foods/moon-cake/asset.svg"
+  },
+  {
+    "id": "dango",
+    "asset": "foods/dango/asset.svg"
+  },
+  {
+    "id": "dumpling",
+    "asset": "foods/dumpling/asset.svg"
+  },
+  {
+    "id": "fortune-cookie",
+    "asset": "foods/fortune-cookie/asset.svg"
+  },
+  {
+    "id": "takeout-box",
+    "asset": "foods/takeout-box/asset.svg"
+  },
+  {
+    "id": "soft-ice-cream",
+    "asset": "foods/soft-ice-cream/asset.svg"
+  },
+  {
+    "id": "shaved-ice",
+    "asset": "foods/shaved-ice/asset.svg"
+  },
+  {
+    "id": "ice-cream",
+    "asset": "foods/ice-cream/asset.svg"
+  },
+  {
+    "id": "doughnut",
+    "asset": "foods/doughnut/asset.svg"
+  },
+  {
+    "id": "cookie",
+    "asset": "foods/cookie/asset.svg"
+  },
+  {
+    "id": "birthday-cake",
+    "asset": "foods/birthday-cake/asset.svg"
+  },
+  {
+    "id": "shortcake",
+    "asset": "foods/shortcake/asset.svg"
+  },
+  {
+    "id": "cupcake",
+    "asset": "foods/cupcake/asset.svg"
+  },
+  {
+    "id": "pie",
+    "asset": "foods/pie/asset.svg"
+  },
+  {
+    "id": "chocolate-bar",
+    "asset": "foods/chocolate-bar/asset.svg"
+  },
+  {
+    "id": "candy",
+    "asset": "foods/candy/asset.svg"
+  },
+  {
+    "id": "lollipop",
+    "asset": "foods/lollipop/asset.svg"
+  },
+  {
+    "id": "custard",
+    "asset": "foods/custard/asset.svg"
+  },
+  {
+    "id": "honey-pot",
+    "asset": "foods/honey-pot/asset.svg"
+  },
+  {
+    "id": "half-orange-fruit",
+    "asset": "foods/half-orange-fruit/asset.svg"
+  },
+  {
+    "id": "maultasche",
+    "asset": "foods/maultasche/asset.svg"
+  },
+  {
+    "id": "lentils-with-spaetzle",
+    "asset": "foods/lentils-with-spaetzle/asset.svg"
+  },
+  {
+    "id": "pretzel",
+    "asset": "foods/pretzel/asset.svg"
+  },
+  {
+    "id": "pomegranate",
+    "asset": "foods/pomegranate/asset.svg"
+  },
+  {
+    "id": "latte-macchiato",
+    "asset": "foods/latte-macchiato/asset.svg"
+  },
+  {
+    "id": "roasted-coffee-bean",
+    "asset": "foods/roasted-coffee-bean/asset.svg"
+  },
+  {
+    "id": "cake",
+    "asset": "foods/cake/asset.svg"
+  },
+  {
+    "id": "champignon-brown",
+    "asset": "foods/champignon-brown/asset.svg"
+  },
+  {
+    "id": "champignon-white",
+    "asset": "foods/champignon-white/asset.svg"
+  },
+  {
+    "id": "boule-bread",
+    "asset": "foods/boule-bread/asset.svg"
+  },
+  {
+    "id": "glass-bottle",
+    "asset": "foods/glass-bottle/asset.svg"
+  },
+  {
+    "id": "plastic-bottle",
+    "asset": "foods/plastic-bottle/asset.svg"
+  },
+  {
+    "id": "jar-with-red-content",
+    "asset": "foods/jar-with-red-content/asset.svg"
+  },
+  {
+    "id": "jar-with-blue-content",
+    "asset": "foods/jar-with-blue-content/asset.svg"
+  },
+  {
+    "id": "jar-with-orange-content",
+    "asset": "foods/jar-with-orange-content/asset.svg"
+  },
+  {
+    "id": "jar-with-yellow-content",
+    "asset": "foods/jar-with-yellow-content/asset.svg"
+  },
+  {
+    "id": "jar-with-green-content",
+    "asset": "foods/jar-with-green-content/asset.svg"
+  },
+  {
+    "id": "jar-with-purple-content",
+    "asset": "foods/jar-with-purple-content/asset.svg"
+  },
+  {
+    "id": "jar-with-brown-content",
+    "asset": "foods/jar-with-brown-content/asset.svg"
+  }
+]

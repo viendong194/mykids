@@ -1,0 +1,18 @@
+{
+  "id": "peanuts",
+  "name": "peanuts",
+  "category": "vegetables",
+  "subgroup": "food-vegetable",
+  "translations": {
+    "en": "peanuts",
+    "vi": "peanuts",
+    "ja": "peanuts",
+    "zh": "peanuts"
+  },
+  "tags": [
+    "food",
+    "nut",
+    "peanut",
+    "vegetable"
+  ]
+}

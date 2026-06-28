@@ -1,0 +1,17 @@
+{
+  "id": "green-apple",
+  "name": "green apple",
+  "category": "fruits",
+  "subgroup": "food-fruit",
+  "translations": {
+    "en": "green apple",
+    "vi": "Táo xanh",
+    "ja": "みどりのりんご",
+    "zh": "青苹果"
+  },
+  "tags": [
+    "apple",
+    "fruit",
+    "green"
+  ]
+}

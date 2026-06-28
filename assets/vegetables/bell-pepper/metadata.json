@@ -1,0 +1,19 @@
+{
+  "id": "bell-pepper",
+  "name": "bell pepper",
+  "category": "vegetables",
+  "subgroup": "food-vegetable",
+  "translations": {
+    "en": "bell pepper",
+    "vi": "Ớt chuông",
+    "ja": "ピーマン",
+    "zh": "彩椒"
+  },
+  "tags": [
+    "bell",
+    "capsicum",
+    "food",
+    "pepper",
+    "vegetable"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "canned-food",
+  "name": "canned food",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "canned food",
+    "vi": "canned food",
+    "ja": "canned food",
+    "zh": "canned food"
+  },
+  "tags": [
+    "can",
+    "canned",
+    "food"
+  ]
+}

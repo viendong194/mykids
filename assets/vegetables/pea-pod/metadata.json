@@ -1,0 +1,23 @@
+{
+  "id": "pea-pod",
+  "name": "pea pod",
+  "category": "vegetables",
+  "subgroup": "food-vegetable",
+  "translations": {
+    "en": "pea pod",
+    "vi": "pea pod",
+    "ja": "pea pod",
+    "zh": "pea pod"
+  },
+  "tags": [
+    "beans",
+    "beanstalk",
+    "edamame",
+    "legume",
+    "pea",
+    "pod",
+    "soybean",
+    "vegetable",
+    "veggie"
+  ]
+}

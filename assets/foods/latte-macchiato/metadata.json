@@ -1,0 +1,13 @@
+{
+  "id": "latte-macchiato",
+  "name": "latte macchiato",
+  "category": "foods",
+  "subgroup": "food-drink",
+  "translations": {
+    "en": "latte macchiato",
+    "vi": "latte macchiato",
+    "ja": "latte macchiato",
+    "zh": "latte macchiato"
+  },
+  "tags": []
+}

@@ -1,0 +1,21 @@
+{
+  "id": "flatbread",
+  "name": "flatbread",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "flatbread",
+    "vi": "flatbread",
+    "ja": "flatbread",
+    "zh": "flatbread"
+  },
+  "tags": [
+    "arepa",
+    "bread",
+    "food",
+    "gordita",
+    "lavash",
+    "naan",
+    "pita"
+  ]
+}

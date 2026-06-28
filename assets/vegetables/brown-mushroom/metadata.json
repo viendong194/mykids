@@ -1,0 +1,30 @@
+{
+  "id": "brown-mushroom",
+  "name": "brown mushroom",
+  "category": "vegetables",
+  "subgroup": "food-vegetable",
+  "translations": {
+    "en": "brown mushroom",
+    "vi": "brown mushroom",
+    "ja": "brown mushroom",
+    "zh": "brown mushroom"
+  },
+  "tags": [
+    "food",
+    "fungi",
+    "fungus",
+    "mushroom",
+    "nature",
+    "pizza",
+    "portobello",
+    "shiitake",
+    "shroom",
+    "spore",
+    "sprout",
+    "toppings",
+    "truffle",
+    "vegetable",
+    "vegetarian",
+    "veggie"
+  ]
+}

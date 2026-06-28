@@ -1,0 +1,19 @@
+{
+  "id": "hamburger",
+  "name": "hamburger",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "hamburger",
+    "vi": "Bánh hamburger",
+    "ja": "ハンバーガー",
+    "zh": "汉堡"
+  },
+  "tags": [
+    "burger",
+    "eat",
+    "fast",
+    "food",
+    "hungry"
+  ]
+}

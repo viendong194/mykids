@@ -1,0 +1,80 @@
+[
+  {
+    "id": "alpha_vi_46_01",
+    "type": "tap",
+    "correct": "C",
+    "options": ["C", "T", "M", "H"],
+    "voiceText": "Chữ cái nào bắt đầu cho từ con cá nhỉ?",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "fish", "count": 1 },
+        { "type": "text", "value": "C Á" }
+      ]
+    }
+  },
+  {
+    "id": "alpha_vi_46_02",
+    "type": "tap",
+    "correct": "T",
+    "options": ["T", "A", "O", "B"],
+    "voiceText": "Bé hãy tìm chữ cái đầu tiên của quả táo nhé",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "red-apple", "count": 1 },
+        { "type": "text", "value": "T Á O" }
+      ]
+    }
+  },
+  {
+    "id": "alpha_vi_46_03",
+    "type": "tap",
+    "correct": "M",
+    "options": ["M", "L", "N", "V"],
+    "voiceText": "Chữ cái nào bắt đầu cho từ con mèo nào bé?",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "cat", "count": 1 },
+        { "type": "text", "value": "M È O" }
+      ]
+    }
+  },
+  {
+    "id": "alpha_vi_46_04",
+    "type": "tap",
+    "correct": "V",
+    "options": ["V", "X", "H", "K"],
+    "voiceText": "Đâu là chữ cái đầu tiên của từ con voi?",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "elephant", "count": 1 },
+        { "type": "text", "value": "V O I" }
+      ]
+    }
+  },
+  {
+    "id": "alpha_vi_46_05",
+    "type": "tap",
+    "correct": "K",
+    "options": ["K", "Q", "I", "T"],
+    "voiceText": "Bé hãy tìm chữ cái bắt đầu cho từ con kiến nào",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "ant", "count": 1 },
+        { "type": "text", "value": "K I Ế N" }
+      ]
+    }
+  },
+  {
+    "id": "alpha_vi_46_06",
+    "type": "tap",
+    "correct": "N",
+    "options": ["N", "M", "U", "D"],
+    "voiceText": "Hãy tìm chữ cái đầu tiên của quả nho nhé",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "grapes", "count": 1 },
+        { "type": "text", "value": "N H O" }
+      ]
+    }
+  }
+]

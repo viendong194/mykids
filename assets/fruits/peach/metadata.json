@@ -1,0 +1,15 @@
+{
+  "id": "peach",
+  "name": "peach",
+  "category": "fruits",
+  "subgroup": "food-fruit",
+  "translations": {
+    "en": "peach",
+    "vi": "Quả đào",
+    "ja": "もも",
+    "zh": "桃子"
+  },
+  "tags": [
+    "fruit"
+  ]
+}

@@ -9,7 +9,7 @@ import { HeaderUI } from '../components/HeaderUI';
 import { VictoryOverlay } from '../components/VictoryOverlay';
 import { AssetLoader } from '../utils/AssetLoader';
 import { SVG_ASSETS } from '../assets/SVGs';
-import { generateRound } from '../services/LevelGenerator';
+import { generateRoundForCategory, getTranslation } from '../services/LevelGenerator';
 import type { LevelData } from '../types/engine';
 
 export class GameScene extends Phaser.Scene {
@@ -94,32 +94,39 @@ export class GameScene extends Phaser.Scene {
       let lang = languageManager.getLanguage();
       let age = this.selectedAge;
       
-      // 1. Cố gắng fetch theo ngôn ngữ và độ tuổi bé chọn
-      let response = await fetch(`/content/${lang}/${age}/${this.selectedCategory}.json`);
-      let contentType = response.headers.get("content-type");
+      const autoGenCategories = ['animals', 'insects', 'fruits', 'foods'];
       
-      // 2. Nếu không có cấu hình ngôn ngữ này, chuyển sang Tiếng Anh của tuổi này
-      if (!response.ok || !contentType || !contentType.includes("application/json")) {
-        console.warn(`Level config for '${lang}' and age '${age}' not found. Falling back to English.`);
-        lang = 'en';
-        response = await fetch(`/content/en/${age}/${this.selectedCategory}.json`);
-        contentType = response.headers.get("content-type");
+      if (autoGenCategories.includes(this.selectedCategory)) {
+        // Tự sinh màn chơi ngẫu nhiên
+        this.levels = generateRoundForCategory(this.selectedCategory, 6, lang);
+        this.currentLevelIndex = 0;
+      } else {
+        // 1. Cố gắng fetch theo ngôn ngữ và độ tuổi bé chọn
+        let response = await fetch(`/content/${lang}/${age}/${this.selectedCategory}.json`);
+        let contentType = response.headers.get("content-type");
         
-        // 3. Nếu Tiếng Anh tuổi này cũng chưa có, chuyển về Tiếng Anh của nhóm tuổi mặc định 2-3
+        // 2. Nếu không có cấu hình ngôn ngữ này, chuyển sang Tiếng Anh của tuổi này
         if (!response.ok || !contentType || !contentType.includes("application/json")) {
-          console.warn(`English config for age '${age}' not found. Falling back to Age 2-3.`);
-          age = '2-3';
-          response = await fetch(`/content/en/2-3/${this.selectedCategory}.json`);
+          console.warn(`Level config for '${lang}' and age '${age}' not found. Falling back to English.`);
+          lang = 'en';
+          response = await fetch(`/content/en/${age}/${this.selectedCategory}.json`);
           contentType = response.headers.get("content-type");
           
+          // 3. Nếu Tiếng Anh tuổi này cũng chưa có, chuyển về Tiếng Anh của nhóm tuổi mặc định 2-3
           if (!response.ok || !contentType || !contentType.includes("application/json")) {
-            throw new Error(`Failed to load any level config: ${response.status}`);
+            console.warn(`English config for age '${age}' not found. Falling back to Age 2-3.`);
+            age = '2-3';
+            response = await fetch(`/content/en/2-3/${this.selectedCategory}.json`);
+            contentType = response.headers.get("content-type");
+            
+            if (!response.ok || !contentType || !contentType.includes("application/json")) {
+              throw new Error(`Failed to load any level config: ${response.status}`);
+            }
           }
         }
+        this.levels = await response.json();
+        this.currentLevelIndex = 0;
       }
-      
-      this.levels = await response.json();
-      this.currentLevelIndex = 0;
 
       // Thu thập toàn bộ key ảnh Base64 được sử dụng trong các màn
       const categoryAssets: Record<string, string> = {};
@@ -175,27 +182,56 @@ export class GameScene extends Phaser.Scene {
       let lang = languageManager.getLanguage();
       let age = this.selectedAge;
       
-      let response = await fetch(`/content/${lang}/${age}/${this.selectedCategory}.json`);
-      let contentType = response.headers.get("content-type");
+      const autoGenCategories = ['animals', 'insects', 'fruits', 'foods'];
       
-      if (!response.ok || !contentType || !contentType.includes("application/json")) {
-        console.warn(`Reload level config for '${lang}' failed. Falling back to English.`);
-        lang = 'en';
-        response = await fetch(`/content/en/${age}/${this.selectedCategory}.json`);
-        contentType = response.headers.get("content-type");
+      if (autoGenCategories.includes(this.selectedCategory)) {
+        // Tự cập nhật lại câu đọc (voiceText) tương ứng ngôn ngữ mới mà không cần fetch
+        this.levels.forEach((lvl: any) => {
+          let voicePrefix = '';
+          if (lang === 'vi') {
+            if (this.selectedCategory === 'animals') voicePrefix = 'Hãy chạm vào con';
+            else if (this.selectedCategory === 'insects') voicePrefix = 'Bé hãy tìm con';
+            else if (this.selectedCategory === 'fruits') voicePrefix = 'Bé hãy tìm';
+            else if (this.selectedCategory === 'foods') voicePrefix = 'Bé hãy chọn';
+            else voicePrefix = 'Hãy chạm vào';
+          } else {
+            voicePrefix = 'Tap the';
+          }
+
+          const name = getTranslation(lvl.correct, lang);
+          let cleanName = name;
+          if (lang === 'vi') {
+            if (cleanName.toLowerCase().startsWith('con ')) {
+              if (this.selectedCategory === 'animals' || this.selectedCategory === 'insects') {
+                cleanName = cleanName.substring(4);
+              }
+            }
+          }
+          lvl.voiceText = `${voicePrefix} ${cleanName}`;
+        });
+      } else {
+        let response = await fetch(`/content/${lang}/${age}/${this.selectedCategory}.json`);
+        let contentType = response.headers.get("content-type");
         
         if (!response.ok || !contentType || !contentType.includes("application/json")) {
-          console.warn(`Reload English config for '${age}' failed. Falling back to Age 2-3.`);
-          age = '2-3';
-          response = await fetch(`/content/en/2-3/${this.selectedCategory}.json`);
+          console.warn(`Reload level config for '${lang}' failed. Falling back to English.`);
+          lang = 'en';
+          response = await fetch(`/content/en/${age}/${this.selectedCategory}.json`);
           contentType = response.headers.get("content-type");
+          
           if (!response.ok || !contentType || !contentType.includes("application/json")) {
-            return;
+            console.warn(`Reload English config for '${age}' failed. Falling back to Age 2-3.`);
+            age = '2-3';
+            response = await fetch(`/content/en/2-3/${this.selectedCategory}.json`);
+            contentType = response.headers.get("content-type");
+            if (!response.ok || !contentType || !contentType.includes("application/json")) {
+              return;
+            }
           }
         }
+        this.levels = await response.json();
       }
 
-      this.levels = await response.json();
       // Cập nhật lại voiceText cho engine hiện tại mà không mất tiến trình chơi
       if (this.currentEngine && this.levels[this.currentLevelIndex]) {
         this.currentEngine.updateLevelData(this.levels[this.currentLevelIndex]);
@@ -323,9 +359,10 @@ export class GameScene extends Phaser.Scene {
    * - Các chủ đề khác: Tải lại file JSON gốc và xáo trộn ngẫu nhiên thứ tự.
    */
   private async generateNewGame() {
-    if (this.selectedCategory === 'animals') {
+    const autoGenCategories = ['animals', 'insects', 'fruits', 'foods'];
+    if (autoGenCategories.includes(this.selectedCategory)) {
       const lang = languageManager.getLanguage();
-      this.levels = generateRound(6, lang);
+      this.levels = generateRoundForCategory(this.selectedCategory, 6, lang);
       this.currentLevelIndex = 0;
 
       // Thu thập asset cần load

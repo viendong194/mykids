@@ -1,0 +1,19 @@
+{
+  "id": "shallow-pan-of-food",
+  "name": "shallow pan of food",
+  "category": "foods",
+  "subgroup": "food-prepared",
+  "translations": {
+    "en": "shallow pan of food",
+    "vi": "shallow pan of food",
+    "ja": "shallow pan of food",
+    "zh": "shallow pan of food"
+  },
+  "tags": [
+    "casserole",
+    "food",
+    "paella",
+    "pan",
+    "shallow"
+  ]
+}

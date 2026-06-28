@@ -1,0 +1,13 @@
+{
+  "id": "jar-with-purple-content",
+  "name": "jar with purple content",
+  "category": "foods",
+  "subgroup": "food-drink",
+  "translations": {
+    "en": "jar with purple content",
+    "vi": "jar with purple content",
+    "ja": "jar with purple content",
+    "zh": "jar with purple content"
+  },
+  "tags": []
+}

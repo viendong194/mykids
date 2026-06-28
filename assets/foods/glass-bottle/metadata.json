@@ -1,0 +1,13 @@
+{
+  "id": "glass-bottle",
+  "name": "glass bottle",
+  "category": "foods",
+  "subgroup": "food-drink",
+  "translations": {
+    "en": "glass bottle",
+    "vi": "glass bottle",
+    "ja": "glass bottle",
+    "zh": "glass bottle"
+  },
+  "tags": []
+}
