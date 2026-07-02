@@ -2,54 +2,98 @@ import Phaser from 'phaser';
 import { SVG_ASSETS } from '../assets/SVGs';
 
 /**
- * Xây dựng URL tuyệt đối từ đường dẫn tương đối, căn cứ vào base URL của app.
+ * Rasterize một SVG text string lên Canvas 256×256,
+ * sau đó thêm trực tiếp vào Phaser texture cache.
+ * Trả về true nếu thành công.
  */
-function resolveUrl(relativePath: string): string {
-  const base = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
-  const cleanPath = relativePath.replace(/^\.\//, '').replace(/^\//, '');
-  return `${base}/${cleanPath}`;
+function addSvgTextureFromString(
+  textures: Phaser.Textures.TextureManager,
+  key: string,
+  svgText: string,
+  size = 256
+): Promise<boolean> {
+  return new Promise((resolve) => {
+    const encoded = encodeURIComponent(svgText);
+    const dataUrl = `data:image/svg+xml;charset=utf-8,${encoded}`;
+
+    const img = new Image();
+    img.width = size;
+    img.height = size;
+
+    img.onload = () => {
+      try {
+        const canvas = document.createElement('canvas');
+        canvas.width = size;
+        canvas.height = size;
+        const ctx = canvas.getContext('2d')!;
+        ctx.drawImage(img, 0, 0, size, size);
+
+        if (!textures.exists(key)) {
+          textures.addCanvas(key, canvas);
+        }
+        resolve(true);
+      } catch (e) {
+        console.warn(`⚠️ SVG canvas render failed for "${key}":`, e);
+        resolve(false);
+      }
+    };
+
+    img.onerror = (e) => {
+      console.warn(`⚠️ SVG img load failed for "${key}":`, e);
+      resolve(false);
+    };
+
+    img.src = dataUrl;
+  });
 }
 
 /**
- * Fetch SVG bằng ArrayBuffer, validate byte-level, trả về blob URL.
- * Nếu server trả về HTML (SPA redirect/404) → bytes đầu không phải '<sv' → trả về null.
+ * Fetch SVG text từ URL tuyệt đối và trả về chuỗi text SVG.
+ * Validate rằng response thực sự là SVG (không phải HTML redirect).
  */
-async function fetchSvgAsBlobUrl(url: string): Promise<string | null> {
+async function fetchSvgText(absoluteUrl: string): Promise<string | null> {
   try {
-    const response = await fetch(url);
-    if (!response.ok) {
-      console.warn(`⚠️ BootScene: HTTP ${response.status} for ${url}`);
+    const res = await fetch(absoluteUrl);
+    if (!res.ok) {
+      console.warn(`⚠️ HTTP ${res.status}: ${absoluteUrl}`);
       return null;
     }
-
-    const buffer = await response.arrayBuffer();
-    const bytes = new Uint8Array(buffer);
-
-    // Validate byte-level: SVG bắt đầu bằng '<sv' hoặc '<?x', HTML bắt đầu bằng '<!D' hoặc '<ht'
-    const first3 = String.fromCharCode(bytes[0], bytes[1], bytes[2]);
-    if (first3 !== '<sv' && first3 !== '<?x') {
-      console.warn(`⚠️ BootScene: Not SVG at ${url} (starts with "${first3}")`);
+    const text = await res.text();
+    // Byte-level check: SVG bắt đầu bằng '<sv' hoặc '<?x'
+    // HTML bắt đầu bằng '<!D' (<!DOCTYPE) hoặc '<ht'
+    const firstChars = text.trimStart().substring(0, 3);
+    if (firstChars !== '<sv' && firstChars !== '<?x') {
+      console.warn(`⚠️ Not SVG at ${absoluteUrl} (starts with "${firstChars}")`);
       return null;
     }
-
-    const blob = new Blob([buffer], { type: 'image/svg+xml' });
-    return URL.createObjectURL(blob);
-  } catch (err) {
-    console.error(`❌ BootScene: fetch failed for ${url}:`, err);
+    return text;
+  } catch (e) {
+    console.error(`❌ fetch failed: ${absoluteUrl}`, e);
     return null;
   }
 }
 
+/**
+ * Xây dựng URL tuyệt đối dựa trên window.location.origin.
+ * Luôn đúng bất kể BASE_URL hay routing.
+ */
+function toAbsoluteUrl(relativePath: string): string {
+  // Dùng window.location để construct URL tuyệt đối
+  // Ví dụ: 'assets/animals/ant/asset.svg' → 'https://mykids.viendong.online/assets/animals/ant/asset.svg'
+  const cleanPath = relativePath.replace(/^\.\//, '').replace(/^\//, '');
+  return `${window.location.origin}/${cleanPath}`;
+}
+
 export class BootScene extends Phaser.Scene {
   constructor() {
-    super('BootScene');
+    super({ key: 'BootScene' });
   }
 
   preload() {
     this.cameras.main.setBackgroundColor('#E3F2FD');
   }
 
-  async create() {
+  create() {
     const width = this.cameras.main.width;
     const height = this.cameras.main.height;
 
@@ -65,59 +109,61 @@ export class BootScene extends Phaser.Scene {
       progressBar.fillStyle(0x2196F3, 1);
       progressBar.fillRoundedRect(width / 2 - 150, height / 2 - 15, 300 * ratio, 30, 10);
     };
-
     updateProgress(0);
 
-    // Bước 1: Pre-fetch và validate tất cả SVG file-path → blob URL
+    // Chạy async loading trong background — KHÔNG dùng async create()
+    this._loadAllAssets(updateProgress).then(() => {
+      progressBar.destroy();
+      progressBox.destroy();
+      this.scene.start('MainMenuScene');
+    });
+
+  }
+
+  private async _loadAllAssets(onProgress: (ratio: number) => void): Promise<void> {
     const entries = Object.entries(SVG_ASSETS);
-    const resolvedAssets: Record<string, string> = {};
     let done = 0;
 
-    const fetchPromises = entries.map(async ([key, value]) => {
-      if (value.startsWith('data:') || value.startsWith('blob:')) {
-        // data URL inline → dùng thẳng
-        resolvedAssets[key] = value;
-      } else if (value.toLowerCase().endsWith('.svg') || value.toLowerCase().includes('.svg?')) {
-        // SVG file path → fetch với absolute URL, validate, tạo blob URL
-        const absoluteUrl = resolveUrl(value);
-        const blobUrl = await fetchSvgAsBlobUrl(absoluteUrl);
-        if (blobUrl) {
-          resolvedAssets[key] = blobUrl;
+    // Xử lý song song nhưng chia thành batches để tránh quá tải mạng
+    const BATCH_SIZE = 20;
+    for (let i = 0; i < entries.length; i += BATCH_SIZE) {
+      const batch = entries.slice(i, i + BATCH_SIZE);
+
+      await Promise.all(batch.map(async ([key, value]) => {
+        if (this.textures.exists(key)) {
+          // Texture đã tồn tại → bỏ qua
+        } else if (value.startsWith('data:')) {
+          // Inline data URL (flag, star, sound) → rasterize trực tiếp
+          await addSvgTextureFromString(this.textures, key, this._extractSvgFromDataUrl(value));
+        } else if (value.toLowerCase().endsWith('.svg') || value.toLowerCase().includes('.svg?')) {
+          // SVG file path → fetch text → rasterize
+          const absoluteUrl = toAbsoluteUrl(value);
+          const svgText = await fetchSvgText(absoluteUrl);
+          if (svgText) {
+            await addSvgTextureFromString(this.textures, key, svgText);
+          }
         }
-        // Nếu null → bỏ qua key này (không crash game)
-      } else {
-        resolvedAssets[key] = value;
+
+        done++;
+        onProgress(done / entries.length);
+      }));
+    }
+  }
+
+  /**
+   * Trích xuất SVG text từ data:image/svg+xml;base64,... URL
+   */
+  private _extractSvgFromDataUrl(dataUrl: string): string {
+    if (dataUrl.includes(';base64,')) {
+      const base64 = dataUrl.split(';base64,')[1];
+      try {
+        return decodeURIComponent(escape(atob(base64)));
+      } catch {
+        return atob(base64);
       }
-      done++;
-      updateProgress((done / entries.length) * 0.7); // 0-70% cho fetch phase
-    });
-
-    await Promise.all(fetchPromises);
-
-    // Bước 2: Nạp vào Phaser qua scene.load.image (KHÔNG dùng load.svg)
-    await new Promise<void>((resolve) => {
-      let needsLoad = false;
-
-      for (const [key, url] of Object.entries(resolvedAssets)) {
-        if (!this.textures.exists(key)) {
-          this.load.image(key, url);
-          needsLoad = true;
-        }
-      }
-
-      if (needsLoad) {
-        this.load.on('progress', (v: number) => updateProgress(0.7 + v * 0.3)); // 70-100%
-        this.load.once('complete', () => resolve());
-        this.load.start();
-      } else {
-        resolve();
-      }
-    });
-
-    progressBar.destroy();
-    progressBox.destroy();
-
-    // Chuyển sang màn hình Menu chính
-    this.scene.start('MainMenuScene');
+    }
+    // data:image/svg+xml,<url-encoded-svg>
+    const encoded = dataUrl.split(',')[1];
+    return decodeURIComponent(encoded ?? '');
   }
 }
