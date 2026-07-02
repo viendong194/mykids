@@ -12,6 +12,38 @@ import { SVG_ASSETS } from '../assets/SVGs';
 import { generateRoundForCategory, getTranslation } from '../services/LevelGenerator';
 import type { LevelData } from '../types/engine';
 
+/**
+ * Trộn ngẫu nhiên thứ tự các màn chơi (Fisher-Yates),
+ * và đồng thời trộn thứ tự choices/options trong từng màn.
+ * Giúp mỗi lần chơi cảm giác mới mẻ, không bị lặp lại.
+ */
+function shuffleLevels(levels: LevelData[]): LevelData[] {
+  // Shuffle thứ tự màn
+  const arr = [...levels];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+
+  // Shuffle choices/options bên trong mỗi màn
+  return arr.map((lvl: any) => {
+    const copy = { ...lvl };
+    // Tap levels: shuffle options[]
+    if (copy.options && Array.isArray(copy.options)) {
+      copy.options = [...copy.options].sort(() => Math.random() - 0.5);
+    }
+    // Match levels: shuffle choices[]
+    if (copy.choices && Array.isArray(copy.choices)) {
+      copy.choices = [...copy.choices].sort(() => Math.random() - 0.5);
+    }
+    // Drag levels: shuffle items[]
+    if (copy.items && Array.isArray(copy.items)) {
+      copy.items = [...copy.items].sort(() => Math.random() - 0.5);
+    }
+    return copy;
+  }) as LevelData[];
+}
+
 export class GameScene extends Phaser.Scene {
   private selectedAge: string = '2-3';
   private selectedCategory: string = 'animals';
@@ -124,8 +156,11 @@ export class GameScene extends Phaser.Scene {
             }
           }
         }
-        this.levels = await response.json();
+        const rawLevels: LevelData[] = await response.json();
+        // Shuffle thứ tự các màn để mỗi lần chơi không bị lặp lại cùng một thứ tự
+        this.levels = shuffleLevels(rawLevels);
         this.currentLevelIndex = 0;
+
       }
 
       // Thu thập toàn bộ key ảnh Base64 được sử dụng trong các màn
