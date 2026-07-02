@@ -1,0 +1,90 @@
+[
+  {
+    "id": "math_46_vi_01",
+    "type": "tap",
+    "correct": "5",
+    "options": ["3", "4", "5", "6"],
+    "voiceText": "Ba quả dâu tây cộng thêm hai quả dâu tây thì được mấy quả dâu tây hả bé?",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "strawberry", "count": 3 },
+        { "type": "text", "value": "+" },
+        { "type": "images", "asset": "strawberry", "count": 2 },
+        { "type": "text", "value": "= ?" }
+      ]
+    }
+  },
+  {
+    "id": "math_46_vi_02",
+    "type": "tap",
+    "correct": "2",
+    "options": ["1", "2", "3", "4"],
+    "voiceText": "Bốn chú chó bớt đi hai chú chó thì còn mấy chú chó nào?",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "dog", "count": 4 },
+        { "type": "text", "value": "-" },
+        { "type": "images", "asset": "dog", "count": 2 },
+        { "type": "text", "value": "= ?" }
+      ]
+    }
+  },
+  {
+    "id": "math_46_vi_03",
+    "type": "tap",
+    "correct": "4",
+    "options": ["3", "4", "5", "6"],
+    "voiceText": "Bé hãy tìm số tiếp theo trong dãy số nhé: 1, 2, 3...?",
+    "illustration": {
+      "items": [
+        { "type": "text", "value": "1 , 2 , 3 , ?" }
+      ]
+    }
+  },
+  {
+    "id": "math_46_vi_04",
+    "type": "tap",
+    "correct": "6",
+    "options": ["4", "5", "6", "7"],
+    "voiceText": "Hai chú thỏ cộng thêm bốn chú thỏ bằng mấy chú thỏ?",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "rabbit", "count": 2 },
+        { "type": "text", "value": "+" },
+        { "type": "images", "asset": "rabbit", "count": 4 },
+        { "type": "text", "value": "= ?" }
+      ]
+    }
+  },
+  {
+    "id": "math_46_vi_05",
+    "type": "tap",
+    "correct": "3",
+    "options": ["2", "3", "4", "5"],
+    "voiceText": "Sáu chú cá bớt đi ba chú cá thì còn mấy chú cá nhỉ?",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "fish", "count": 6 },
+        { "type": "text", "value": "-" },
+        { "type": "images", "asset": "fish", "count": 3 },
+        { "type": "text", "value": "= ?" }
+      ]
+    }
+  },
+  {
+    "id": "math_46_vi_06",
+    "type": "tap",
+    "correct": "red-apple",
+    "options": ["red-apple", "banana", "carrot"],
+    "voiceText": "Hình nào tiếp theo quy luật này: Táo, Chuối, Táo, Chuối...?",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "red-apple", "count": 1 },
+        { "type": "images", "asset": "banana", "count": 1 },
+        { "type": "images", "asset": "red-apple", "count": 1 },
+        { "type": "images", "asset": "banana", "count": 1 },
+        { "type": "text", "value": "-> ?" }
+      ]
+    }
+  }
+]

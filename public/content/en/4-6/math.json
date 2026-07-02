@@ -1,0 +1,90 @@
+[
+  {
+    "id": "math_46_en_01",
+    "type": "tap",
+    "correct": "5",
+    "options": ["3", "4", "5", "6"],
+    "voiceText": "Three strawberries plus two strawberries makes how many?",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "strawberry", "count": 3 },
+        { "type": "text", "value": "+" },
+        { "type": "images", "asset": "strawberry", "count": 2 },
+        { "type": "text", "value": "= ?" }
+      ]
+    }
+  },
+  {
+    "id": "math_46_en_02",
+    "type": "tap",
+    "correct": "2",
+    "options": ["1", "2", "3", "4"],
+    "voiceText": "Four dogs minus two dogs leaves how many dogs?",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "dog", "count": 4 },
+        { "type": "text", "value": "-" },
+        { "type": "images", "asset": "dog", "count": 2 },
+        { "type": "text", "value": "= ?" }
+      ]
+    }
+  },
+  {
+    "id": "math_46_en_03",
+    "type": "tap",
+    "correct": "4",
+    "options": ["3", "4", "5", "6"],
+    "voiceText": "What number comes next: 1, 2, 3, ...?",
+    "illustration": {
+      "items": [
+        { "type": "text", "value": "1 , 2 , 3 , ?" }
+      ]
+    }
+  },
+  {
+    "id": "math_46_en_04",
+    "type": "tap",
+    "correct": "6",
+    "options": ["4", "5", "6", "7"],
+    "voiceText": "Two rabbits plus four rabbits makes how many rabbits?",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "rabbit", "count": 2 },
+        { "type": "text", "value": "+" },
+        { "type": "images", "asset": "rabbit", "count": 4 },
+        { "type": "text", "value": "= ?" }
+      ]
+    }
+  },
+  {
+    "id": "math_46_en_05",
+    "type": "tap",
+    "correct": "3",
+    "options": ["2", "3", "4", "5"],
+    "voiceText": "Six fishes minus three fishes leaves how many?",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "fish", "count": 6 },
+        { "type": "text", "value": "-" },
+        { "type": "images", "asset": "fish", "count": 3 },
+        { "type": "text", "value": "= ?" }
+      ]
+    }
+  },
+  {
+    "id": "math_46_en_06",
+    "type": "tap",
+    "correct": "red-apple",
+    "options": ["red-apple", "banana", "carrot"],
+    "voiceText": "What comes next in the pattern: Apple, Banana, Apple, Banana...?",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "red-apple", "count": 1 },
+        { "type": "images", "asset": "banana", "count": 1 },
+        { "type": "images", "asset": "red-apple", "count": 1 },
+        { "type": "images", "asset": "banana", "count": 1 },
+        { "type": "text", "value": "-> ?" }
+      ]
+    }
+  }
+]

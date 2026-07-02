@@ -1,0 +1,77 @@
+[
+  {
+    "id": "math_23_zh_01",
+    "type": "tap",
+    "correct": "2",
+    "options": ["1", "2", "3"],
+    "voiceText": "一只熊加上一只熊是几只熊？",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "bear", "count": 1 },
+        { "type": "text", "value": "+" },
+        { "type": "images", "asset": "bear", "count": 1 },
+        { "type": "text", "value": "= ?" }
+      ]
+    }
+  },
+  {
+    "id": "math_23_zh_02",
+    "type": "tap",
+    "correct": "1",
+    "options": ["1", "2", "3"],
+    "voiceText": "两只猫减去一只猫还剩几只猫？",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "cat", "count": 2 },
+        { "type": "text", "value": "-" },
+        { "type": "images", "asset": "cat", "count": 1 },
+        { "type": "text", "value": "= ?" }
+      ]
+    }
+  },
+  {
+    "id": "math_23_zh_03",
+    "type": "tap",
+    "correct": "3",
+    "options": ["1", "2", "3"],
+    "voiceText": "两个苹果加上一个苹果是几个苹果？",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "red-apple", "count": 2 },
+        { "type": "text", "value": "+" },
+        { "type": "images", "asset": "red-apple", "count": 1 },
+        { "type": "text", "value": "= ?" }
+      ]
+    }
+  },
+  {
+    "id": "math_23_zh_04",
+    "type": "tap",
+    "correct": "2",
+    "options": ["1", "2", "3"],
+    "voiceText": "三根香蕉减去一根香蕉是几根香蕉？",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "banana", "count": 3 },
+        { "type": "text", "value": "-" },
+        { "type": "images", "asset": "banana", "count": 1 },
+        { "type": "text", "value": "= ?" }
+      ]
+    }
+  },
+  {
+    "id": "math_23_zh_05",
+    "type": "tap",
+    "correct": "3",
+    "options": ["1", "2", "3"],
+    "voiceText": "一只兔子加上两只兔子是几只兔子？",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "rabbit", "count": 1 },
+        { "type": "text", "value": "+" },
+        { "type": "images", "asset": "rabbit", "count": 2 },
+        { "type": "text", "value": "= ?" }
+      ]
+    }
+  }
+]

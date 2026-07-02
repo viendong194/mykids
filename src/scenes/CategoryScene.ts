@@ -212,7 +212,7 @@ export class CategoryScene extends Phaser.Scene {
         color: 0x7986CB,
         borderColor: 0x5C6BC0,
         asset: 'elephant',
-        supportedAges: ['6-8']
+        supportedAges: ['2-3', '4-6', '6-8']
       }
     ];
 

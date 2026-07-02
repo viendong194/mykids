@@ -1,0 +1,77 @@
+[
+  {
+    "id": "math_23_ja_01",
+    "type": "tap",
+    "correct": "2",
+    "options": ["1", "2", "3"],
+    "voiceText": "くま1頭に、くま1頭をたすと、なん頭になりますか？",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "bear", "count": 1 },
+        { "type": "text", "value": "+" },
+        { "type": "images", "asset": "bear", "count": 1 },
+        { "type": "text", "value": "= ?" }
+      ]
+    }
+  },
+  {
+    "id": "math_23_ja_02",
+    "type": "tap",
+    "correct": "1",
+    "options": ["1", "2", "3"],
+    "voiceText": "ねこ2匹から、ねこ1匹をひくと、なん匹になりますか？",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "cat", "count": 2 },
+        { "type": "text", "value": "-" },
+        { "type": "images", "asset": "cat", "count": 1 },
+        { "type": "text", "value": "= ?" }
+      ]
+    }
+  },
+  {
+    "id": "math_23_ja_03",
+    "type": "tap",
+    "correct": "3",
+    "options": ["1", "2", "3"],
+    "voiceText": "りんご2個に、りんご1個をたすと、なん個になりますか？",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "red-apple", "count": 2 },
+        { "type": "text", "value": "+" },
+        { "type": "images", "asset": "red-apple", "count": 1 },
+        { "type": "text", "value": "= ?" }
+      ]
+    }
+  },
+  {
+    "id": "math_23_ja_04",
+    "type": "tap",
+    "correct": "2",
+    "options": ["1", "2", "3"],
+    "voiceText": "バナナ3本から、バナナ1本をひくと、なん本になりますか？",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "banana", "count": 3 },
+        { "type": "text", "value": "-" },
+        { "type": "images", "asset": "banana", "count": 1 },
+        { "type": "text", "value": "= ?" }
+      ]
+    }
+  },
+  {
+    "id": "math_23_ja_05",
+    "type": "tap",
+    "correct": "3",
+    "options": ["1", "2", "3"],
+    "voiceText": "うさぎ1羽に、うさぎ2羽をたすと、なん羽になりますか？",
+    "illustration": {
+      "items": [
+        { "type": "images", "asset": "rabbit", "count": 1 },
+        { "type": "text", "value": "+" },
+        { "type": "images", "asset": "rabbit", "count": 2 },
+        { "type": "text", "value": "= ?" }
+      ]
+    }
+  }
+]
