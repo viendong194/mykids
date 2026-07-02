@@ -241,23 +241,16 @@ export class MainMenuScene extends Phaser.Scene {
    */
   private addHoverTween(image: Phaser.GameObjects.Image) {
     image.on('pointerover', () => {
-      this.tweens.add({
-        targets: image,
-        scaleX: 1.15,
-        scaleY: 1.15,
-        duration: 150,
-        ease: 'Power1'
-      });
+      const baseX = image.scaleX;
+      const baseY = image.scaleY;
+      image.setData('baseScaleX', baseX);
+      image.setData('baseScaleY', baseY);
+      this.tweens.add({ targets: image, scaleX: baseX * 1.15, scaleY: baseY * 1.15, duration: 150, ease: 'Back.easeOut' });
     });
-
     image.on('pointerout', () => {
-      this.tweens.add({
-        targets: image,
-        scaleX: 1.0,
-        scaleY: 1.0,
-        duration: 150,
-        ease: 'Power1'
-      });
+      const baseX = image.getData('baseScaleX') ?? image.scaleX;
+      const baseY = image.getData('baseScaleY') ?? image.scaleY;
+      this.tweens.add({ targets: image, scaleX: baseX, scaleY: baseY, duration: 150, ease: 'Sine.easeOut' });
     });
   }
 
