@@ -1,5 +1,7 @@
 export interface LanguageStrings {
   play: string;
+  play_2d: string;
+  play_3d: string;
   replay: string;
   well_done: string;
   excellent: string;
@@ -21,6 +23,8 @@ export interface LanguageStrings {
 export const TRANSLATIONS: Record<string, LanguageStrings> = {
   vi: {
     play: "CHƠI",
+    play_2d: "CHƠI 2D 🧩",
+    play_3d: "VƯỜN THÚ 3D 🦒",
     replay: "Chơi lại 🧸",
     well_done: "Giỏi lắm! 🌟",
     excellent: "Xuất sắc! 🎉",
@@ -40,6 +44,8 @@ export const TRANSLATIONS: Record<string, LanguageStrings> = {
   },
   en: {
     play: "PLAY",
+    play_2d: "PLAY 2D 🧩",
+    play_3d: "3D ZOO 🦒",
     replay: "Play again 🧸",
     well_done: "Well done! 🌟",
     excellent: "Excellent! 🎉",
@@ -59,6 +65,8 @@ export const TRANSLATIONS: Record<string, LanguageStrings> = {
   },
   zh: {
     play: "开始",
+    play_2d: "2D游戏 🧩",
+    play_3d: "3D动物园 🦒",
     replay: "再玩一次 🧸",
     well_done: "太棒了！🌟",
     excellent: "非常出色！🎉",
@@ -78,6 +86,8 @@ export const TRANSLATIONS: Record<string, LanguageStrings> = {
   },
   ja: {
     play: "あそぶ",
+    play_2d: "2Dゲーム 🧩",
+    play_3d: "3Dどうぶつえん 🦒",
     replay: "もういちど 🧸",
     well_done: "よくできたね！🌟",
     excellent: "すばらしい！🎉",

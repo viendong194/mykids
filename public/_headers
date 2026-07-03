@@ -18,3 +18,7 @@
 # JSON content configs: không cache để dễ cập nhật nội dung
 /content/**/*.json
   Cache-Control: no-cache
+
+# Model 3D (.glb): tên file không có hash nên cache vừa phải (1 ngày), không dùng immutable
+/assets/3d/**/*.glb
+  Cache-Control: public, max-age=86400

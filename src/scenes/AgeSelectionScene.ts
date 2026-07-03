@@ -14,9 +14,14 @@ export class AgeSelectionScene extends Phaser.Scene {
   private flagHighlights: Record<string, Phaser.GameObjects.Graphics> = {};
   private unsubscribeLang!: () => void;
   private lastOrientation: 'portrait' | 'landscape' | null = null;
+  private mode: 'game' | 'zoo3d' = 'game';
 
   constructor() {
     super('AgeSelectionScene');
+  }
+
+  init(data: { mode?: 'game' | 'zoo3d' }) {
+    this.mode = data?.mode === 'zoo3d' ? 'zoo3d' : 'game';
   }
 
   create() {
@@ -153,24 +158,30 @@ export class AgeSelectionScene extends Phaser.Scene {
   /**
    * Tạo lưới các nút tuổi (Responsive)
    */
+  private getAgeGroups(): AgeGroup[] {
+    // Vườn thú 3D hiện chỉ dành cho bé 2-5 tuổi, ẩn bớt nhóm 6-8
+    return this.mode === 'zoo3d' ? AGE_GROUPS.filter(g => g.id !== '6-8') : AGE_GROUPS;
+  }
+
   private createAgeButtons(width: number, height: number) {
     const isLandscape = width > height;
-    
+    const groups = this.getAgeGroups();
+
     const spacing = isLandscape ? 260 : 140;
-    const startIdx = -1; // Để căn giữa -1, 0, 1
+    const centerOffset = (groups.length - 1) / 2;
     const centerY = height * 0.56;
 
     const btnW = isLandscape ? 220 : Math.min(width * 0.85, 360);
     const btnH = isLandscape ? 240 : 100;
 
-    AGE_GROUPS.forEach((group: AgeGroup, idx: number) => {
+    groups.forEach((group: AgeGroup, idx: number) => {
       let bx = width / 2;
       let by = centerY;
 
       if (isLandscape) {
-        bx = width / 2 + (startIdx + idx) * spacing;
+        bx = width / 2 + (idx - centerOffset) * spacing;
       } else {
-        by = centerY - 100 + idx * spacing;
+        by = centerY + (idx - centerOffset) * spacing;
       }
 
       const container = this.add.container(bx, by);
@@ -215,10 +226,15 @@ export class AgeSelectionScene extends Phaser.Scene {
           duration: 100,
           yoyo: true,
           onComplete: () => {
-            // Lưu độ tuổi được chọn vào localStorage
-            localStorage.setItem('mykids_selected_age', group.id);
-            // Chuyển sang chọn chủ đề
-            this.scene.start('CategoryScene');
+            if (this.mode === 'zoo3d') {
+              // Luồng Vườn thú 3D: vào thẳng game, không dùng chung key tuổi của luồng 2D
+              this.scene.start('Zoo3DScene', { age: group.id });
+            } else {
+              // Lưu độ tuổi được chọn vào localStorage
+              localStorage.setItem('mykids_selected_age', group.id);
+              // Chuyển sang chọn chủ đề
+              this.scene.start('CategoryScene');
+            }
           }
         });
       });
@@ -302,7 +318,7 @@ export class AgeSelectionScene extends Phaser.Scene {
   private layoutExistingAgeButtons(width: number, height: number) {
     const isLandscape = width > height;
     const spacing = isLandscape ? 260 : 140;
-    const startIdx = -1;
+    const centerOffset = (this.ageButtons.length - 1) / 2;
     const centerY = height * 0.56;
 
     this.ageButtons.forEach((btn, idx) => {
@@ -310,9 +326,9 @@ export class AgeSelectionScene extends Phaser.Scene {
       let by = centerY;
 
       if (isLandscape) {
-        bx = width / 2 + (startIdx + idx) * spacing;
+        bx = width / 2 + (idx - centerOffset) * spacing;
       } else {
-        by = centerY - 100 + idx * spacing;
+        by = centerY + (idx - centerOffset) * spacing;
       }
 
       btn.setPosition(bx, by);

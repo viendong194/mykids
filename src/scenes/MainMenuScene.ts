@@ -6,8 +6,10 @@ import { ParentGate } from '../components/ParentGate';
 
 export class MainMenuScene extends Phaser.Scene {
   private titleText!: Phaser.GameObjects.Text;
-  private playText!: Phaser.GameObjects.Text;
-  private playButton!: Phaser.GameObjects.Container;
+  private play2dText!: Phaser.GameObjects.Text;
+  private play3dText!: Phaser.GameObjects.Text;
+  private play2dButton!: Phaser.GameObjects.Container;
+  private play3dButton!: Phaser.GameObjects.Container;
   private soundButton!: Phaser.GameObjects.Image;
   private flagVi!: Phaser.GameObjects.Image;
   private flagEn!: Phaser.GameObjects.Image;
@@ -33,8 +35,9 @@ export class MainMenuScene extends Phaser.Scene {
     // Tạo các bong bóng trôi nổi phía sau làm nền động đáng yêu
     this.createFloatingBubbles(width, height);
 
-    // 2. Tạo Texture cho nút PLAY (để không cần dùng file ảnh lớn)
-    this.createPlayButtonTexture();
+    // 2. Tạo Texture cho 2 nút vào game (để không cần dùng file ảnh lớn)
+    this.createPlayButtonTexture('play_btn_skin_2d', 0xFF7043);
+    this.createPlayButtonTexture('play_btn_skin_3d', 0x00ACC1);
 
     // 3. Khởi tạo nút MUTE/SOUND (Góc trái)
     const soundKey = audioManager.isMuted() ? 'sound_off' : 'sound_on';
@@ -90,53 +93,16 @@ export class MainMenuScene extends Phaser.Scene {
       shadow: { color: '#FFFFFF', blur: 15, stroke: true, fill: true }
     }).setOrigin(0.5);
 
-    // 6. Nút PLAY Khổng Lồ
-    this.playButton = this.add.container(width / 2, height * 0.65);
-    
-    const playBg = this.add.image(0, 0, 'play_btn_skin')
-      .setDisplaySize(240, 100)
-      .setInteractive({ useHandCursor: true });
+    // 6. Hai nút vào game: Chơi 2D (luồng hiện tại) và Vườn thú 3D (luồng mới)
+    const btn2d = this.createModeButton('play_btn_skin_2d', 'game');
+    this.play2dButton = btn2d.container;
+    this.play2dText = btn2d.text;
 
-    this.playText = this.add.text(0, -2, '', {
-      fontFamily: 'Fredoka, sans-serif',
-      fontSize: '38px',
-      fontStyle: '900',
-      color: '#FFFFFF',
-      shadow: { color: '#E65100', blur: 6, fill: true, stroke: true }
-    }).setOrigin(0.5);
+    const btn3d = this.createModeButton('play_btn_skin_3d', 'zoo3d');
+    this.play3dButton = btn3d.container;
+    this.play3dText = btn3d.text;
 
-    this.playButton.add([playBg, this.playText]);
-
-    // Hiệu ứng nhún nhảy (bouncing) cực kỳ đáng yêu cho nút Play
-    this.tweens.add({
-      targets: this.playButton,
-      scaleX: 1.1,
-      scaleY: 1.1,
-      duration: 800,
-      yoyo: true,
-      repeat: -1,
-      ease: 'Sine.easeInOut'
-    });
-
-    // Nhấn PLAY để bắt đầu game
-    playBg.on('pointerdown', () => {
-      // Bắt buộc kích hoạt AudioContext trong gesture người dùng
-      audioManager.init();
-      audioManager.playTap();
-
-      // Hiệu ứng phóng to nhẹ khi nhấn
-      this.tweens.add({
-        targets: this.playButton,
-        scaleX: 0.9,
-        scaleY: 0.9,
-        duration: 100,
-        yoyo: true,
-        repeat: 0,
-        onComplete: () => {
-          this.scene.start('AgeSelectionScene');
-        }
-      });
-    });
+    this.layoutModeButtons(width, height);
 
     // 6.5. Tạo nút Phụ huynh ở góc dưới bên trái
     this.createParentButton(height);
@@ -168,7 +134,7 @@ export class MainMenuScene extends Phaser.Scene {
       this.updateLanguageHighlights();
 
       this.titleText.setPosition(w / 2, h * 0.3);
-      this.playButton.setPosition(w / 2, h * 0.65);
+      this.layoutModeButtons(w, h);
       this.parentButton.setPosition(90, h - 55);
     };
 
@@ -210,30 +176,103 @@ export class MainMenuScene extends Phaser.Scene {
   }
 
   /**
-   * Tạo da (skin) cho nút Play bằng Phaser Graphics
+   * Tạo da (skin) bo tròn dùng chung cho các nút vào game (2D / 3D)
    */
-  private createPlayButtonTexture() {
-    if (this.textures.exists('play_btn_skin')) return;
+  private createPlayButtonTexture(key: string, color: number) {
+    if (this.textures.exists(key)) return;
 
-    const width = 260;
-    const height = 110;
+    const width = 240;
+    const height = 100;
     const graphics = this.make.graphics({ x: 0, y: 0 });
 
     // Tạo bóng mờ phía dưới
-    graphics.fillStyle(0xE65100, 0.5);
-    graphics.fillRoundedRect(5, 5, width, height, 40);
+    graphics.fillStyle(0x000000, 0.25);
+    graphics.fillRoundedRect(5, 5, width, height, 36);
 
-    // Nền chính của nút (Màu cam rực rỡ)
-    graphics.fillStyle(0xFF7043, 1);
-    graphics.fillRoundedRect(0, 0, width, height, 40);
+    // Nền chính của nút
+    graphics.fillStyle(color, 1);
+    graphics.fillRoundedRect(0, 0, width, height, 36);
 
     // Viền trắng nổi bật
     graphics.lineStyle(5, 0xFFFFFF, 1);
-    graphics.strokeRoundedRect(0, 0, width, height, 40);
+    graphics.strokeRoundedRect(0, 0, width, height, 36);
 
     // Xuất ra thành texture dạng ảnh
-    graphics.generateTexture('play_btn_skin', width + 10, height + 10);
+    graphics.generateTexture(key, width + 10, height + 10);
     graphics.destroy();
+  }
+
+  /**
+   * Tạo 1 nút tròn to để bé chọn lối chơi (2D hoặc Vườn thú 3D)
+   */
+  private createModeButton(skinKey: string, mode: 'game' | 'zoo3d'): { container: Phaser.GameObjects.Container; text: Phaser.GameObjects.Text } {
+    const container = this.add.container(0, 0);
+
+    const bg = this.add.image(0, 0, skinKey)
+      .setDisplaySize(220, 92)
+      .setInteractive({ useHandCursor: true });
+
+    const text = this.add.text(0, -2, '', {
+      fontFamily: 'Fredoka, sans-serif',
+      fontSize: '24px',
+      fontStyle: '900',
+      color: '#FFFFFF',
+      align: 'center',
+      wordWrap: { width: 190 },
+      shadow: { color: '#00000055', blur: 6, fill: true, stroke: true }
+    }).setOrigin(0.5);
+
+    container.add([bg, text]);
+
+    // Hiệu ứng nhún nhảy (bouncing) cực kỳ đáng yêu
+    this.tweens.add({
+      targets: container,
+      scaleX: 1.08,
+      scaleY: 1.08,
+      duration: 800,
+      yoyo: true,
+      repeat: -1,
+      ease: 'Sine.easeInOut'
+    });
+
+    bg.on('pointerdown', () => {
+      // Bắt buộc kích hoạt AudioContext trong gesture người dùng
+      audioManager.init();
+      audioManager.playTap();
+
+      this.tweens.add({
+        targets: container,
+        scaleX: 0.9,
+        scaleY: 0.9,
+        duration: 100,
+        yoyo: true,
+        onComplete: () => {
+          this.scene.start('AgeSelectionScene', { mode });
+        }
+      });
+    });
+
+    return { container, text };
+  }
+
+  /**
+   * Sắp xếp 2 nút vào game theo chiều ngang (landscape) hoặc chồng dọc (portrait)
+   */
+  private layoutModeButtons(width: number, height: number) {
+    if (!this.play2dButton || !this.play3dButton) return;
+
+    const isLandscape = width > height;
+    const centerY = height * 0.65;
+
+    if (isLandscape) {
+      const gap = 250;
+      this.play2dButton.setPosition(width / 2 - gap / 2, centerY);
+      this.play3dButton.setPosition(width / 2 + gap / 2, centerY);
+    } else {
+      const gap = 130;
+      this.play2dButton.setPosition(width / 2, centerY - gap / 2);
+      this.play3dButton.setPosition(width / 2, centerY + gap / 2);
+    }
   }
 
   /**
@@ -288,8 +327,11 @@ export class MainMenuScene extends Phaser.Scene {
       }
     }
     
-    if (this.playText) {
-      this.playText.setText(trans.play);
+    if (this.play2dText) {
+      this.play2dText.setText(trans.play_2d);
+    }
+    if (this.play3dText) {
+      this.play3dText.setText(trans.play_3d);
     }
 
     if (this.parentButton) {
