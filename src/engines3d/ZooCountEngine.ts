@@ -128,7 +128,7 @@ export class ZooCountEngine extends Base3DEngine {
     this.setupLighting();
     this.setupCamera();
     this.buildHud();
-    // if (this.devMode) this.buildDevPanel();
+    if (this.devMode) this.buildDevPanel();
     this.showLoading(true);
 
     await this.buildGround();
@@ -973,6 +973,9 @@ export class ZooCountEngine extends Base3DEngine {
   // ---------- Dev panel (only built when running `npm run dev`) ----------
 
   private buildDevPanel() {
+    // Disabled dev panel to keep UI clean, using conditional return to avoid TS unreachable code type errors
+    const devPanelEnabled = false;
+    if (!devPanelEnabled) return;
     const panel = document.createElement('div');
     panel.className = 'zoo3d-dev-panel';
 
