@@ -6,6 +6,7 @@ import { AgeSelectionScene } from './scenes/AgeSelectionScene';
 import { CategoryScene } from './scenes/CategoryScene';
 import { GameScene } from './scenes/GameScene';
 import { ParentScene } from './scenes/ParentScene';
+import { Zoo3DCategoryScene } from './scenes/Zoo3DCategoryScene';
 import { Zoo3DScene } from './scenes/Zoo3DScene';
 
 const config: Phaser.Types.Core.GameConfig = {
@@ -22,7 +23,7 @@ const config: Phaser.Types.Core.GameConfig = {
     mode: Phaser.Scale.RESIZE,
     autoCenter: Phaser.Scale.CENTER_BOTH,
   },
-  scene: [BootScene, MainMenuScene, AgeSelectionScene, CategoryScene, GameScene, ParentScene, Zoo3DScene]
+  scene: [BootScene, MainMenuScene, AgeSelectionScene, CategoryScene, GameScene, ParentScene, Zoo3DCategoryScene, Zoo3DScene]
 };
 
 // Khởi chạy game — Phaser.Scale.RESIZE tự xử lý toàn bộ sự kiện resize

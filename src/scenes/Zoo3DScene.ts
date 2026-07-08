@@ -3,14 +3,29 @@ import { languageManager } from '../managers/LanguageManager';
 import type { Base3DEngine } from '../engines3d/Base3DEngine';
 import type { Zoo3DAgeGroup } from '../engines3d/ZooCountEngine';
 
+export type Zoo3DGameId = 'count' | 'hideseek' | 'feed' | 'herd' | 'daynight';
+
+type Zoo3DEngineCtor = new (age: Zoo3DAgeGroup, onExit: () => void) => Base3DEngine;
+
+// One dynamic import per game — each concrete engine (plus its Three.js/GLTF
+// weight) only downloads when the child actually picks that specific game.
+const GAME_LOADERS: Record<Zoo3DGameId, () => Promise<Zoo3DEngineCtor>> = {
+  count: async () => (await import('../engines3d/ZooCountEngine')).ZooCountEngine,
+  hideseek: async () => (await import('../engines3d/HideSeekEngine')).HideSeekEngine,
+  feed: async () => (await import('../engines3d/FeedAnimalEngine')).FeedAnimalEngine,
+  herd: async () => (await import('../engines3d/HerdEngine')).HerdEngine,
+  daynight: async () => (await import('../engines3d/DayNightEngine')).DayNightEngine,
+};
+
 /**
- * Thin bridge between Phaser and the standalone Three.js "Vườn thú 3D" engine.
+ * Thin bridge between Phaser and the standalone Three.js "Vườn thú 3D" engines.
  * Phaser can't render .glb models, so this scene keeps the Phaser canvas
- * visible (with its own loading spinner) until the 3D engine is fully built,
- * then swaps to the sibling #three-container canvas. Reverses on exit.
+ * visible (with its own loading spinner) until the picked 3D engine is fully
+ * built, then swaps to the sibling #three-container canvas. Reverses on exit.
  */
 export class Zoo3DScene extends Phaser.Scene {
   private age: Zoo3DAgeGroup = '2-3';
+  private gameId: Zoo3DGameId = 'count';
   private container: HTMLElement | null = null;
   private engine: Base3DEngine | null = null;
   private loadingOverlay: Phaser.GameObjects.Container | null = null;
@@ -21,8 +36,9 @@ export class Zoo3DScene extends Phaser.Scene {
     super('Zoo3DScene');
   }
 
-  init(data: { age?: string }) {
+  init(data: { age?: string; game?: string }) {
     this.age = data?.age === '4-6' ? '4-6' : '2-3';
+    this.gameId = data?.game && data.game in GAME_LOADERS ? (data.game as Zoo3DGameId) : 'count';
     this.exited = false;
     this.engine = null;
     this.container = null;
@@ -33,7 +49,7 @@ export class Zoo3DScene extends Phaser.Scene {
     this.container = document.getElementById('three-container');
     if (!this.container) {
       console.error('Zoo3DScene: #three-container element not found in DOM');
-      this.scene.start('AgeSelectionScene', { mode: 'zoo3d' });
+      this.scene.start('Zoo3DCategoryScene', { age: this.age });
       return;
     }
 
@@ -56,10 +72,10 @@ export class Zoo3DScene extends Phaser.Scene {
     if (!this.container) return;
 
     try {
-      const { ZooCountEngine } = await import('../engines3d/ZooCountEngine');
+      const EngineClass = await GAME_LOADERS[this.gameId]();
       if (this.exited || !this.container) return;
 
-      const engine = new ZooCountEngine(this.age, () => this.exitToAgeSelection());
+      const engine = new EngineClass(this.age, () => this.exitToCategory());
       await engine.mount(this.container, this.scale.width, this.scale.height);
 
       if (this.exited) {
@@ -76,14 +92,14 @@ export class Zoo3DScene extends Phaser.Scene {
       this.container.style.display = 'block';
     } catch (e) {
       console.error('Zoo3DScene: failed to start 3D engine:', e);
-      this.exitToAgeSelection();
+      this.exitToCategory();
     }
   }
 
-  private exitToAgeSelection() {
+  private exitToCategory() {
     if (this.exited) return;
     this.exited = true;
-    this.scene.start('AgeSelectionScene', { mode: 'zoo3d' });
+    this.scene.start('Zoo3DCategoryScene', { age: this.age });
   }
 
   private cleanup() {

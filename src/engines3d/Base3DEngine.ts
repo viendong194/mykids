@@ -1,8 +1,14 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import * as SkeletonUtils from 'three/addons/utils/SkeletonUtils.js';
+import { computeFlockingSteering, type SteeringAgent } from './Steering';
 
 let stylesInjected = false;
+
+export interface SteppableAgent extends SteeringAgent {
+  object: THREE.Object3D;
+  speed: number;
+}
 
 /**
  * Framework-agnostic base for 3D mini-games rendered with Three.js.
@@ -15,6 +21,7 @@ export abstract class Base3DEngine {
   protected camera!: THREE.PerspectiveCamera;
   protected renderer!: THREE.WebGLRenderer;
   protected hud!: HTMLDivElement;
+  protected readonly devMode = import.meta.env.DEV;
 
   private container!: HTMLElement;
   private loader = new GLTFLoader();
@@ -22,6 +29,8 @@ export abstract class Base3DEngine {
   private rafId: number | null = null;
   private lastTime = 0;
   private destroyed = false;
+  private raycaster = new THREE.Raycaster();
+  private pickHandler: ((event: PointerEvent) => void) | null = null;
 
   public async mount(container: HTMLElement, width: number, height: number): Promise<void> {
     this.container = container;
@@ -118,6 +127,122 @@ export abstract class Base3DEngine {
     );
   }
 
+  /**
+   * Tags an object as tappable so setupRaycasting()'s hit-test can resolve
+   * a raycast hit (which lands on some deep mesh) back up to it.
+   */
+  protected setPickable(root: THREE.Object3D, pickId: string) {
+    root.userData.pickId = pickId;
+  }
+
+  /**
+   * Wires tap-to-select on 3D objects (as opposed to HTML HUD buttons).
+   * `getPickables` is called fresh on every tap so it always reflects the
+   * current round's objects. NDC math uses the canvas's CSS bounding rect,
+   * not its drawing-buffer resolution (those differ under devicePixelRatio).
+   */
+  protected setupRaycasting(getPickables: () => THREE.Object3D[], onPick: (pickId: string, point: THREE.Vector3) => void) {
+    if (this.pickHandler) {
+      this.renderer.domElement.removeEventListener('pointerdown', this.pickHandler);
+    }
+
+    this.pickHandler = (event: PointerEvent) => {
+      const rect = this.renderer.domElement.getBoundingClientRect();
+      const ndc = new THREE.Vector2(
+        ((event.clientX - rect.left) / rect.width) * 2 - 1,
+        -((event.clientY - rect.top) / rect.height) * 2 + 1
+      );
+      this.raycaster.setFromCamera(ndc, this.camera);
+
+      const hits = this.raycaster.intersectObjects(getPickables(), true);
+      if (hits.length === 0) return;
+
+      let current: THREE.Object3D | null = hits[0].object;
+      while (current && current !== this.scene) {
+        if (current.userData.pickId !== undefined) {
+          onPick(current.userData.pickId as string, hits[0].point);
+          return;
+        }
+        current = current.parent;
+      }
+    };
+
+    this.renderer.domElement.addEventListener('pointerdown', this.pickHandler);
+  }
+
+  /** Projects a world position to HUD-local pixel coordinates (for confetti, floating labels, etc). */
+  protected worldToScreen(pos: THREE.Vector3): { x: number; y: number } {
+    const projected = pos.clone().project(this.camera);
+    const rect = this.renderer.domElement.getBoundingClientRect();
+    return {
+      x: ((projected.x + 1) / 2) * rect.width,
+      y: ((1 - projected.y) / 2) * rect.height,
+    };
+  }
+
+  /**
+   * One step of "walk toward a fixed target" — flocking-steered direction,
+   * a hard positional collision-resolve against every other agent, a
+   * play-area clamp, and an optional ground-height snap. Shared by any
+   * per-agent state machine that needs directed movement (wandering picks a
+   * new random target each arrival; herding always targets the pen).
+   */
+  protected stepAgentTowardTarget(
+    agent: SteppableAgent,
+    allAgents: SteeringAgent[],
+    dt: number,
+    opts: {
+      playRadius: number;
+      getGroundHeight?: (x: number, z: number) => number;
+      arriveThreshold?: number;
+      flockRange?: number;
+      separationRange?: number;
+    }
+  ): { arrived: boolean; facingAngle: number } {
+    const dx = agent.target.x - agent.object.position.x;
+    const dz = agent.target.z - agent.object.position.z;
+    const distToTarget = Math.hypot(dx, dz);
+    const arriveThreshold = opts.arriveThreshold ?? 0.2;
+
+    if (distToTarget < arriveThreshold) {
+      return { arrived: true, facingAngle: Math.atan2(dx, dz) };
+    }
+
+    const move = computeFlockingSteering(agent, allAgents, opts.flockRange ?? 2.2, opts.separationRange ?? 0.55);
+
+    const step = agent.speed * dt;
+    let newX = agent.object.position.x + move.x * step;
+    let newZ = agent.object.position.z + move.z * step;
+
+    allAgents.forEach((other) => {
+      if (other === agent) return;
+      const ox = newX - other.object.position.x;
+      const oz = newZ - other.object.position.z;
+      const d = Math.hypot(ox, oz);
+      const minDist = agent.radius + other.radius + 0.1;
+      if (d > 0.0001 && d < minDist) {
+        const scale = minDist / d;
+        newX = other.object.position.x + ox * scale;
+        newZ = other.object.position.z + oz * scale;
+      }
+    });
+
+    const distFromCenter = Math.hypot(newX, newZ);
+    if (distFromCenter > opts.playRadius) {
+      const scale = opts.playRadius / distFromCenter;
+      newX *= scale;
+      newZ *= scale;
+    }
+
+    agent.object.position.x = newX;
+    agent.object.position.z = newZ;
+    if (opts.getGroundHeight) {
+      agent.object.position.y = opts.getGroundHeight(newX, newZ);
+    }
+
+    return { arrived: false, facingAngle: Math.atan2(move.x, move.z) };
+  }
+
   protected abstract build(): Promise<void>;
   protected update(_dt: number): void {}
 
@@ -154,6 +279,11 @@ export abstract class Base3DEngine {
       promise.then((template) => this.disposeHierarchy(template)).catch(() => {});
     });
     this.modelCache.clear();
+
+    if (this.pickHandler) {
+      this.renderer.domElement.removeEventListener('pointerdown', this.pickHandler);
+      this.pickHandler = null;
+    }
 
     if (this.renderer) {
       this.renderer.domElement.remove();

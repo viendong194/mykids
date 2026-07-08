@@ -227,8 +227,8 @@ export class AgeSelectionScene extends Phaser.Scene {
           yoyo: true,
           onComplete: () => {
             if (this.mode === 'zoo3d') {
-              // Luồng Vườn thú 3D: vào thẳng game, không dùng chung key tuổi của luồng 2D
-              this.scene.start('Zoo3DScene', { age: group.id });
+              // Luồng Vườn thú 3D: sang màn chọn game 3D, không dùng chung key tuổi của luồng 2D
+              this.scene.start('Zoo3DCategoryScene', { age: group.id });
             } else {
               // Lưu độ tuổi được chọn vào localStorage
               localStorage.setItem('mykids_selected_age', group.id);

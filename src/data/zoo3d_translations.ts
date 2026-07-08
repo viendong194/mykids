@@ -38,3 +38,66 @@ export function buildZoo3DVoiceText(lang: 'vi' | 'en' | 'zh' | 'ja', speciesId: 
   const template = COUNT_QUESTION_TEMPLATES[lang] || COUNT_QUESTION_TEMPLATES.en;
   return template(species.name[lang] || species.name.en);
 }
+
+const HIDE_SEEK_QUESTION_TEMPLATES: Record<'vi' | 'en' | 'zh' | 'ja', (name: string) => string> = {
+  vi: (name) => `Con ${name} đang trốn ở đâu nhỉ? Bé hãy tìm ra nhé`,
+  en: (name) => `Where is the ${name} hiding? Find it!`,
+  zh: (name) => `${name}藏在哪里呢？快找找看`,
+  ja: (name) => `${name}は どこに かくれてるかな？`,
+};
+
+export function buildHideSeekVoiceText(lang: 'vi' | 'en' | 'zh' | 'ja', speciesId: string): string {
+  const species = getZoo3DSpecies(speciesId);
+  const template = HIDE_SEEK_QUESTION_TEMPLATES[lang] || HIDE_SEEK_QUESTION_TEMPLATES.en;
+  return template(species.name[lang] || species.name.en);
+}
+
+const FEED_QUESTION_TEMPLATES: Record<'vi' | 'en' | 'zh' | 'ja', (name: string) => string> = {
+  vi: (name) => `Bạn ${name} đang đói bụng, bé hãy chọn món ăn phù hợp nhé`,
+  en: (name) => `The ${name} is hungry — pick the right food for it`,
+  zh: (name) => `${name}肚子饿了，请选择合适的食物吧`,
+  ja: (name) => `${name}は おなかが すいてるよ。あう たべものを えらんでね`,
+};
+
+export function buildFeedVoiceText(lang: 'vi' | 'en' | 'zh' | 'ja', speciesId: string): string {
+  const species = getZoo3DSpecies(speciesId);
+  const template = FEED_QUESTION_TEMPLATES[lang] || FEED_QUESTION_TEMPLATES.en;
+  return template(species.name[lang] || species.name.en);
+}
+
+const HERD_QUESTION_TEMPLATES: Record<'vi' | 'en' | 'zh' | 'ja', (name: string) => string> = {
+  vi: (name) => `Bé hãy lùa các bạn ${name} về chuồng nhé`,
+  en: (name) => `Help herd the ${name}s back into the pen`,
+  zh: (name) => `请把${name}都赶回围栏里吧`,
+  ja: (name) => `${name}を おりに つれていってね`,
+};
+
+export function buildHerdVoiceText(lang: 'vi' | 'en' | 'zh' | 'ja', speciesId: string): string {
+  const species = getZoo3DSpecies(speciesId);
+  const template = HERD_QUESTION_TEMPLATES[lang] || HERD_QUESTION_TEMPLATES.en;
+  return template(species.name[lang] || species.name.en);
+}
+
+const DAY_NIGHT_TEMPLATES: Record<'vi' | 'en' | 'zh' | 'ja', { findAwake: string; findAsleep: string }> = {
+  vi: {
+    findAwake: 'Đêm rồi, ai vẫn còn thức vậy nhỉ? Bé hãy tìm ra và ru bạn ấy ngủ nào',
+    findAsleep: 'Buổi sáng rồi, ai vẫn còn ngủ vậy nhỉ? Bé hãy đánh thức bạn ấy dậy nhé',
+  },
+  en: {
+    findAwake: "It's night — who is still awake? Find them and help them sleep",
+    findAsleep: "It's morning — who is still asleep? Wake them up",
+  },
+  zh: {
+    findAwake: '现在是晚上了，谁还醒着呢？快找出来哄它睡觉吧',
+    findAsleep: '现在是早上了，谁还在睡觉呢？快叫醒它吧',
+  },
+  ja: {
+    findAwake: 'よるだよ。まだ おきてるのは だれかな？みつけて ねかせてあげよう',
+    findAsleep: 'あさだよ。まだ ねているのは だれかな？おこしてあげよう',
+  },
+};
+
+export function buildDayNightVoiceText(lang: 'vi' | 'en' | 'zh' | 'ja', mode: 'findAwake' | 'findAsleep'): string {
+  const template = DAY_NIGHT_TEMPLATES[lang] || DAY_NIGHT_TEMPLATES.en;
+  return template[mode];
+}
