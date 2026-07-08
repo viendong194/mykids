@@ -198,7 +198,7 @@ export class DioramaKit {
 
     this.hemiLight.color.set(0xe1f5fe).lerp(new THREE.Color(0xffecb3), time);
     this.hemiLight.groundColor.set(0x8d6e63).lerp(new THREE.Color(0x221a15), time);
-    this.hemiLight.intensity = THREE.MathUtils.lerp(1.1, 0.45, time);
+    this.hemiLight.intensity = THREE.MathUtils.lerp(1.1, 0.70, time);
 
     // Sun/Moon orbit behind the ground plane (z = -34)
     const R_orbit = 28;
@@ -210,7 +210,7 @@ export class DioramaKit {
     if (this.moonMesh) this.moonMesh.position.set(-cosTheta * R_orbit, -sinTheta * 20 - 4, -34);
 
     this.sunLight.color.set(0xffffff).lerp(new THREE.Color(0xfffde7), time);
-    this.sunLight.intensity = THREE.MathUtils.lerp(1.4, 0.35, time);
+    this.sunLight.intensity = THREE.MathUtils.lerp(1.4, 0.55, time);
     if (time < 0.5) {
       if (this.sunMesh) this.sunLight.position.copy(this.sunMesh.position.clone().normalize().multiplyScalar(15));
     } else {
@@ -220,12 +220,12 @@ export class DioramaKit {
     if (this.groundMaterial) {
       // When vertexColors=true the material color is a tint multiplier.
       // Use white (no tint) at day so Perlin vertex colors show through; darken at night.
-      this.groundMaterial.color.set(0xffffff).lerp(new THREE.Color(0x1c2b1a), time);
+      this.groundMaterial.color.set(0xffffff).lerp(new THREE.Color(0x3c593e), time);
     }
 
     if (this.cameraLight) {
       this.cameraLight.color.set(0xffffff).lerp(new THREE.Color(0xfffde7), time);
-      this.cameraLight.intensity = THREE.MathUtils.lerp(0.8, 0.18, time);
+      this.cameraLight.intensity = THREE.MathUtils.lerp(0.8, 0.50, time);
     }
 
     if (this.starField) {

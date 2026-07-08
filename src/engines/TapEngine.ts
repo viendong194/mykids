@@ -117,7 +117,7 @@ export class TapEngine extends BaseEngine<TapLevelData> {
     const bubbleWidth = Math.min(width * 0.8, 480);
     const bubbleHeight = hasIll ? 75 : 90;
     const bx = -bubbleWidth / 2;
-    const by = hasIll ? -235 : -180;
+    const by = hasIll ? -250 : -220;
 
     this.speechBubble = this.scene.add.graphics();
     this.speechBubble.fillStyle(0x000000, 0.08);
@@ -148,7 +148,7 @@ export class TapEngine extends BaseEngine<TapLevelData> {
     const hasIll = !!this.levelData.illustration;
     const bubbleWidth = Math.min(width * 0.8, 480);
     const speakerX = bubbleWidth / 2 + 40;
-    const speakerY = hasIll ? -195 : -135;
+    const speakerY = hasIll ? -212.5 : -175;
 
     const bg = this.scene.add.graphics();
     bg.fillStyle(0xFF9800, 1);
@@ -207,7 +207,7 @@ export class TapEngine extends BaseEngine<TapLevelData> {
     let rowSpacing = isLandscape ? Math.min(height * 0.38, 180) : Math.min(height * 0.22, 190);
     
     // Nếu có hình minh họa, dịch chuyển các card lựa chọn xuống dưới một chút
-    const yOffset = hasIll ? 95 : 50;
+    const yOffset = hasIll ? 95 : 65;
     const finalRowSpacing = hasIll ? Math.min(rowSpacing, 130) : rowSpacing;
 
     let positions = [
@@ -224,7 +224,7 @@ export class TapEngine extends BaseEngine<TapLevelData> {
       ];
     }
 
-    const cardSize = Math.min(colSpacing - 20, 160);
+    const cardSize = Math.min(colSpacing - 20, 150);
 
     this.levelData.options.forEach((choiceKey, index) => {
       const pos = positions[index] || { x: 0, y: yOffset };
