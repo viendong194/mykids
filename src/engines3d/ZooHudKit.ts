@@ -240,21 +240,29 @@ export class ZooHudKit {
 
     this.previewModel = modelTemplate.clone();
     
+    // Must reset rotation BEFORE computing bounding box, otherwise the box
+    // includes any inherited animation pose and gives a wrong size/center.
+    this.previewModel.rotation.set(0, 0, 0);
+    this.previewModel.scale.set(1, 1, 1);
+    this.previewModel.position.set(0, 0, 0);
+
     const box = new THREE.Box3().setFromObject(this.previewModel);
     const size = new THREE.Vector3();
     box.getSize(size);
     const maxDim = Math.max(size.x, size.y, size.z);
-    
     const scale = (0.9 / maxDim) * scaleFactor;
     this.previewModel.scale.setScalar(scale);
 
     const center = new THREE.Vector3();
     box.getCenter(center);
-    this.previewModel.position.sub(center.multiplyScalar(scale));
+    this.previewModel.position.set(
+      -center.x * scale,
+      -center.y * scale,
+      -center.z * scale
+    );
     
     this.basePreviewRotationY = baseRotationY;
-
-    this.previewModel.rotation.x = 0.25;
+    this.previewModel.rotation.x = 0.18;
     this.previewModel.rotation.y = this.basePreviewRotationY;
 
     this.previewScene!.add(this.previewModel);

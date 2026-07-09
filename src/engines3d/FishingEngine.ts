@@ -61,7 +61,11 @@ export class FishingEngine extends Base3DEngine {
   private interactiveLocked = false;
 
   private fishingLine!: THREE.Line;
-  private rodTipPos = new THREE.Vector3(0.25, 0.78, 3.65);
+  // Rod tip in world space — must match rod prop position+rotation in dioramaConfig.json
+  private rodTipPos = new THREE.Vector3(0.35, 0.65, 4.5);
+  // Where the hook/lure rests in the water when idle
+  private hookRestPos = new THREE.Vector3(0.35, -0.22, 1.8);
+  private idleLine!: THREE.Line;
 
   constructor(age: Zoo3DAgeGroup, onExit: () => void) {
     super();
@@ -96,8 +100,14 @@ export class FishingEngine extends Base3DEngine {
     this.generateRound();
     this.currentIndex = 0;
 
+    // Idle fishing line — always hangs from rod tip to water surface
+    const idleGeo = new THREE.BufferGeometry().setFromPoints([this.rodTipPos, this.hookRestPos]);
+    this.idleLine = new THREE.Line(idleGeo, new THREE.LineBasicMaterial({ color: 0xffffff }));
+    this.scene.add(this.idleLine);
+
+    // Animated cast line (hidden until fish is caught)
     const lineGeo = new THREE.BufferGeometry().setFromPoints([this.rodTipPos, this.rodTipPos.clone()]);
-    this.fishingLine = new THREE.Line(lineGeo, new THREE.LineBasicMaterial({ color: 0xffffff, linewidth: 2 }));
+    this.fishingLine = new THREE.Line(lineGeo, new THREE.LineBasicMaterial({ color: 0xffffff }));
     this.fishingLine.visible = false;
     this.scene.add(this.fishingLine);
 
@@ -260,8 +270,17 @@ export class FishingEngine extends Base3DEngine {
   }
 
   private animateHookAndReel(agent: FishAgent) {
+    // Hide the idle hang line while the cast line is animating
+    this.idleLine.visible = false;
     this.fishingLine.visible = true;
     const startPos = agent.object.position.clone();
+
+    // Initialize cast line endpoint to fish position
+    const positions = this.fishingLine.geometry.attributes.position.array as Float32Array;
+    positions[3] = startPos.x;
+    positions[4] = startPos.y;
+    positions[5] = startPos.z;
+    this.fishingLine.geometry.attributes.position.needsUpdate = true;
 
     const duration = 1200;
     const startTime = performance.now();
@@ -288,6 +307,7 @@ export class FishingEngine extends Base3DEngine {
         requestAnimationFrame(animate);
       } else {
         this.fishingLine.visible = false;
+        this.idleLine.visible = true;
         this.scene.remove(agent.object);
         DomConfetti.burst(this.hud, window.innerWidth / 2, window.innerHeight / 2);
         
