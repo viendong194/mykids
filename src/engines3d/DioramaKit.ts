@@ -39,7 +39,7 @@ export class DioramaKit {
   public devCameraOverride = true;
   public devCam: DevCamState;
 
-  private readonly devMode = import.meta.env.DEV;
+  private readonly devMode = false;
 
   private hemiLight!: THREE.HemisphereLight;
   private sunLight!: THREE.DirectionalLight;

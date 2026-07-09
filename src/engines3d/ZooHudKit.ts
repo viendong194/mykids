@@ -159,10 +159,13 @@ export class ZooHudKit {
     dirLight.position.set(1, 1.5, 2);
     this.previewScene.add(dirLight);
 
+    let time = 0;
     const animate = () => {
       this.previewAnimationId = requestAnimationFrame(animate);
       if (this.previewModel) {
-        this.previewModel.rotation.y += 0.015;
+        time += 0.025;
+        this.previewModel.rotation.y = Math.PI / 2 + Math.sin(time) * 0.45;
+        this.previewModel.rotation.z = Math.sin(time * 2.0) * 0.08;
       }
       if (this.previewRenderer && this.previewScene && this.previewCamera) {
         this.previewRenderer.render(this.previewScene, this.previewCamera);
