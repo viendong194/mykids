@@ -94,6 +94,7 @@ export class DioramaKit {
     const config = dioramaConfig.games[this.gameId as keyof typeof dioramaConfig.games];
     if (config) {
       this.dioramaConfig = config;
+      this.isLakePond = !!config.water;
       if (config.camera) {
         this.devCam = {
           distance: config.camera.distance,
@@ -402,8 +403,14 @@ export class DioramaKit {
 
   // ---------- Terrain / decor ----------
 
-  public async buildTerrainGround(opts: BuildTerrainOptions): Promise<void> {
-    this.bowlStart = opts.bowlStart ?? 7.5;
+  public async buildTerrainGround(opts?: BuildTerrainOptions): Promise<void> {
+    const configTerrain = this.dioramaConfig?.terrain;
+    const decor = configTerrain?.decor ?? opts?.decor ?? [];
+    const decorRingCount = configTerrain?.decorRingCount ?? opts?.decorRingCount ?? 12;
+    const decorRingRadius = configTerrain?.decorRingRadius ?? opts?.decorRingRadius ?? 5.6;
+    const grassCount = configTerrain?.grassCount ?? opts?.grassCount ?? 18;
+    const grassRadius = configTerrain?.grassRadius ?? opts?.grassRadius ?? 4.5;
+    this.bowlStart = configTerrain?.bowlStart ?? opts?.bowlStart ?? 7.5;
 
     const SEG = 50; // 50×50 = 2,601 verts / 5,000 tris — large enough that edges fall deep inside fog
     const SIZE = 60;
@@ -462,28 +469,26 @@ export class DioramaKit {
     ground.receiveShadow = true;
     this.scene.add(ground);
 
-    const decorRingCount = opts.decorRingCount ?? 12;
-    const decorRingRadius = opts.decorRingRadius ?? 5.6;
-    const distinctDecor = Array.from(new Map(opts.decor.map((d) => [d.file, d])).values());
-    await Promise.all(distinctDecor.map((d) => this.loadModel(`assets/3d/nature/${d.file}.glb`, d.height)));
+    if (decor.length > 0) {
+      const distinctDecor = Array.from(new Map(decor.map((d: any) => [d.file, d])).values());
+      await Promise.all(distinctDecor.map((d: any) => this.loadModel(`assets/3d/nature/${d.file}.glb`, d.height)));
 
-    for (let i = 0; i < decorRingCount; i++) {
-      const decor = opts.decor[i % opts.decor.length];
-      const template = await this.loadModel(`assets/3d/nature/${decor.file}.glb`, decor.height);
-      const instance = this.cloneInstance(template);
-      this.enableShadows(instance);
+      for (let i = 0; i < decorRingCount; i++) {
+        const d = decor[i % decor.length];
+        const template = await this.loadModel(`assets/3d/nature/${d.file}.glb`, d.height);
+        const instance = this.cloneInstance(template);
+        this.enableShadows(instance);
 
-      const angle = (i / decorRingCount) * Math.PI * 2;
-      const r = decorRingRadius + (Math.random() - 0.5) * 0.8;
-      const x = Math.cos(angle) * r;
-      const z = Math.sin(angle) * r;
-      instance.position.set(x, this.getGroundHeight(x, z), z);
-      instance.rotation.y = Math.random() * Math.PI * 2;
-      this.scene.add(instance);
+        const angle = (i / decorRingCount) * Math.PI * 2;
+        const r = decorRingRadius + (Math.random() - 0.5) * 0.8;
+        const x = Math.cos(angle) * r;
+        const z = Math.sin(angle) * r;
+        instance.position.set(x, this.getGroundHeight(x, z), z);
+        instance.rotation.y = Math.random() * Math.PI * 2;
+        this.scene.add(instance);
+      }
     }
 
-    const grassCount = opts.grassCount ?? 18;
-    const grassRadius = opts.grassRadius ?? 4.5;
     const grassTemplate = await this.loadModel('assets/3d/nature/grass.glb', 0.3);
     for (let i = 0; i < grassCount; i++) {
       const instance = this.cloneInstance(grassTemplate);

@@ -25,15 +25,7 @@ const DIFFICULTY: Record<Zoo3DAgeGroup, DifficultyConfig> = {
   '4-6': { numSpeciesRange: [2, 3], targetCountRange: [2, 5], distractorCountRange: [1, 4], choicesCount: 4, rounds: 5 },
 };
 
-const NATURE_DECOR: { file: string; height: number }[] = [
-  { file: 'tree', height: 2.4 },
-  { file: 'pine', height: 2.6 },
-  { file: 'twisted-tree', height: 2.2 },
-  { file: 'bush', height: 0.7 },
-  { file: 'rock-medium', height: 0.6 },
-  { file: 'flower-group', height: 0.4 },
-  { file: 'mushroom', height: 0.35 },
-];
+
 
 function randInt(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -110,7 +102,7 @@ export class ZooCountEngine extends Base3DEngine {
     this.diorama.buildDevPanel('🛠 DEV — Đếm thú');
     this.zooHud.showLoading(true);
 
-    await this.diorama.buildTerrainGround({ decor: NATURE_DECOR });
+    await this.diorama.buildTerrainGround();
 
     this.levels = this.generateRound();
     this.currentIndex = 0;

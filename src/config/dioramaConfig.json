@@ -12,7 +12,23 @@
         "autoCycle": true,
         "daySpeed": 0.08
       },
-      "water": null
+      "water": null,
+      "terrain": {
+        "decor": [
+          { "file": "tree", "height": 2.4 },
+          { "file": "pine", "height": 2.6 },
+          { "file": "twisted-tree", "height": 2.2 },
+          { "file": "bush", "height": 0.7 },
+          { "file": "rock-medium", "height": 0.6 },
+          { "file": "flower-group", "height": 0.4 },
+          { "file": "mushroom", "height": 0.35 }
+        ],
+        "decorRingCount": 12,
+        "decorRingRadius": 5.6,
+        "grassCount": 18,
+        "grassRadius": 4.5,
+        "bowlStart": 7.5
+      }
     },
     "hideseek": {
       "camera": {
@@ -26,7 +42,22 @@
         "autoCycle": true,
         "daySpeed": 0.05
       },
-      "water": null
+      "water": null,
+      "terrain": {
+        "decor": [
+          { "file": "tree", "height": 2.4 },
+          { "file": "pine", "height": 2.6 },
+          { "file": "bush", "height": 0.7 },
+          { "file": "rock-medium", "height": 0.6 },
+          { "file": "flower-group", "height": 0.4 },
+          { "file": "mushroom", "height": 0.35 }
+        ],
+        "decorRingCount": 10,
+        "decorRingRadius": 6.2,
+        "grassCount": 16,
+        "grassRadius": 4.5,
+        "bowlStart": 7.5
+      }
     },
     "feed": {
       "camera": {
@@ -40,7 +71,22 @@
         "autoCycle": true,
         "daySpeed": 0.06
       },
-      "water": null
+      "water": null,
+      "terrain": {
+        "decor": [
+          { "file": "tree", "height": 2.4 },
+          { "file": "pine", "height": 2.6 },
+          { "file": "bush", "height": 0.7 },
+          { "file": "rock-medium", "height": 0.6 },
+          { "file": "flower-group", "height": 0.4 },
+          { "file": "mushroom", "height": 0.35 }
+        ],
+        "decorRingCount": 10,
+        "decorRingRadius": 6.0,
+        "grassCount": 16,
+        "grassRadius": 4.5,
+        "bowlStart": 7.5
+      }
     },
     "herd": {
       "camera": {
@@ -54,7 +100,22 @@
         "autoCycle": true,
         "daySpeed": 0.07
       },
-      "water": null
+      "water": null,
+      "terrain": {
+        "decor": [
+          { "file": "tree", "height": 2.4 },
+          { "file": "pine", "height": 2.6 },
+          { "file": "bush", "height": 0.7 },
+          { "file": "rock-medium", "height": 0.6 },
+          { "file": "flower-group", "height": 0.4 },
+          { "file": "mushroom", "height": 0.35 }
+        ],
+        "decorRingCount": 10,
+        "decorRingRadius": 7.0,
+        "grassCount": 16,
+        "grassRadius": 4.5,
+        "bowlStart": 7.5
+      }
     },
     "daynight": {
       "camera": {
@@ -68,7 +129,22 @@
         "autoCycle": false,
         "daySpeed": 0.0
       },
-      "water": null
+      "water": null,
+      "terrain": {
+        "decor": [
+          { "file": "tree", "height": 2.4 },
+          { "file": "pine", "height": 2.6 },
+          { "file": "bush", "height": 0.7 },
+          { "file": "rock-medium", "height": 0.6 },
+          { "file": "flower-group", "height": 0.4 },
+          { "file": "mushroom", "height": 0.35 }
+        ],
+        "decorRingCount": 10,
+        "decorRingRadius": 5.6,
+        "grassCount": 16,
+        "grassRadius": 4.5,
+        "bowlStart": 7.5
+      }
     },
     "fishing": {
       "camera": {
@@ -89,6 +165,20 @@
         "opacity": 0.65,
         "waveSpeed": 0.0015,
         "waveHeight": 0.012
+      },
+      "terrain": {
+        "decor": [
+          { "file": "tree", "height": 2.2 },
+          { "file": "twisted-tree", "height": 2.0 },
+          { "file": "bush", "height": 0.7 },
+          { "file": "rock-medium", "height": 0.6 },
+          { "file": "flower-group", "height": 0.4 }
+        ],
+        "decorRingCount": 12,
+        "decorRingRadius": 5.6,
+        "grassCount": 18,
+        "grassRadius": 4.5,
+        "bowlStart": 7.5
       }
     }
   }

@@ -21,15 +21,6 @@ const DIFFICULTY: Record<Zoo3DAgeGroup, DifficultyConfig> = {
   '4-6': { animalCount: 5, rounds: 5 },
 };
 
-const AMBIENT_DECOR: { file: string; height: number }[] = [
-  { file: 'tree', height: 2.4 },
-  { file: 'pine', height: 2.6 },
-  { file: 'twisted-tree', height: 2.2 },
-  { file: 'bush', height: 0.7 },
-  { file: 'rock-medium', height: 0.6 },
-  { file: 'mushroom', height: 0.35 },
-];
-
 const BUMP_DURATION = 0.35;
 const PLAY_RADIUS = 3.0;
 
@@ -117,7 +108,7 @@ export class DayNightEngine extends Base3DEngine {
     this.diorama.buildDevPanel('🛠 DEV — Ngày và đêm');
     this.zooHud.showLoading(true);
 
-    await this.diorama.buildTerrainGround({ decor: AMBIENT_DECOR, decorRingCount: 10, grassCount: 16 });
+    await this.diorama.buildTerrainGround();
 
     this.setupRaycasting(
       () => this.agents.map((a) => a.object),

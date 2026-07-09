@@ -14,14 +14,7 @@ export type Zoo3DAgeGroup = '2-3' | '4-6';
 const ROUNDS_BY_AGE: Record<Zoo3DAgeGroup, number> = { '2-3': 4, '4-6': 5 };
 const CHOICES_COUNT = 3;
 
-const AMBIENT_DECOR: { file: string; height: number }[] = [
-  { file: 'tree', height: 2.4 },
-  { file: 'pine', height: 2.6 },
-  { file: 'bush', height: 0.7 },
-  { file: 'rock-medium', height: 0.6 },
-  { file: 'flower-group', height: 0.4 },
-  { file: 'mushroom', height: 0.35 },
-];
+
 
 function shuffle<T>(arr: T[]): T[] {
   const copy = [...arr];
@@ -94,7 +87,7 @@ export class FeedAnimalEngine extends Base3DEngine {
     this.diorama.buildDevPanel('🛠 DEV — Cho thú ăn');
     this.zooHud.showLoading(true);
 
-    await this.diorama.buildTerrainGround({ decor: AMBIENT_DECOR, decorRingCount: 10, grassCount: 16, decorRingRadius: 6 });
+    await this.diorama.buildTerrainGround();
     await this.buildAmbientAnimals();
 
     this.levels = this.generateRound();

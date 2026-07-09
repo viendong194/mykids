@@ -40,13 +40,7 @@ interface FishingRound {
   targetCatchCount: number;
 }
 
-const LAKE_DECOR = [
-  { file: 'tree', height: 2.2 },
-  { file: 'twisted-tree', height: 2.0 },
-  { file: 'bush', height: 0.7 },
-  { file: 'rock-medium', height: 0.6 },
-  { file: 'flower-group', height: 0.4 },
-];
+
 
 export class FishingEngine extends Base3DEngine {
   private age: Zoo3DAgeGroup;
@@ -90,7 +84,7 @@ export class FishingEngine extends Base3DEngine {
     this.diorama.buildDevPanel('🛠 DEV — Câu cá');
     this.zooHud.showLoading(true);
 
-    await this.diorama.buildTerrainGround({ decor: LAKE_DECOR });
+    await this.diorama.buildTerrainGround();
 
     const dockT = await this.loadModel('assets/3d/fish/Dock Long.glb', 1.0);
     const dock = this.cloneInstance(dockT);

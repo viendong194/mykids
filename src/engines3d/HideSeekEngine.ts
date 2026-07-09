@@ -29,14 +29,7 @@ const TALL_PROPS: { file: string; height: number }[] = [
   { file: 'twisted-tree', height: 2.2 },
 ];
 
-const AMBIENT_DECOR: { file: string; height: number }[] = [
-  { file: 'tree', height: 2.4 },
-  { file: 'pine', height: 2.6 },
-  { file: 'bush', height: 0.7 },
-  { file: 'rock-medium', height: 0.6 },
-  { file: 'flower-group', height: 0.4 },
-  { file: 'mushroom', height: 0.35 },
-];
+
 
 function randInt(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -115,7 +108,7 @@ export class HideSeekEngine extends Base3DEngine {
     this.diorama.buildDevPanel('🛠 DEV — Trốn tìm thú');
     this.zooHud.showLoading(true);
 
-    await this.diorama.buildTerrainGround({ decor: AMBIENT_DECOR, decorRingCount: 10, grassCount: 16, decorRingRadius: 6.2 });
+    await this.diorama.buildTerrainGround();
 
     const cfg = DIFFICULTY[this.age];
     await this.buildHideSpots(cfg.spotCount);

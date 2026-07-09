@@ -22,15 +22,6 @@ const DIFFICULTY: Record<Zoo3DAgeGroup, DifficultyConfig> = {
   '4-6': { numSpeciesRange: [2, 3], targetCountRange: [2, 4], distractorCountRange: [1, 3], rounds: 5 },
 };
 
-const AMBIENT_DECOR: { file: string; height: number }[] = [
-  { file: 'tree', height: 2.4 },
-  { file: 'pine', height: 2.6 },
-  { file: 'twisted-tree', height: 2.2 },
-  { file: 'bush', height: 0.7 },
-  { file: 'flower-group', height: 0.4 },
-  { file: 'mushroom', height: 0.35 },
-];
-
 const BUMP_DURATION = 0.35;
 
 function randInt(min: number, max: number): number {
@@ -118,7 +109,7 @@ export class HerdEngine extends Base3DEngine {
     this.diorama.buildDevPanel('🛠 DEV — Lùa thú về chuồng');
     this.zooHud.showLoading(true);
 
-    await this.diorama.buildTerrainGround({ decor: AMBIENT_DECOR, decorRingCount: 10, grassCount: 16, decorRingRadius: 7 });
+    await this.diorama.buildTerrainGround();
     await this.buildPen();
 
     this.setupRaycasting(
