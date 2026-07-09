@@ -28,6 +28,8 @@ export class ZooHudKit {
   private previewContainerEl: HTMLDivElement | null = null;
   private previewAnimationId: number | null = null;
   private basePreviewRotationY = 0;
+  private previewPointerMoveHandler: ((e: any) => void) | null = null;
+  private previewPointerUpHandler: ((e: any) => void) | null = null;
 
   constructor(hud: HTMLDivElement, onBack: () => void) {
     this.hud = hud;
@@ -160,13 +162,62 @@ export class ZooHudKit {
     dirLight.position.set(1, 1.5, 2);
     this.previewScene.add(dirLight);
 
+    let isDragging = false;
+    let previousMouseX = 0;
+
+    this.previewContainerEl.style.pointerEvents = 'auto';
+    this.previewContainerEl.style.cursor = 'grab';
+
+    const onPointerDown = (e: MouseEvent | TouchEvent) => {
+      isDragging = true;
+      if (this.previewContainerEl) {
+        this.previewContainerEl.style.cursor = 'grabbing';
+      }
+      const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+      previousMouseX = clientX;
+    };
+
+    const onPointerMove = (e: MouseEvent | TouchEvent) => {
+      if (!isDragging) return;
+      const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+      const deltaX = clientX - previousMouseX;
+      previousMouseX = clientX;
+
+      this.basePreviewRotationY += deltaX * 0.015;
+      if (this.previewModel) {
+        this.previewModel.rotation.y = this.basePreviewRotationY;
+      }
+    };
+
+    const onPointerUp = () => {
+      isDragging = false;
+      if (this.previewContainerEl) {
+        this.previewContainerEl.style.cursor = 'grab';
+      }
+    };
+
+    this.previewContainerEl.addEventListener('mousedown', onPointerDown);
+    this.previewPointerMoveHandler = onPointerMove;
+    this.previewPointerUpHandler = onPointerUp;
+
+    window.addEventListener('mousemove', onPointerMove);
+    window.addEventListener('mouseup', onPointerUp);
+
+    this.previewContainerEl.addEventListener('touchstart', onPointerDown, { passive: true });
+    window.addEventListener('touchmove', onPointerMove, { passive: true });
+    window.addEventListener('touchend', onPointerUp);
+
     let time = 0;
     const animate = () => {
       this.previewAnimationId = requestAnimationFrame(animate);
       if (this.previewModel) {
-        time += 0.025;
-        this.previewModel.rotation.y = this.basePreviewRotationY + Math.sin(time) * 0.45;
-        this.previewModel.rotation.z = Math.sin(time * 2.0) * 0.08;
+        if (!isDragging) {
+          time += 0.025;
+          this.previewModel.rotation.y = this.basePreviewRotationY + Math.sin(time) * 0.45;
+          this.previewModel.rotation.z = Math.sin(time * 2.0) * 0.08;
+        } else {
+          this.previewModel.rotation.z = 0;
+        }
       }
       if (this.previewRenderer && this.previewScene && this.previewCamera) {
         this.previewRenderer.render(this.previewScene, this.previewCamera);
@@ -240,6 +291,16 @@ export class ZooHudKit {
     if (this.previewRenderer) {
       this.previewRenderer.dispose();
       this.previewRenderer = null;
+    }
+    if (this.previewPointerMoveHandler) {
+      window.removeEventListener('mousemove', this.previewPointerMoveHandler);
+      window.removeEventListener('touchmove', this.previewPointerMoveHandler);
+      this.previewPointerMoveHandler = null;
+    }
+    if (this.previewPointerUpHandler) {
+      window.removeEventListener('mouseup', this.previewPointerUpHandler);
+      window.removeEventListener('touchend', this.previewPointerUpHandler);
+      this.previewPointerUpHandler = null;
     }
     this.previewScene = null;
     this.previewCamera = null;

@@ -61,7 +61,7 @@ export class FishingEngine extends Base3DEngine {
   private interactiveLocked = false;
 
   private fishingLine!: THREE.Line;
-  private rodTipPos = new THREE.Vector3(0, 0.55, 4.2);
+  private rodTipPos = new THREE.Vector3(0.25, 0.78, 3.65);
 
   constructor(age: Zoo3DAgeGroup, onExit: () => void) {
     super();

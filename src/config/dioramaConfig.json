@@ -174,6 +174,12 @@
           "scale": 1.0,
           "position": [0.0, 0.05, 5.0],
           "rotation": [0.0, 3.1415926, 0.0]
+        },
+        {
+          "file": "assets/3d/fish/Fishing Rod.glb",
+          "scale": 0.85,
+          "position": [0.25, 0.38, 4.4],
+          "rotation": [-0.15, 3.1415926, 0.0]
         }
       ],
       "terrain": {
