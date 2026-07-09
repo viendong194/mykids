@@ -164,8 +164,18 @@
         "color": "#00bcd4",
         "opacity": 0.65,
         "waveSpeed": 0.0015,
-        "waveHeight": 0.012
+        "waveHeight": 0.012,
+        "roughness": 0.75,
+        "metalness": 0.0
       },
+      "props": [
+        {
+          "file": "assets/3d/fish/Dock Long.glb",
+          "scale": 1.0,
+          "position": [0.0, 0.05, 5.0],
+          "rotation": [0.0, 3.1415926, 0.0]
+        }
+      ],
       "terrain": {
         "decor": [
           { "file": "tree", "height": 2.2 },

@@ -86,13 +86,6 @@ export class FishingEngine extends Base3DEngine {
 
     await this.diorama.buildTerrainGround();
 
-    const dockT = await this.loadModel('assets/3d/fish/Dock Long.glb', 1.0);
-    const dock = this.cloneInstance(dockT);
-    dock.position.set(0, 0.05, 5.0);
-    dock.rotation.y = Math.PI;
-    this.diorama.enableShadows(dock);
-    this.scene.add(dock);
-
     this.fishList = fishConfig.species;
     await Promise.all(this.fishList.map(async (f) => {
       const template = await this.loadModel(`assets/3d/fish/${f.model}`, f.scale);

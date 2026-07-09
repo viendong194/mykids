@@ -509,16 +509,20 @@ export class DioramaKit {
         this.dioramaConfig.water.height
       );
     }
+
+    await this.buildProps();
   }
 
   public buildWaterPlane(radius = 7.3, height = -0.25) {
     const colorVal = this.dioramaConfig?.water?.color ?? "#00bcd4";
     const opacityVal = this.dioramaConfig?.water?.opacity ?? 0.65;
+    const roughnessVal = this.dioramaConfig?.water?.roughness ?? 0.1;
+    const metalnessVal = this.dioramaConfig?.water?.metalness ?? 0.1;
     const geometry = new THREE.CircleGeometry(radius, 64);
     const material = new THREE.MeshStandardMaterial({
       color: new THREE.Color(colorVal),
-      roughness: 0.1,
-      metalness: 0.1,
+      roughness: roughnessVal,
+      metalness: metalnessVal,
       transparent: true,
       opacity: opacityVal,
       side: THREE.DoubleSide
@@ -528,6 +532,20 @@ export class DioramaKit {
     this.waterMesh.position.y = height;
     this.waterMesh.receiveShadow = true;
     this.scene.add(this.waterMesh);
+  }
+
+  public async buildProps(): Promise<void> {
+    const props = this.dioramaConfig?.props;
+    if (props && props.length > 0) {
+      await Promise.all(props.map(async (p: any) => {
+        const template = await this.loadModel(p.file, p.scale ?? 1.0);
+        const instance = this.cloneInstance(template);
+        if (p.position) instance.position.set(p.position[0], p.position[1], p.position[2]);
+        if (p.rotation) instance.rotation.set(p.rotation[0], p.rotation[1], p.rotation[2]);
+        this.enableShadows(instance);
+        this.scene.add(instance);
+      }));
+    }
   }
 
   public enableShadows(object: THREE.Object3D) {
