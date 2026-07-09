@@ -79,11 +79,10 @@ export class FishingEngine extends Base3DEngine {
     this.diorama = new DioramaKit(
       this.renderer, this.scene, this.camera, this.hud,
       (url, h) => this.loadModel(url, h),
-      (t) => this.cloneInstance(t)
+      (t) => this.cloneInstance(t),
+      'fishing'
     );
-    this.diorama.isLakePond = true;
     this.diorama.setupLighting();
-    this.diorama.devCam = { distance: 8.5, height: 3.5, yawDeg: 0, lookHeight: -0.2, fov: 48 };
     this.diorama.setupCamera();
     this.diorama.devCameraOverride = false;
 
@@ -92,7 +91,6 @@ export class FishingEngine extends Base3DEngine {
     this.zooHud.showLoading(true);
 
     await this.diorama.buildTerrainGround({ decor: LAKE_DECOR });
-    this.diorama.buildWaterPlane(7.3, -0.25);
 
     const dockT = await this.loadModel('assets/3d/fish/Dock Long.glb', 1.0);
     const dock = this.cloneInstance(dockT);

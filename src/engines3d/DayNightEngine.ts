@@ -108,7 +108,7 @@ export class DayNightEngine extends Base3DEngine {
       this.hud,
       (url, height) => this.loadModel(url, height),
       (template) => this.cloneInstance(template),
-      { distance: 10, height: 3.2, yawDeg: -20, lookHeight: 0.8, fov: 50 }
+      'daynight'
     );
 
     this.diorama.setupLighting();

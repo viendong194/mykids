@@ -100,7 +100,8 @@ export class ZooCountEngine extends Base3DEngine {
       this.camera,
       this.hud,
       (url, height) => this.loadModel(url, height),
-      (template) => this.cloneInstance(template)
+      (template) => this.cloneInstance(template),
+      'count'
     );
 
     this.diorama.setupLighting();

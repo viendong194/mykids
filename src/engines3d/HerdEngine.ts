@@ -109,7 +109,7 @@ export class HerdEngine extends Base3DEngine {
       this.hud,
       (url, height) => this.loadModel(url, height),
       (template) => this.cloneInstance(template),
-      { distance: 9, height: 3.6, yawDeg: 0, lookHeight: 0.7, fov: 58 }
+      'herd'
     );
 
     this.diorama.setupLighting();

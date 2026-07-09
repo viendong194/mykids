@@ -85,7 +85,7 @@ export class FeedAnimalEngine extends Base3DEngine {
       this.hud,
       (url, height) => this.loadModel(url, height),
       (template) => this.cloneInstance(template),
-      { distance: 7, height: 2.6, yawDeg: 0, lookHeight: 0.9, fov: 45 }
+      'feed'
     );
 
     this.diorama.setupLighting();

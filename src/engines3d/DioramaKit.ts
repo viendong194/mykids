@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { fractalNoise } from './PerlinNoise';
+import dioramaConfig from '../config/dioramaConfig.json';
 
 export interface DioramaDecorSpec {
   file: string;
@@ -65,6 +66,9 @@ export class DioramaKit {
   private loadModel: (url: string, height: number) => Promise<THREE.Group>;
   private cloneInstance: (template: THREE.Object3D) => THREE.Object3D;
 
+  private gameId: string;
+  private dioramaConfig: any = null;
+
   constructor(
     renderer: THREE.WebGLRenderer,
     scene: THREE.Scene,
@@ -72,7 +76,7 @@ export class DioramaKit {
     hud: HTMLDivElement,
     loadModel: (url: string, height: number) => Promise<THREE.Group>,
     cloneInstance: (template: THREE.Object3D) => THREE.Object3D,
-    devCam: Partial<DevCamState> = {}
+    gameId: string
   ) {
     this.renderer = renderer;
     this.scene = scene;
@@ -80,7 +84,30 @@ export class DioramaKit {
     this.hud = hud;
     this.loadModel = loadModel;
     this.cloneInstance = cloneInstance;
-    this.devCam = { ...DEFAULT_DEV_CAM, ...devCam };
+    this.gameId = gameId;
+    this.devCam = { ...DEFAULT_DEV_CAM };
+
+    this.applyGameConfig();
+  }
+
+  private applyGameConfig() {
+    const config = dioramaConfig.games[this.gameId as keyof typeof dioramaConfig.games];
+    if (config) {
+      this.dioramaConfig = config;
+      if (config.camera) {
+        this.devCam = {
+          distance: config.camera.distance,
+          height: config.camera.height,
+          yawDeg: config.camera.yawDeg,
+          lookHeight: config.camera.lookHeight,
+          fov: config.camera.fov
+        };
+      } else {
+        this.devCam = { ...DEFAULT_DEV_CAM };
+      }
+    } else {
+      this.devCam = { ...DEFAULT_DEV_CAM };
+    }
   }
 
   // ---------- Lighting / sky / celestial bodies ----------
@@ -470,22 +497,30 @@ export class DioramaKit {
       instance.rotation.y = Math.random() * Math.PI * 2;
       this.scene.add(instance);
     }
+
+    if (this.dioramaConfig?.water) {
+      this.buildWaterPlane(
+        this.dioramaConfig.water.radius,
+        this.dioramaConfig.water.height
+      );
+    }
   }
 
   public buildWaterPlane(radius = 7.3, height = -0.25) {
+    const colorVal = this.dioramaConfig?.water?.color ?? "#00bcd4";
+    const opacityVal = this.dioramaConfig?.water?.opacity ?? 0.65;
     const geometry = new THREE.CircleGeometry(radius, 64);
     const material = new THREE.MeshStandardMaterial({
-      color: 0x00bcd4,
+      color: new THREE.Color(colorVal),
       roughness: 0.1,
       metalness: 0.1,
       transparent: true,
-      opacity: 0.65,
+      opacity: opacityVal,
       side: THREE.DoubleSide
     });
     this.waterMesh = new THREE.Mesh(geometry, material);
     this.waterMesh.rotation.x = -Math.PI / 2;
     this.waterMesh.position.y = height;
-    // Water does not cast shadows but can receive them
     this.waterMesh.receiveShadow = true;
     this.scene.add(this.waterMesh);
   }
@@ -549,14 +584,17 @@ export class DioramaKit {
     }
 
     if (this.waterMesh) {
-      // Oscillate water height slightly to simulate gentle waves
-      const time = performance.now() * 0.0015;
-      this.waterMesh.position.y = -0.25 + Math.sin(time) * 0.012;
+      const speed = this.dioramaConfig?.water?.waveSpeed ?? 0.0015;
+      const waveH = this.dioramaConfig?.water?.waveHeight ?? 0.012;
+      const baseH = this.dioramaConfig?.water?.height ?? -0.25;
+      const time = performance.now() * speed;
+      this.waterMesh.position.y = baseH + Math.sin(time) * waveH;
       this.waterMesh.rotation.z = time * 0.02;
     }
 
     if (opts.autoDayNight) {
-      this.timeOfDayAngle += dt * 0.08;
+      const speed = this.dioramaConfig?.dayNight?.daySpeed ?? 0.08;
+      this.timeOfDayAngle += dt * speed;
       this.applyTimeOfDay(0.5 - 0.5 * Math.sin(this.timeOfDayAngle));
     }
 

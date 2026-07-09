@@ -1,0 +1,95 @@
+{
+  "games": {
+    "count": {
+      "camera": {
+        "distance": 10.0,
+        "height": 3.2,
+        "yawDeg": -20.0,
+        "lookHeight": 0.8,
+        "fov": 50.0
+      },
+      "dayNight": {
+        "autoCycle": true,
+        "daySpeed": 0.08
+      },
+      "water": null
+    },
+    "hideseek": {
+      "camera": {
+        "distance": 9.0,
+        "height": 3.6,
+        "yawDeg": 0.0,
+        "lookHeight": 0.8,
+        "fov": 55.0
+      },
+      "dayNight": {
+        "autoCycle": true,
+        "daySpeed": 0.05
+      },
+      "water": null
+    },
+    "feed": {
+      "camera": {
+        "distance": 7.0,
+        "height": 2.6,
+        "yawDeg": 0.0,
+        "lookHeight": 0.9,
+        "fov": 45.0
+      },
+      "dayNight": {
+        "autoCycle": true,
+        "daySpeed": 0.06
+      },
+      "water": null
+    },
+    "herd": {
+      "camera": {
+        "distance": 9.0,
+        "height": 3.6,
+        "yawDeg": 0.0,
+        "lookHeight": 0.7,
+        "fov": 58.0
+      },
+      "dayNight": {
+        "autoCycle": true,
+        "daySpeed": 0.07
+      },
+      "water": null
+    },
+    "daynight": {
+      "camera": {
+        "distance": 10.0,
+        "height": 3.2,
+        "yawDeg": -20.0,
+        "lookHeight": 0.8,
+        "fov": 50.0
+      },
+      "dayNight": {
+        "autoCycle": false,
+        "daySpeed": 0.0
+      },
+      "water": null
+    },
+    "fishing": {
+      "camera": {
+        "distance": 8.5,
+        "height": 3.5,
+        "yawDeg": 0.0,
+        "lookHeight": -0.2,
+        "fov": 48.0
+      },
+      "dayNight": {
+        "autoCycle": false,
+        "daySpeed": 0.0
+      },
+      "water": {
+        "radius": 7.3,
+        "height": -0.25,
+        "color": "#00bcd4",
+        "opacity": 0.65,
+        "waveSpeed": 0.0015,
+        "waveHeight": 0.012
+      }
+    }
+  }
+}

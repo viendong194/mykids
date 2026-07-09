@@ -106,7 +106,7 @@ export class HideSeekEngine extends Base3DEngine {
       this.hud,
       (url, height) => this.loadModel(url, height),
       (template) => this.cloneInstance(template),
-      { distance: 9, height: 3.6, yawDeg: 0, lookHeight: 0.8, fov: 55 }
+      'hideseek'
     );
 
     this.diorama.setupLighting();
