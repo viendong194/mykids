@@ -208,14 +208,28 @@ export class TapEngine extends BaseEngine<TapLevelData> {
     
     // Nếu có hình minh họa, dịch chuyển các card lựa chọn xuống dưới một chút
     const yOffset = hasIll ? 95 : 65;
-    const finalRowSpacing = hasIll ? Math.min(rowSpacing, 130) : rowSpacing;
+    const finalRowSpacing = hasIll ? Math.min(rowSpacing, 135) : rowSpacing;
 
     let positions = [
       { x: -colSpacing / 2, y: yOffset },
       { x: colSpacing / 2, y: yOffset }
     ];
 
-    if (numOptions > 2) {
+    if (numOptions === 3) {
+      if (isLandscape) {
+        positions = [
+          { x: -colSpacing, y: yOffset },
+          { x: 0, y: yOffset },
+          { x: colSpacing, y: yOffset }
+        ];
+      } else {
+        positions = [
+          { x: -colSpacing / 2, y: -finalRowSpacing / 2 + yOffset },
+          { x: colSpacing / 2, y: -finalRowSpacing / 2 + yOffset },
+          { x: 0, y: finalRowSpacing / 2 + yOffset }
+        ];
+      }
+    } else if (numOptions >= 4) {
       positions = [
         { x: -colSpacing / 2, y: -finalRowSpacing / 2 + yOffset },
         { x: colSpacing / 2, y: -finalRowSpacing / 2 + yOffset },
@@ -224,7 +238,7 @@ export class TapEngine extends BaseEngine<TapLevelData> {
       ];
     }
 
-    const cardSize = Math.min(colSpacing - 20, 150);
+    const cardSize = hasIll ? Math.min(colSpacing - 20, 120) : Math.min(colSpacing - 20, 150);
 
     this.levelData.options.forEach((choiceKey, index) => {
       const pos = positions[index] || { x: 0, y: yOffset };
