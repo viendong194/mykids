@@ -196,7 +196,7 @@ export class FishingEngine extends Base3DEngine {
 
     const targetTemplate = this.fishTemplates.get(level.targetSpecies.id)!;
     const rotY = level.targetSpecies.previewRotationY ?? 1.5708;
-    this.zooHud.setTargetPreviewModel(targetTemplate, 2.5, rotY);
+    this.zooHud.setTargetPreviewModel(targetTemplate, 0.72, rotY);
     this.speak(text);
 
     for (let i = 0; i < 3; i++) this.spawnFish(level.targetSpecies.id, true);

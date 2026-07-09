@@ -28,6 +28,7 @@ export class ZooHudKit {
   private previewContainerEl: HTMLDivElement | null = null;
   private previewAnimationId: number | null = null;
   private basePreviewRotationY = 0;
+  private previewBasePositionX = 0;  // centering X offset, swim is added on top
   private previewPointerMoveHandler: ((e: any) => void) | null = null;
   private previewPointerUpHandler: ((e: any) => void) | null = null;
 
@@ -208,17 +209,17 @@ export class ZooHudKit {
     window.addEventListener('touchend', onPointerUp);
 
     let time = 0;
-    let swimX = -0.35;        // current horizontal position in preview scene
+    let swimX = -0.22;        // current swim offset from center
     let swimDir = 1;          // 1 = right, -1 = left
-    const SWIM_SPEED = 0.004;
-    const SWIM_LIMIT = 0.35;  // how far left/right before turning
+    const SWIM_SPEED = 0.005;
+    const SWIM_LIMIT = 0.22;  // max offset from center before turning
 
     const animate = () => {
       this.previewAnimationId = requestAnimationFrame(animate);
       if (this.previewModel && !isDragging) {
         time += 0.04;
 
-        // Swim back and forth
+        // Swim back and forth around the centered position
         swimX += swimDir * SWIM_SPEED;
         if (swimX > SWIM_LIMIT) {
           swimX = SWIM_LIMIT;
@@ -233,15 +234,15 @@ export class ZooHudKit {
           ? this.basePreviewRotationY
           : this.basePreviewRotationY + Math.PI;
 
-        // Tail wag: fast Z oscillation + slight Y wobble
-        const tailWag = Math.sin(time * 6.5) * 0.12;
-        const bodyWobble = Math.sin(time * 6.5 + 0.8) * 0.04;
+        // Tail wag and body wobble
+        const tailWag = Math.sin(time * 6.5) * 0.1;
+        const bodyWobble = Math.sin(time * 6.5 + 0.8) * 0.03;
 
-        this.previewModel.position.x = swimX;
+        // Apply swim offset ON TOP of the centering base position
+        this.previewModel.position.x = this.previewBasePositionX + swimX;
         this.previewModel.rotation.y = facingY + bodyWobble;
         this.previewModel.rotation.z = tailWag * swimDir;
       } else if (this.previewModel && isDragging) {
-        // When user is dragging, freeze swim but allow manual rotation
         this.previewModel.rotation.z = 0;
       }
       if (this.previewRenderer && this.previewScene && this.previewCamera) {
@@ -280,8 +281,9 @@ export class ZooHudKit {
 
     const center = new THREE.Vector3();
     box.getCenter(center);
+    this.previewBasePositionX = -center.x * scale;
     this.previewModel.position.set(
-      -center.x * scale,
+      this.previewBasePositionX,
       -center.y * scale,
       -center.z * scale
     );
