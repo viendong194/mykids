@@ -208,16 +208,41 @@ export class ZooHudKit {
     window.addEventListener('touchend', onPointerUp);
 
     let time = 0;
+    let swimX = -0.35;        // current horizontal position in preview scene
+    let swimDir = 1;          // 1 = right, -1 = left
+    const SWIM_SPEED = 0.004;
+    const SWIM_LIMIT = 0.35;  // how far left/right before turning
+
     const animate = () => {
       this.previewAnimationId = requestAnimationFrame(animate);
-      if (this.previewModel) {
-        if (!isDragging) {
-          time += 0.025;
-          this.previewModel.rotation.y = this.basePreviewRotationY + Math.sin(time) * 0.45;
-          this.previewModel.rotation.z = Math.sin(time * 2.0) * 0.08;
-        } else {
-          this.previewModel.rotation.z = 0;
+      if (this.previewModel && !isDragging) {
+        time += 0.04;
+
+        // Swim back and forth
+        swimX += swimDir * SWIM_SPEED;
+        if (swimX > SWIM_LIMIT) {
+          swimX = SWIM_LIMIT;
+          swimDir = -1;
+        } else if (swimX < -SWIM_LIMIT) {
+          swimX = -SWIM_LIMIT;
+          swimDir = 1;
         }
+
+        // Flip Y rotation to face the swim direction
+        const facingY = swimDir > 0
+          ? this.basePreviewRotationY
+          : this.basePreviewRotationY + Math.PI;
+
+        // Tail wag: fast Z oscillation + slight Y wobble
+        const tailWag = Math.sin(time * 6.5) * 0.12;
+        const bodyWobble = Math.sin(time * 6.5 + 0.8) * 0.04;
+
+        this.previewModel.position.x = swimX;
+        this.previewModel.rotation.y = facingY + bodyWobble;
+        this.previewModel.rotation.z = tailWag * swimDir;
+      } else if (this.previewModel && isDragging) {
+        // When user is dragging, freeze swim but allow manual rotation
+        this.previewModel.rotation.z = 0;
       }
       if (this.previewRenderer && this.previewScene && this.previewCamera) {
         this.previewRenderer.render(this.previewScene, this.previewCamera);
