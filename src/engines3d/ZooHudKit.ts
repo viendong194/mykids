@@ -151,7 +151,7 @@ export class ZooHudKit {
     this.previewCamera.position.set(0, 0, 1.8);
 
     this.previewRenderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    this.previewRenderer.setSize(90, 90);
+    this.previewRenderer.setSize(180, 180);
     this.previewRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     this.previewContainerEl.appendChild(this.previewRenderer.domElement);
 
@@ -432,11 +432,11 @@ const ZOO_HUD_CSS = `
 .zoo3d-target-preview {
   position: absolute;
   top: 15px; right: 15px;
-  width: 90px; height: 90px;
+  width: 180px; height: 180px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.85);
-  border: 4px solid #4fc3f7;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  border: 5px solid #4fc3f7;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
   overflow: hidden;
   pointer-events: none;
 }
