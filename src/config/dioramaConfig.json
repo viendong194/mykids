@@ -179,9 +179,11 @@
           "file": "assets/3d/fish/Fishing Rod.glb",
           "scale": 1.4,
           "position": [0.35, 0.65, 4.5],
-          "rotation": [-0.55, 3.1415926, 0.0]
+          "rotation": [-0.55, 3.1415926, 0.0],
+          "rodTipPosition": [0.35, 1.75, 1.8]
         }
       ],
+      "hookRestPosition": [0.35, -0.22, 0.5],
       "terrain": {
         "decor": [
           { "file": "tree", "height": 2.2 },

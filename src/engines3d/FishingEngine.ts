@@ -7,6 +7,7 @@ import { audioManager } from '../managers/AudioManager';
 import { languageManager } from '../managers/LanguageManager';
 import { parentService } from '../services/ParentService';
 import fishConfig from '../config/fishConfig.json';
+import dioramaConfig from '../config/dioramaConfig.json';
 import type { SteeringAgent } from './Steering';
 
 export type Zoo3DAgeGroup = '2-3' | '4-6';
@@ -61,11 +62,11 @@ export class FishingEngine extends Base3DEngine {
   private interactiveLocked = false;
 
   private fishingLine!: THREE.Line;
-  // Rod tip in world space — must match rod prop position+rotation in dioramaConfig.json
-  private rodTipPos = new THREE.Vector3(0.35, 0.65, 4.5);
-  // Where the hook/lure rests in the water when idle
-  private hookRestPos = new THREE.Vector3(0.35, -0.22, 1.8);
   private idleLine!: THREE.Line;
+
+  // These are resolved from dioramaConfig at build time for easy tuning
+  private rodTipPos!: THREE.Vector3;
+  private hookRestPos!: THREE.Vector3;
 
   constructor(age: Zoo3DAgeGroup, onExit: () => void) {
     super();
@@ -99,6 +100,13 @@ export class FishingEngine extends Base3DEngine {
 
     this.generateRound();
     this.currentIndex = 0;
+
+    // Resolve rod tip & hook rest positions from config
+    const fishingCfg = (dioramaConfig.games as Record<string, any>).fishing;
+    const tipCfg: number[] = fishingCfg?.props?.find((p: any) => p.rodTipPosition)?.rodTipPosition ?? [0.35, 1.75, 1.8];
+    const hookCfg: number[] = fishingCfg?.hookRestPosition ?? [0.35, -0.22, 0.5];
+    this.rodTipPos = new THREE.Vector3(tipCfg[0], tipCfg[1], tipCfg[2]);
+    this.hookRestPos = new THREE.Vector3(hookCfg[0], hookCfg[1], hookCfg[2]);
 
     // Idle fishing line — always hangs from rod tip to water surface
     const idleGeo = new THREE.BufferGeometry().setFromPoints([this.rodTipPos, this.hookRestPos]);
