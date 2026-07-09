@@ -15,6 +15,7 @@ interface FishSpecies {
   id: string;
   model: string;
   scale: number;
+  previewRotationY?: number;
   name: Record<string, string>;
 }
 
@@ -146,7 +147,8 @@ export class FishingEngine extends Base3DEngine {
     this.zooHud.setProgress(this.levels.length, this.currentIndex);
 
     const targetTemplate = this.fishTemplates.get(level.targetSpecies.id)!;
-    this.zooHud.setTargetPreviewModel(targetTemplate, 1.25);
+    const rotY = level.targetSpecies.previewRotationY ?? 1.5708;
+    this.zooHud.setTargetPreviewModel(targetTemplate, 1.25, rotY);
     this.speak(text);
 
     for (let i = 0; i < 3; i++) this.spawnFish(level.targetSpecies.id, true);

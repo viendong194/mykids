@@ -175,7 +175,7 @@ export class ZooHudKit {
     animate();
   }
 
-  public setTargetPreviewModel(modelTemplate: THREE.Object3D, scaleFactor = 1.0) {
+  public setTargetPreviewModel(modelTemplate: THREE.Object3D, scaleFactor = 1.0, baseRotationY = 1.5708) {
     if (!this.previewScene) {
       this.initTargetPreview();
     }
@@ -189,8 +189,6 @@ export class ZooHudKit {
 
     this.previewModel = modelTemplate.clone();
     
-    // Temporarily reset rotation to measure the bounding box correctly
-    this.previewModel.rotation.set(0, 0, 0);
     const box = new THREE.Box3().setFromObject(this.previewModel);
     const size = new THREE.Vector3();
     box.getSize(size);
@@ -203,14 +201,7 @@ export class ZooHudKit {
     box.getCenter(center);
     this.previewModel.position.sub(center.multiplyScalar(scale));
     
-    // Auto-detect if the fish model is oriented along the X-axis or Z-axis.
-    // If it's wider than it is long, it's already oriented sideways (X-aligned),
-    // so we keep Y rotation as 0. Otherwise, rotate it 90 degrees to face sideways.
-    if (size.x > size.z) {
-      this.basePreviewRotationY = 0;
-    } else {
-      this.basePreviewRotationY = Math.PI / 2;
-    }
+    this.basePreviewRotationY = baseRotationY;
 
     this.previewModel.rotation.x = 0.25;
     this.previewModel.rotation.y = this.basePreviewRotationY;
