@@ -400,13 +400,6 @@ export class HerdEngine extends Base3DEngine {
     if (agent.idleAction) agent.idleAction.reset().setEffectiveWeight(1).fadeIn(0.3).play();
   }
 
-  private lerpAngle(from: number, to: number, t: number): number {
-    let diff = (to - from) % (Math.PI * 2);
-    if (diff > Math.PI) diff -= Math.PI * 2;
-    if (diff < -Math.PI) diff += Math.PI * 2;
-    return from + diff * t;
-  }
-
   // ---------- Interaction ----------
 
   private onAnimalTap(pickId: number) {

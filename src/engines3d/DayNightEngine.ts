@@ -7,6 +7,7 @@ import { audioManager } from '../managers/AudioManager';
 import { languageManager } from '../managers/LanguageManager';
 import { parentService } from '../services/ParentService';
 import { ZOO3D_SPECIES, buildDayNightVoiceText, getZoo3DSpecies } from '../data/zoo3d_translations';
+import type { SteeringAgent } from './Steering';
 
 export type Zoo3DAgeGroup = '2-3' | '4-6';
 
@@ -58,10 +59,17 @@ interface DayNightAgent {
   mixer: THREE.AnimationMixer;
   idleAction: THREE.AnimationAction | null;
   headlowAction: THREE.AnimationAction | null;
+  walkAction: THREE.AnimationAction | null;
   isSleeping: boolean;
   zzzEl: HTMLDivElement | null;
   bumpTimer: number;
   baseScale: number;
+  state: 'idle' | 'walking';
+  target: { x: number; z: number };
+  idleTimer: number;
+  speed: number;
+  radius: number;
+  speciesId: string;
 }
 
 /**
@@ -142,6 +150,35 @@ export class DayNightEngine extends Base3DEngine {
         const screen = this.worldToScreen(headPos);
         agent.zzzEl.style.left = `${screen.x}px`;
         agent.zzzEl.style.top = `${screen.y}px`;
+      }
+
+      // Wander AI for awake animals
+      if (!agent.isSleeping && !this.interactionLocked) {
+        if (agent.state === 'idle') {
+          agent.idleTimer -= dt;
+          if (agent.idleTimer <= 0) {
+            const angle = Math.random() * Math.PI * 2;
+            const dist = Math.sqrt(Math.random()) * PLAY_RADIUS;
+            agent.target = { x: Math.cos(angle) * dist, z: Math.sin(angle) * dist };
+            this.setAgentWalking(agent);
+          }
+        } else {
+          const activeAgents = this.agents as SteeringAgent[];
+          const result = this.stepAgentTowardTarget(agent, activeAgents, dt, {
+            playRadius: PLAY_RADIUS,
+            getGroundHeight: (x, z) => this.diorama.getGroundHeight(x, z),
+            arriveThreshold: 0.25,
+            flockRange: 2.0,
+            separationRange: 0.55,
+          });
+
+          if (result.arrived) {
+            agent.idleTimer = 1.5 + Math.random() * 3.5;
+            this.setAgentIdle(agent);
+          } else {
+            agent.object.rotation.y = this.lerpAngle(agent.object.rotation.y, result.facingAngle, Math.min(1, dt * 6));
+          }
+        }
       }
     });
   }
@@ -224,7 +261,7 @@ export class DayNightEngine extends Base3DEngine {
       this.setPickable(instance, String(i));
 
       const isSleeping = level.isNight ? i !== level.targetIdx : i === level.targetIdx;
-      this.agents.push(this.createAgent(instance, isSleeping));
+      this.agents.push(this.createAgent(instance, isSleeping, speciesId));
     });
 
     this.zooHud.setQuestion(level.voiceText, () => this.speak(level.voiceText));
@@ -232,30 +269,46 @@ export class DayNightEngine extends Base3DEngine {
     this.speak(level.voiceText);
   }
 
-  private createAgent(instance: THREE.Object3D, isSleeping: boolean): DayNightAgent {
+  private createAgent(instance: THREE.Object3D, isSleeping: boolean, speciesId: string): DayNightAgent {
     const mixer = new THREE.AnimationMixer(instance);
     const idleClip = this.findClip(instance, 'Idle', /hitreact|headlow/i);
     const headlowClip = this.findClip(instance, 'Headlow') || idleClip;
+    const walkClip = this.findClip(instance, 'Walk');
 
     const idleAction = idleClip ? mixer.clipAction(idleClip) : null;
     const headlowAction = headlowClip ? mixer.clipAction(headlowClip) : null;
+    const walkAction = walkClip ? mixer.clipAction(walkClip) : null;
 
     let zzzEl: HTMLDivElement | null = null;
+    let state: 'idle' | 'walking' = 'idle';
+    let target = { x: instance.position.x, z: instance.position.z };
+    let idleTimer = 1 + Math.random() * 2.5;
 
-    if (isSleeping && headlowAction) {
-      headlowAction.play();
-      headlowAction.paused = true;
-      headlowAction.time = (headlowClip!.duration || 1) * 0.4;
-      mixer.update(0);
+    if (isSleeping) {
+      if (headlowAction) {
+        headlowAction.reset().setEffectiveWeight(1).fadeIn(0.2).play();
+        headlowAction.timeScale = 0.55;
+      } else if (idleAction) {
+        idleAction.reset().setEffectiveWeight(1).fadeIn(0.2).play();
+        idleAction.timeScale = 0.55;
+      }
 
       zzzEl = document.createElement('div');
       zzzEl.className = 'zoo3d-zzz';
       zzzEl.textContent = '💤';
       this.hud.appendChild(zzzEl);
-    } else if (idleAction) {
-      idleAction.time = Math.random() * idleClip!.duration;
-      idleAction.timeScale = 1.25;
-      idleAction.play();
+    } else {
+      state = 'walking';
+      const angle = Math.random() * Math.PI * 2;
+      const dist = Math.sqrt(Math.random()) * PLAY_RADIUS;
+      target = { x: Math.cos(angle) * dist, z: Math.sin(angle) * dist };
+
+      if (walkAction) {
+        walkAction.time = Math.random() * walkClip!.duration;
+        walkAction.play();
+      } else if (idleAction) {
+        idleAction.play();
+      }
     }
 
     return {
@@ -263,11 +316,38 @@ export class DayNightEngine extends Base3DEngine {
       mixer,
       idleAction,
       headlowAction,
+      walkAction,
       isSleeping,
       zzzEl,
       bumpTimer: 0,
       baseScale: instance.scale.x,
+      state,
+      target,
+      idleTimer,
+      speed: 0.45 + Math.random() * 0.35,
+      radius: 0.2,
+      speciesId,
     };
+  }
+
+  private setAgentWalking(agent: DayNightAgent) {
+    if (agent.state === 'walking') return;
+    agent.state = 'walking';
+    agent.idleAction?.fadeOut(0.3);
+    if (agent.walkAction) {
+      agent.walkAction.reset().setEffectiveWeight(1).fadeIn(0.3).play();
+    } else {
+      agent.idleAction?.reset().setEffectiveWeight(1).fadeIn(0.3).play();
+    }
+  }
+
+  private setAgentIdle(agent: DayNightAgent) {
+    if (agent.state === 'idle') return;
+    agent.state = 'idle';
+    agent.walkAction?.fadeOut(0.3);
+    if (agent.idleAction) {
+      agent.idleAction.reset().setEffectiveWeight(1).fadeIn(0.3).play();
+    }
   }
 
   // ---------- Interaction ----------

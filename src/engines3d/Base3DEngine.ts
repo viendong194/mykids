@@ -243,6 +243,13 @@ export abstract class Base3DEngine {
     return { arrived: false, facingAngle: Math.atan2(move.x, move.z) };
   }
 
+  protected lerpAngle(from: number, to: number, t: number): number {
+    let diff = (to - from) % (Math.PI * 2);
+    if (diff > Math.PI) diff -= Math.PI * 2;
+    if (diff < -Math.PI) diff += Math.PI * 2;
+    return from + diff * t;
+  }
+
   protected abstract build(): Promise<void>;
   protected update(_dt: number): void {}
 
