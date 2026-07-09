@@ -3,7 +3,7 @@ import { languageManager } from '../managers/LanguageManager';
 import type { Base3DEngine } from '../engines3d/Base3DEngine';
 import type { Zoo3DAgeGroup } from '../engines3d/ZooCountEngine';
 
-export type Zoo3DGameId = 'count' | 'hideseek' | 'feed' | 'herd' | 'daynight';
+export type Zoo3DGameId = 'count' | 'hideseek' | 'feed' | 'herd' | 'daynight' | 'fishing';
 
 type Zoo3DEngineCtor = new (age: Zoo3DAgeGroup, onExit: () => void) => Base3DEngine;
 
@@ -15,6 +15,7 @@ const GAME_LOADERS: Record<Zoo3DGameId, () => Promise<Zoo3DEngineCtor>> = {
   feed: async () => (await import('../engines3d/FeedAnimalEngine')).FeedAnimalEngine,
   herd: async () => (await import('../engines3d/HerdEngine')).HerdEngine,
   daynight: async () => (await import('../engines3d/DayNightEngine')).DayNightEngine,
+  fishing: async () => (await import('../engines3d/FishingEngine')).FishingEngine,
 };
 
 /**

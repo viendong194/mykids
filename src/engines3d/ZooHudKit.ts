@@ -1,3 +1,4 @@
+import * as THREE from 'three';
 import { audioManager } from '../managers/AudioManager';
 import { languageManager } from '../managers/LanguageManager';
 import { TRANSLATIONS } from '../data/translations';
@@ -18,6 +19,14 @@ export class ZooHudKit {
   private progressRowEl: HTMLDivElement;
   private loadingOverlayEl: HTMLDivElement | null = null;
   private onSpeak: () => void = () => {};
+
+  // Target preview fields
+  private previewRenderer: THREE.WebGLRenderer | null = null;
+  private previewScene: THREE.Scene | null = null;
+  private previewCamera: THREE.PerspectiveCamera | null = null;
+  private previewModel: THREE.Object3D | null = null;
+  private previewContainerEl: HTMLDivElement | null = null;
+  private previewAnimationId: number | null = null;
 
   constructor(hud: HTMLDivElement, onBack: () => void) {
     this.hud = hud;
@@ -124,6 +133,112 @@ export class ZooHudKit {
 
     overlay.appendChild(card);
     this.hud.appendChild(overlay);
+  }
+
+  public initTargetPreview() {
+    if (this.previewContainerEl) return;
+
+    this.previewContainerEl = document.createElement('div');
+    this.previewContainerEl.className = 'zoo3d-target-preview';
+    this.hud.appendChild(this.previewContainerEl);
+
+    this.previewScene = new THREE.Scene();
+    
+    this.previewCamera = new THREE.PerspectiveCamera(45, 1, 0.1, 10);
+    this.previewCamera.position.set(0, 0, 1.8);
+
+    this.previewRenderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    this.previewRenderer.setSize(90, 90);
+    this.previewRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    this.previewContainerEl.appendChild(this.previewRenderer.domElement);
+
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.85);
+    this.previewScene.add(ambientLight);
+
+    const dirLight = new THREE.DirectionalLight(0xffffff, 0.75);
+    dirLight.position.set(1, 1.5, 2);
+    this.previewScene.add(dirLight);
+
+    const animate = () => {
+      this.previewAnimationId = requestAnimationFrame(animate);
+      if (this.previewModel) {
+        this.previewModel.rotation.y += 0.015;
+      }
+      if (this.previewRenderer && this.previewScene && this.previewCamera) {
+        this.previewRenderer.render(this.previewScene, this.previewCamera);
+      }
+    };
+    animate();
+  }
+
+  public setTargetPreviewModel(modelTemplate: THREE.Object3D, scaleFactor = 1.0) {
+    if (!this.previewScene) {
+      this.initTargetPreview();
+    }
+
+    if (this.previewModel) {
+      this.previewScene!.remove(this.previewModel);
+      this.previewModel = null;
+    }
+
+    if (!modelTemplate) return;
+
+    this.previewModel = modelTemplate.clone();
+    
+    const box = new THREE.Box3().setFromObject(this.previewModel);
+    const size = new THREE.Vector3();
+    box.getSize(size);
+    const maxDim = Math.max(size.x, size.y, size.z);
+    
+    const scale = (0.9 / maxDim) * scaleFactor;
+    this.previewModel.scale.setScalar(scale);
+
+    const center = new THREE.Vector3();
+    box.getCenter(center);
+    this.previewModel.position.sub(center.multiplyScalar(scale));
+    
+    this.previewModel.rotation.x = 0.25;
+
+    this.previewScene!.add(this.previewModel);
+  }
+
+  public setCatchProgress(current: number, target: number) {
+    let progressBadge = this.speechTextEl.parentNode?.querySelector('.zoo3d-catch-progress') as HTMLDivElement;
+    if (!progressBadge) {
+      progressBadge = document.createElement('div');
+      progressBadge.className = 'zoo3d-catch-progress';
+      this.speechTextEl.parentNode?.appendChild(progressBadge);
+    }
+    if (target > 0) {
+      progressBadge.style.display = 'block';
+      progressBadge.textContent = `🎣 ${current} / ${target}`;
+    } else {
+      progressBadge.style.display = 'none';
+    }
+  }
+
+  public shakePreview() {
+    if (this.previewContainerEl) {
+      this.previewContainerEl.classList.remove('zoo3d-shake');
+      void this.previewContainerEl.offsetWidth; // trigger reflow
+      this.previewContainerEl.classList.add('zoo3d-shake');
+    }
+  }
+
+  public destroy() {
+    if (this.previewAnimationId) {
+      cancelAnimationFrame(this.previewAnimationId);
+      this.previewAnimationId = null;
+    }
+    if (this.previewRenderer) {
+      this.previewRenderer.dispose();
+      this.previewRenderer = null;
+    }
+    this.previewScene = null;
+    this.previewCamera = null;
+    this.previewModel = null;
+    this.previewContainerEl?.remove();
+    this.previewContainerEl = null;
   }
 
   private injectStylesOnce() {
@@ -237,5 +352,30 @@ const ZOO_HUD_CSS = `
 .zoo3d-complete-btn-primary {
   color: #fff;
   background: #FF7043;
+}
+.zoo3d-target-preview {
+  position: absolute;
+  top: 15px; right: 15px;
+  width: 90px; height: 90px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  border: 4px solid #4fc3f7;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  overflow: hidden;
+  pointer-events: none;
+}
+.zoo3d-target-preview.zoo3d-shake {
+  animation: zoo3d-shake 0.5s;
+}
+@keyframes zoo3d-shake {
+  0%, 100% { transform: scale(1); }
+  10%, 30%, 50%, 70%, 90% { transform: translate3d(-4px, 0, 0); }
+  20%, 40%, 60%, 80% { transform: translate3d(4px, 0, 0); }
+}
+.zoo3d-catch-progress {
+  margin-top: 6px;
+  font-size: clamp(14px, 2.8vw, 20px);
+  color: #0288d1;
+  font-weight: bold;
 }
 `;

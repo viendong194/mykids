@@ -56,6 +56,14 @@ const GAMES: Zoo3DGameCard[] = [
     color: 0x7986cb,
     borderColor: 0x5c6bc0,
   },
+  {
+    id: 'fishing',
+    emoji: '🎣',
+    title: { vi: 'BÉ CÂU CÁ', en: 'GO FISHING', zh: '小猫钓鱼', ja: 'つりを しよう' },
+    sub: { vi: 'Tìm và câu các chú cá', en: 'Find and catch the fish', zh: '找出并钓起小鱼', ja: 'ただしい さかなを つろう' },
+    color: 0x4fc3f7,
+    borderColor: 0x03a9f4,
+  },
 ];
 
 /**

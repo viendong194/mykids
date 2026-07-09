@@ -53,6 +53,8 @@ export class DioramaKit {
   private timeOfDayAngle = 0;
   private cameraAngle = 0;
   private bowlStart = 7.5;
+  public isLakePond = false;
+  private waterMesh: THREE.Mesh | null = null;
 
   private devReadoutEl: HTMLPreElement | null = null;
 
@@ -244,6 +246,12 @@ export class DioramaKit {
     const bump = Math.sin(x * 0.8) * Math.cos(z * 0.8) * 0.15 + Math.sin(x * 2.0) * 0.05;
 
     const r = Math.sqrt(x * x + z * z);
+    if (this.isLakePond && r < 7.5) {
+      // Create a nice bowl/basin for the pond: -1.2 in the center, sloping up to 0 at r = 7.5
+      const depth = -1.2 * (1 - r / 7.5);
+      return depth + bump * 0.2;
+    }
+
     if (r <= this.bowlStart) return bump;
 
     const t = r - this.bowlStart;
@@ -394,18 +402,24 @@ export class DioramaKit {
       const noise2 = r < 12 ? fractalNoise(x * 0.35 + 17, y * 0.35 + 31, 3, 0.6, 2.0) : 0;
 
       let vertexColor: THREE.Color;
-      if (noise < 0.22) {
-        vertexColor = colorDeep.clone().lerp(colorDark, noise / 0.22);
-      } else if (noise < 0.5) {
-        vertexColor = colorDark.clone().lerp(colorMid, (noise - 0.22) / 0.28);
-      } else if (noise < 0.72) {
-        vertexColor = colorMid.clone().lerp(colorYellow, (noise - 0.5) / 0.22);
+      if (this.isLakePond && r < 7.5) {
+        // Pond bed: sand/mud blend
+        const lerpRatio = r / 7.5;
+        vertexColor = colorSand.clone().lerp(new THREE.Color(0x3e2723), 1 - lerpRatio);
       } else {
-        vertexColor = colorYellow.clone().lerp(colorSand, (noise - 0.72) / 0.28);
-      }
+        if (noise < 0.22) {
+          vertexColor = colorDeep.clone().lerp(colorDark, noise / 0.22);
+        } else if (noise < 0.5) {
+          vertexColor = colorDark.clone().lerp(colorMid, (noise - 0.22) / 0.28);
+        } else if (noise < 0.72) {
+          vertexColor = colorMid.clone().lerp(colorYellow, (noise - 0.5) / 0.22);
+        } else {
+          vertexColor = colorYellow.clone().lerp(colorSand, (noise - 0.72) / 0.28);
+        }
 
-      if (noise2 > 0.72) {
-        vertexColor.lerp(colorSand, ((noise2 - 0.72) / 0.28) * 0.6);
+        if (noise2 > 0.72) {
+          vertexColor.lerp(colorSand, ((noise2 - 0.72) / 0.28) * 0.6);
+        }
       }
 
       colors[i * 3] = vertexColor.r;
@@ -456,6 +470,24 @@ export class DioramaKit {
       instance.rotation.y = Math.random() * Math.PI * 2;
       this.scene.add(instance);
     }
+  }
+
+  public buildWaterPlane(radius = 7.3, height = -0.25) {
+    const geometry = new THREE.CircleGeometry(radius, 64);
+    const material = new THREE.MeshStandardMaterial({
+      color: 0x00bcd4,
+      roughness: 0.1,
+      metalness: 0.1,
+      transparent: true,
+      opacity: 0.65,
+      side: THREE.DoubleSide
+    });
+    this.waterMesh = new THREE.Mesh(geometry, material);
+    this.waterMesh.rotation.x = -Math.PI / 2;
+    this.waterMesh.position.y = height;
+    // Water does not cast shadows but can receive them
+    this.waterMesh.receiveShadow = true;
+    this.scene.add(this.waterMesh);
   }
 
   public enableShadows(object: THREE.Object3D) {
@@ -514,6 +546,13 @@ export class DioramaKit {
       const height = this.devCam.height + Math.sin(this.cameraAngle * 0.6) * 0.2;
       this.camera.position.set(Math.sin(yaw) * this.devCam.distance, height, Math.cos(yaw) * this.devCam.distance);
       this.camera.lookAt(0, this.devCam.lookHeight, 0);
+    }
+
+    if (this.waterMesh) {
+      // Oscillate water height slightly to simulate gentle waves
+      const time = performance.now() * 0.0015;
+      this.waterMesh.position.y = -0.25 + Math.sin(time) * 0.012;
+      this.waterMesh.rotation.z = time * 0.02;
     }
 
     if (opts.autoDayNight) {

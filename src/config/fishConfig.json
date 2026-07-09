@@ -1,0 +1,100 @@
+{
+  "species": [
+    {
+      "id": "clownfish",
+      "model": "Clownfish.glb",
+      "scale": 0.35,
+      "name": { "vi": "cá hề", "en": "clownfish", "zh": "小丑鱼", "ja": "クマノミ" }
+    },
+    {
+      "id": "blue_tang",
+      "model": "Blue Tang.glb",
+      "scale": 0.35,
+      "name": { "vi": "cá nẻ xanh", "en": "blue tang", "zh": "blue tang", "ja": "ナンヨウハギ" }
+    },
+    {
+      "id": "yellow_tang",
+      "model": "Yellow Tang.glb",
+      "scale": 0.35,
+      "name": { "vi": "cá nẻ vàng", "en": "yellow tang", "zh": "黄高鳍刺尾鱼", "ja": "キイロハギ" }
+    },
+    {
+      "id": "goldfish",
+      "model": "Goldfish.glb",
+      "scale": 0.35,
+      "name": { "vi": "cá vàng", "en": "goldfish", "zh": "金鱼", "ja": "キンギョ" }
+    },
+    {
+      "id": "blue_goldfish",
+      "model": "Blue Goldfish.glb",
+      "scale": 0.35,
+      "name": { "vi": "cá vàng xanh", "en": "blue goldfish", "zh": "蓝金鱼", "ja": "青金魚" }
+    },
+    {
+      "id": "koi",
+      "model": "Koi.glb",
+      "scale": 0.38,
+      "name": { "vi": "cá chép Koi", "en": "koi fish", "zh": "锦鲤", "ja": "コイ" }
+    },
+    {
+      "id": "puffer",
+      "model": "Puffer.glb",
+      "scale": 0.32,
+      "name": { "vi": "cá nóc", "en": "pufferfish", "zh": "河豚", "ja": "フグ" }
+    },
+    {
+      "id": "lionfish",
+      "model": "Lionfish.glb",
+      "scale": 0.35,
+      "name": { "vi": "cá sư tử", "en": "lionfish", "zh": "狮子鱼", "ja": "ミノカサゴ" }
+    },
+    {
+      "id": "anglerfish",
+      "model": "Anglerfish.glb",
+      "scale": 0.38,
+      "name": { "vi": "cá lồng đèn", "en": "anglerfish", "zh": "鮟鱇鱼", "ja": "アンコウ" }
+    },
+    {
+      "id": "piranha",
+      "model": "Piranha.glb",
+      "scale": 0.35,
+      "name": { "vi": "cá piranha", "en": "piranha", "zh": "食人鱼", "ja": "ピラニア" }
+    },
+    {
+      "id": "shark",
+      "model": "Shark.glb",
+      "scale": 0.45,
+      "name": { "vi": "cá mập", "en": "shark", "zh": "鲨鱼", "ja": "サメ" }
+    },
+    {
+      "id": "swordfish",
+      "model": "Swordfish.glb",
+      "scale": 0.48,
+      "name": { "vi": "cá kiếm", "en": "swordfish", "zh": "剑鱼", "ja": "カジキ" }
+    },
+    {
+      "id": "tuna",
+      "model": "Tuna.glb",
+      "scale": 0.45,
+      "name": { "vi": "cá ngừ", "en": "tuna", "zh": "金枪鱼", "ja": "マグロ" }
+    },
+    {
+      "id": "betta",
+      "model": "Betta.glb",
+      "scale": 0.35,
+      "name": { "vi": "cá xiêm", "en": "betta fish", "zh": "斗鱼", "ja": "ベタ" }
+    },
+    {
+      "id": "blobfish",
+      "model": "Blobfish.glb",
+      "scale": 0.32,
+      "name": { "vi": "cá giọt nước", "en": "blobfish", "zh": "水滴鱼", "ja": "ブロブフィッシュ" }
+    },
+    {
+      "id": "butterfly_fish",
+      "model": "Butterfly Fish.glb",
+      "scale": 0.35,
+      "name": { "vi": "cá bướm", "en": "butterfly fish", "zh": "蝴蝶鱼", "ja": "チョウチョウウオ" }
+    }
+  ]
+}
