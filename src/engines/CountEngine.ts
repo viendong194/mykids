@@ -125,7 +125,7 @@ export class CountEngine extends BaseEngine<CountLevelData> {
     const bubbleWidth = Math.min(width * 0.8, 480);
     const bubbleHeight = 90;
     const bx = -bubbleWidth / 2;
-    const by = -190;
+    const by = -230;
 
     this.speechBubble = this.scene.add.graphics();
     this.speechBubble.fillStyle(0x000000, 0.08);
@@ -151,7 +151,7 @@ export class CountEngine extends BaseEngine<CountLevelData> {
   private createSpeakerButton(width: number) {
     const bubbleWidth = Math.min(width * 0.8, 480);
     const speakerX = bubbleWidth / 2 + 40;
-    const speakerY = -145;
+    const speakerY = -185;
 
     const bg = this.scene.add.graphics();
     bg.fillStyle(0xFF9800, 1);
@@ -356,7 +356,7 @@ export class CountEngine extends BaseEngine<CountLevelData> {
     const bubbleWidth = Math.min(width * 0.8, 480);
     const bubbleHeight = 90;
     const bx = -bubbleWidth / 2;
-    const by = -190;
+    const by = -230;
 
     if (this.speechBubble && this.speechBubble.active) {
       this.speechBubble.clear();
@@ -375,7 +375,7 @@ export class CountEngine extends BaseEngine<CountLevelData> {
 
     if (this.voiceSpeakerBtn && this.voiceSpeakerBtn.active) {
       const speakerX = bubbleWidth / 2 + 40;
-      const speakerY = -145;
+      const speakerY = -185;
       this.voiceSpeakerBtn.setPosition(speakerX, speakerY);
     }
 

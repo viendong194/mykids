@@ -121,7 +121,7 @@ export class MatchEngine extends BaseEngine<MatchLevelData> {
     const bubbleWidth = Math.min(width * 0.8, 480);
     const bubbleHeight = 90;
     const bx = -bubbleWidth / 2;
-    const by = -190;
+    const by = -230;
 
     this.speechBubble = this.scene.add.graphics();
     this.speechBubble.fillStyle(0x000000, 0.08);
@@ -147,7 +147,7 @@ export class MatchEngine extends BaseEngine<MatchLevelData> {
   private createSpeakerButton(width: number) {
     const bubbleWidth = Math.min(width * 0.8, 480);
     const speakerX = bubbleWidth / 2 + 40;
-    const speakerY = -145;
+    const speakerY = -185;
 
     const bg = this.scene.add.graphics();
     bg.fillStyle(0xFF9800, 1);
@@ -198,8 +198,8 @@ export class MatchEngine extends BaseEngine<MatchLevelData> {
   }
 
   private createTargetObject() {
-    this.targetCard = this.scene.add.container(0, -45);
-    const size = 150;
+    this.targetCard = this.scene.add.container(0, -55);
+    const size = 120;
     
     this.renderItem(this.targetCard, this.levelData.target, size);
 
@@ -226,7 +226,7 @@ export class MatchEngine extends BaseEngine<MatchLevelData> {
     let rowSpacing = isLandscape ? Math.min(height * 0.38, 120) : Math.min(height * 0.22, 130);
 
     let positions: { x: number; y: number }[] = [];
-    const choiceYStart = 110;
+    const choiceYStart = 130;
 
     if (numChoices === 2) {
       positions = [
@@ -339,7 +339,7 @@ export class MatchEngine extends BaseEngine<MatchLevelData> {
     const bubbleWidth = Math.min(width * 0.8, 480);
     const bubbleHeight = 90;
     const bx = -bubbleWidth / 2;
-    const by = -190;
+    const by = -230;
 
     if (this.speechBubble && this.speechBubble.active) {
       this.speechBubble.clear();
@@ -358,7 +358,7 @@ export class MatchEngine extends BaseEngine<MatchLevelData> {
 
     if (this.voiceSpeakerBtn && this.voiceSpeakerBtn.active) {
       const speakerX = bubbleWidth / 2 + 40;
-      const speakerY = -145;
+      const speakerY = -185;
       this.voiceSpeakerBtn.setPosition(speakerX, speakerY);
     }
 
@@ -370,7 +370,7 @@ export class MatchEngine extends BaseEngine<MatchLevelData> {
     let rowSpacing = isLandscape ? Math.min(height * 0.38, 120) : Math.min(height * 0.22, 130);
 
     let positions: { x: number; y: number }[] = [];
-    const choiceYStart = 110;
+    const choiceYStart = 130;
 
     if (numChoices === 2) {
       positions = [

@@ -384,10 +384,11 @@ export class TapEngine extends BaseEngine<TapLevelData> {
   }
 
   public resize(width: number, height: number) {
+    const hasIll = !!this.levelData.illustration;
     const bubbleWidth = Math.min(width * 0.8, 480);
-    const bubbleHeight = 90;
+    const bubbleHeight = hasIll ? 75 : 90;
     const bx = -bubbleWidth / 2;
-    const by = -190;
+    const by = hasIll ? -250 : -220;
 
     if (this.speechBubble && this.speechBubble.active) {
       this.speechBubble.clear();
@@ -402,11 +403,12 @@ export class TapEngine extends BaseEngine<TapLevelData> {
     if (this.speechText && this.speechText.active) {
       this.speechText.setPosition(0, by + bubbleHeight / 2);
       this.speechText.setWordWrapWidth(bubbleWidth - 30);
+      this.speechText.setFontSize(hasIll ? '22px' : '26px');
     }
 
     if (this.voiceSpeakerBtn && this.voiceSpeakerBtn.active) {
       const speakerX = bubbleWidth / 2 + 40;
-      const speakerY = -145;
+      const speakerY = hasIll ? -212.5 : -175;
       this.voiceSpeakerBtn.setPosition(speakerX, speakerY);
     }
 
