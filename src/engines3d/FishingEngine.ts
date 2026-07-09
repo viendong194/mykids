@@ -101,12 +101,42 @@ export class FishingEngine extends Base3DEngine {
     this.generateRound();
     this.currentIndex = 0;
 
-    // Resolve rod tip & hook rest positions from config
+    // Auto-compute rod tip from the rod prop's bounding box
     const fishingCfg = (dioramaConfig.games as Record<string, any>).fishing;
-    const tipCfg: number[] = fishingCfg?.props?.find((p: any) => p.rodTipPosition)?.rodTipPosition ?? [0.35, 1.75, 1.8];
+    const rodPropCfg: any = fishingCfg?.props?.find((p: any) => (p.file as string).toLowerCase().includes('fishing rod'));
     const hookCfg: number[] = fishingCfg?.hookRestPosition ?? [0.35, -0.22, 0.5];
-    this.rodTipPos = new THREE.Vector3(tipCfg[0], tipCfg[1], tipCfg[2]);
     this.hookRestPos = new THREE.Vector3(hookCfg[0], hookCfg[1], hookCfg[2]);
+
+    if (rodPropCfg) {
+      const rodTemplate = await this.loadModel(rodPropCfg.file, rodPropCfg.scale ?? 1.0);
+      const rodInstance = rodTemplate.clone();
+      if (rodPropCfg.position) rodInstance.position.set(rodPropCfg.position[0], rodPropCfg.position[1], rodPropCfg.position[2]);
+      if (rodPropCfg.rotation) rodInstance.rotation.set(rodPropCfg.rotation[0], rodPropCfg.rotation[1], rodPropCfg.rotation[2]);
+      // Force matrix update so world positions are computed
+      rodInstance.updateMatrixWorld(true);
+
+      // Walk every vertex of every mesh to find the tip (point farthest from camera = min Z in world)
+      let tipVertex = new THREE.Vector3();
+      let minZ = Infinity;
+      const worldPos = new THREE.Vector3();
+      rodInstance.traverse((child) => {
+        const mesh = child as THREE.Mesh;
+        if (!mesh.isMesh || !mesh.geometry) return;
+        const posAttr = mesh.geometry.attributes.position;
+        if (!posAttr) return;
+        for (let i = 0; i < posAttr.count; i++) {
+          worldPos.fromBufferAttribute(posAttr, i).applyMatrix4(mesh.matrixWorld);
+          if (worldPos.z < minZ) {
+            minZ = worldPos.z;
+            tipVertex.copy(worldPos);
+          }
+        }
+      });
+      this.rodTipPos = tipVertex;
+    } else {
+      // Fallback if rod prop not found in config
+      this.rodTipPos = new THREE.Vector3(0.35, 1.8, 2.2);
+    }
 
     // Idle fishing line — always hangs from rod tip to water surface
     const idleGeo = new THREE.BufferGeometry().setFromPoints([this.rodTipPos, this.hookRestPos]);
