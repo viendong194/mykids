@@ -25,10 +25,10 @@ export class ZooHudKit {
   private previewScene: THREE.Scene | null = null;
   private previewCamera: THREE.PerspectiveCamera | null = null;
   private previewModel: THREE.Object3D | null = null;
+  private previewPivot: THREE.Group | null = null;   // wraps model; we move this for swimming
   private previewContainerEl: HTMLDivElement | null = null;
   private previewAnimationId: number | null = null;
   private basePreviewRotationY = 0;
-  private previewBasePositionX = 0;  // centering X offset, swim is added on top
   private previewPointerMoveHandler: ((e: any) => void) | null = null;
   private previewPointerUpHandler: ((e: any) => void) | null = null;
 
@@ -147,104 +147,89 @@ export class ZooHudKit {
     this.hud.appendChild(this.previewContainerEl);
 
     this.previewScene = new THREE.Scene();
-    
-    this.previewCamera = new THREE.PerspectiveCamera(45, 1, 0.1, 10);
-    this.previewCamera.position.set(0, 0, 1.8);
+
+    // Camera closer + wider FOV so fish appears larger
+    this.previewCamera = new THREE.PerspectiveCamera(55, 1, 0.1, 10);
+    this.previewCamera.position.set(0, 0, 1.5);
+    this.previewCamera.lookAt(0, 0, 0);
 
     this.previewRenderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     this.previewRenderer.setSize(180, 180);
     this.previewRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     this.previewContainerEl.appendChild(this.previewRenderer.domElement);
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.85);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.0);
     this.previewScene.add(ambientLight);
-
-    const dirLight = new THREE.DirectionalLight(0xffffff, 0.75);
-    dirLight.position.set(1, 1.5, 2);
+    const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    dirLight.position.set(1, 2, 2);
     this.previewScene.add(dirLight);
 
+    // Drag-to-rotate
     let isDragging = false;
     let previousMouseX = 0;
-
     this.previewContainerEl.style.pointerEvents = 'auto';
     this.previewContainerEl.style.cursor = 'grab';
 
     const onPointerDown = (e: MouseEvent | TouchEvent) => {
       isDragging = true;
-      if (this.previewContainerEl) {
-        this.previewContainerEl.style.cursor = 'grabbing';
-      }
-      const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
-      previousMouseX = clientX;
+      if (this.previewContainerEl) this.previewContainerEl.style.cursor = 'grabbing';
+      previousMouseX = 'touches' in e ? e.touches[0].clientX : e.clientX;
     };
-
     const onPointerMove = (e: MouseEvent | TouchEvent) => {
       if (!isDragging) return;
       const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
-      const deltaX = clientX - previousMouseX;
+      this.basePreviewRotationY += (clientX - previousMouseX) * 0.015;
       previousMouseX = clientX;
-
-      this.basePreviewRotationY += deltaX * 0.015;
-      if (this.previewModel) {
-        this.previewModel.rotation.y = this.basePreviewRotationY;
-      }
+      if (this.previewModel) this.previewModel.rotation.y = this.basePreviewRotationY;
     };
-
     const onPointerUp = () => {
       isDragging = false;
-      if (this.previewContainerEl) {
-        this.previewContainerEl.style.cursor = 'grab';
-      }
+      if (this.previewContainerEl) this.previewContainerEl.style.cursor = 'grab';
     };
 
     this.previewContainerEl.addEventListener('mousedown', onPointerDown);
     this.previewPointerMoveHandler = onPointerMove;
     this.previewPointerUpHandler = onPointerUp;
-
     window.addEventListener('mousemove', onPointerMove);
     window.addEventListener('mouseup', onPointerUp);
-
     this.previewContainerEl.addEventListener('touchstart', onPointerDown, { passive: true });
     window.addEventListener('touchmove', onPointerMove, { passive: true });
     window.addEventListener('touchend', onPointerUp);
 
+    // ---- Swim animation ----
+    // Camera at z=1.5, FOV=55 → frustum half-width = 1.5*tan(27.5°) ≈ 0.78 units
+    // Fish at scaleFactor=1.0 → world size ≈ 0.9 units (half=0.45)
+    // SWIM_LIMIT=0.25 → fish edge at limit: 0.45+0.25=0.70 < 0.78 → stays in frame ✓
     let time = 0;
-    let swimX = -0.22;        // current swim offset from center
-    let swimDir = 1;          // 1 = right, -1 = left
-    const SWIM_SPEED = 0.005;
-    const SWIM_LIMIT = 0.22;  // max offset from center before turning
+    let swimX = -0.25;       // pivot X position in scene
+    let swimDir = 1;         // 1=right, -1=left
+    const SWIM_SPEED = 0.006;
+    const SWIM_LIMIT = 0.25;
 
     const animate = () => {
       this.previewAnimationId = requestAnimationFrame(animate);
-      if (this.previewModel && !isDragging) {
+
+      if (this.previewPivot && this.previewModel && !isDragging) {
         time += 0.04;
 
-        // Swim back and forth around the centered position
+        // Move pivot left/right
         swimX += swimDir * SWIM_SPEED;
-        if (swimX > SWIM_LIMIT) {
-          swimX = SWIM_LIMIT;
-          swimDir = -1;
-        } else if (swimX < -SWIM_LIMIT) {
-          swimX = -SWIM_LIMIT;
-          swimDir = 1;
-        }
+        if (swimX > SWIM_LIMIT)  { swimX = SWIM_LIMIT;  swimDir = -1; }
+        if (swimX < -SWIM_LIMIT) { swimX = -SWIM_LIMIT; swimDir = 1;  }
+        this.previewPivot.position.x = swimX;
 
-        // Flip Y rotation to face the swim direction
+        // Face the direction of travel
         const facingY = swimDir > 0
           ? this.basePreviewRotationY
           : this.basePreviewRotationY + Math.PI;
 
-        // Tail wag and body wobble
-        const tailWag = Math.sin(time * 6.5) * 0.1;
-        const bodyWobble = Math.sin(time * 6.5 + 0.8) * 0.03;
-
-        // Apply swim offset ON TOP of the centering base position
-        this.previewModel.position.x = this.previewBasePositionX + swimX;
-        this.previewModel.rotation.y = facingY + bodyWobble;
-        this.previewModel.rotation.z = tailWag * swimDir;
+        // Tail wag + body wobble
+        this.previewModel.rotation.y = facingY + Math.sin(time * 6.5 + 0.8) * 0.03;
+        this.previewModel.rotation.z = Math.sin(time * 6.5) * 0.1 * swimDir;
       } else if (this.previewModel && isDragging) {
         this.previewModel.rotation.z = 0;
       }
+
       if (this.previewRenderer && this.previewScene && this.previewCamera) {
         this.previewRenderer.render(this.previewScene, this.previewCamera);
       }
@@ -257,21 +242,23 @@ export class ZooHudKit {
       this.initTargetPreview();
     }
 
-    if (this.previewModel) {
-      this.previewScene!.remove(this.previewModel);
+    // Remove old pivot (which contains old model)
+    if (this.previewPivot) {
+      this.previewScene!.remove(this.previewPivot);
+      this.previewPivot = null;
       this.previewModel = null;
     }
 
     if (!modelTemplate) return;
 
+    // Clone and reset root transforms
     this.previewModel = modelTemplate.clone();
-    
-    // Must reset rotation BEFORE computing bounding box, otherwise the box
-    // includes any inherited animation pose and gives a wrong size/center.
     this.previewModel.rotation.set(0, 0, 0);
     this.previewModel.scale.set(1, 1, 1);
     this.previewModel.position.set(0, 0, 0);
+    this.previewModel.updateMatrixWorld(true);
 
+    // Normalise scale to fit camera frustum
     const box = new THREE.Box3().setFromObject(this.previewModel);
     const size = new THREE.Vector3();
     box.getSize(size);
@@ -279,20 +266,24 @@ export class ZooHudKit {
     const scale = (0.9 / maxDim) * scaleFactor;
     this.previewModel.scale.setScalar(scale);
 
+    // Centre model inside pivot
     const center = new THREE.Vector3();
     box.getCenter(center);
-    this.previewBasePositionX = -center.x * scale;
     this.previewModel.position.set(
-      this.previewBasePositionX,
+      -center.x * scale,
       -center.y * scale,
       -center.z * scale
     );
-    
+
+    // Apply lateral angle + slight up-tilt
     this.basePreviewRotationY = baseRotationY;
     this.previewModel.rotation.x = 0.18;
     this.previewModel.rotation.y = this.basePreviewRotationY;
 
-    this.previewScene!.add(this.previewModel);
+    // Wrap in pivot so swim animation only moves the pivot, never touches model centering
+    this.previewPivot = new THREE.Group();
+    this.previewPivot.add(this.previewModel);
+    this.previewScene!.add(this.previewPivot);
   }
 
   public setCatchProgress(current: number, target: number) {
@@ -340,6 +331,7 @@ export class ZooHudKit {
     this.previewScene = null;
     this.previewCamera = null;
     this.previewModel = null;
+    this.previewPivot = null;
     this.previewContainerEl?.remove();
     this.previewContainerEl = null;
   }
