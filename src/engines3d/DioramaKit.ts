@@ -117,12 +117,12 @@ export class DioramaKit {
     this.renderer.shadowMap.enabled = true;
     this.renderer.shadowMap.type = THREE.PCFShadowMap; // PCFSoft is ~30% heavier, PCF is sufficient
 
-    this.scene.fog = new THREE.Fog(0xbbe7f2, 16, 38);
+    this.scene.fog = new THREE.Fog(0xe0f7fa, 16, 38);
 
-    this.hemiLight = new THREE.HemisphereLight(0xe1f5fe, 0x8d6e63, 1.1);
+    this.hemiLight = new THREE.HemisphereLight(0xffffff, 0xa1887f, 1.4);
     this.scene.add(this.hemiLight);
 
-    this.sunLight = new THREE.DirectionalLight(0xffffff, 1.4);
+    this.sunLight = new THREE.DirectionalLight(0xffffff, 1.8);
     this.sunLight.position.set(4, 8, 5);
     this.sunLight.castShadow = true;
     this.sunLight.shadow.mapSize.width = 1024;
@@ -136,7 +136,7 @@ export class DioramaKit {
     this.sunLight.shadow.bias = -0.0015;
     this.scene.add(this.sunLight);
 
-    this.cameraLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    this.cameraLight = new THREE.DirectionalLight(0xffffff, 1.1);
     this.cameraLight.position.copy(this.camera.position);
     this.cameraLight.target.position.set(0, 0.8, 0);
     this.scene.add(this.cameraLight);
@@ -222,13 +222,13 @@ export class DioramaKit {
   public applyTimeOfDay(t: number) {
     const time = THREE.MathUtils.clamp(t, 0, 1);
 
-    const sky = new THREE.Color(0xbbe7f2).lerp(new THREE.Color(0x0b1330), time);
+    const sky = new THREE.Color(0xe0f7fa).lerp(new THREE.Color(0x0c1e36), time);
     this.scene.background = sky;
     if (this.scene.fog) (this.scene.fog as THREE.Fog).color.copy(sky);
 
-    this.hemiLight.color.set(0xe1f5fe).lerp(new THREE.Color(0xffecb3), time);
-    this.hemiLight.groundColor.set(0x8d6e63).lerp(new THREE.Color(0x221a15), time);
-    this.hemiLight.intensity = THREE.MathUtils.lerp(1.1, 0.70, time);
+    this.hemiLight.color.set(0xffffff).lerp(new THREE.Color(0xffecb3), time);
+    this.hemiLight.groundColor.set(0xa1887f).lerp(new THREE.Color(0x3e2723), time);
+    this.hemiLight.intensity = THREE.MathUtils.lerp(1.4, 0.9, time);
 
     // Sun/Moon orbit behind the ground plane (z = -34)
     const R_orbit = 28;
@@ -240,7 +240,7 @@ export class DioramaKit {
     if (this.moonMesh) this.moonMesh.position.set(-cosTheta * R_orbit, -sinTheta * 20 - 4, -34);
 
     this.sunLight.color.set(0xffffff).lerp(new THREE.Color(0xfffde7), time);
-    this.sunLight.intensity = THREE.MathUtils.lerp(1.4, 0.55, time);
+    this.sunLight.intensity = THREE.MathUtils.lerp(1.8, 0.8, time);
     if (time < 0.5) {
       if (this.sunMesh) this.sunLight.position.copy(this.sunMesh.position.clone().normalize().multiplyScalar(15));
     } else {
@@ -250,12 +250,12 @@ export class DioramaKit {
     if (this.groundMaterial) {
       // When vertexColors=true the material color is a tint multiplier.
       // Use white (no tint) at day so Perlin vertex colors show through; darken at night.
-      this.groundMaterial.color.set(0xffffff).lerp(new THREE.Color(0x3c593e), time);
+      this.groundMaterial.color.set(0xffffff).lerp(new THREE.Color(0x556b2f), time);
     }
 
     if (this.cameraLight) {
       this.cameraLight.color.set(0xffffff).lerp(new THREE.Color(0xfffde7), time);
-      this.cameraLight.intensity = THREE.MathUtils.lerp(0.8, 0.50, time);
+      this.cameraLight.intensity = THREE.MathUtils.lerp(1.1, 0.70, time);
     }
 
     if (this.starField) {
@@ -419,11 +419,11 @@ export class DioramaKit {
     const posAttr = groundGeo.attributes.position;
     const colors = new Float32Array(posAttr.count * 3);
 
-    const colorDeep = new THREE.Color(0x1b5e20);
-    const colorDark = new THREE.Color(0x33691e);
-    const colorMid = new THREE.Color(0x7cb342);
-    const colorYellow = new THREE.Color(0xc8a84b);
-    const colorSand = new THREE.Color(0xbfa07a);
+    const colorDeep = new THREE.Color(0x2e7d32);   // bright grass green
+    const colorDark = new THREE.Color(0x558b2f);   // lighter leafy green
+    const colorMid = new THREE.Color(0x8bc34a);    // vibrant lime green
+    const colorYellow = new THREE.Color(0xffca28); // bright sunny yellow
+    const colorSand = new THREE.Color(0xffecb3);   // warm soft sand beige
 
     for (let i = 0; i < posAttr.count; i++) {
       const x = posAttr.getX(i);
@@ -439,7 +439,7 @@ export class DioramaKit {
       if (this.isLakePond && r < 7.5) {
         // Pond bed: sand/mud blend
         const lerpRatio = r / 7.5;
-        vertexColor = colorSand.clone().lerp(new THREE.Color(0x3e2723), 1 - lerpRatio);
+        vertexColor = colorSand.clone().lerp(new THREE.Color(0x8d6e63), 1 - lerpRatio);
       } else {
         if (noise < 0.22) {
           vertexColor = colorDeep.clone().lerp(colorDark, noise / 0.22);
