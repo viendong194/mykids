@@ -302,10 +302,11 @@ export class ZooHudKit {
   }
 
   public shakePreview() {
-    if (this.previewContainerEl) {
-      this.previewContainerEl.classList.remove('zoo3d-shake');
-      void this.previewContainerEl.offsetWidth; // trigger reflow
-      this.previewContainerEl.classList.add('zoo3d-shake');
+    const bubble = this.hud.querySelector('.zoo3d-speech-bubble');
+    if (bubble) {
+      bubble.classList.remove('zoo3d-shake');
+      void (bubble as HTMLElement).offsetWidth; // trigger reflow
+      bubble.classList.add('zoo3d-shake');
     }
   }
 
@@ -449,17 +450,9 @@ const ZOO_HUD_CSS = `
   background: #FF7043;
 }
 .zoo3d-target-preview {
-  position: absolute;
-  top: 15px; right: 15px;
-  width: 180px; height: 180px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.85);
-  border: 5px solid #4fc3f7;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
-  overflow: hidden;
-  pointer-events: none;
+  display: none !important;
 }
-.zoo3d-target-preview.zoo3d-shake {
+.zoo3d-target-preview.zoo3d-shake, .zoo3d-speech-bubble.zoo3d-shake {
   animation: zoo3d-shake 0.5s;
 }
 @keyframes zoo3d-shake {

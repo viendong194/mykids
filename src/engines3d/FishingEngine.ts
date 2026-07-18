@@ -34,6 +34,9 @@ interface FishAgent {
   idleTimer: number;
   baseScale: number;
   fleeTimer: number;
+  glowRing?: THREE.Mesh;
+  sparkles?: THREE.Group;
+  sparkleData?: { mesh: THREE.Mesh; speedY: number; swaySpeed: number; swayOffset: number; limitY: number }[];
 }
 
 interface FishingRound {
@@ -157,6 +160,52 @@ export class FishingEngine extends Base3DEngine {
     this.diorama.tick(dt, { autoDayNight: false });
     this.fishAgents.forEach((agent) => agent.mixer.update(dt));
     this.updateFishBehavior(dt);
+    this.updateGlowEffects(dt);
+  }
+
+  private updateGlowEffects(dt: number) {
+    this.fishAgents.forEach((agent) => {
+      if (!agent.isTarget) return;
+
+      // Update glow ring pulsing on the ground
+      if (agent.glowRing && !agent.isHooked) {
+        agent.glowRing.position.x = agent.object.position.x;
+        agent.glowRing.position.z = agent.object.position.z;
+        agent.glowRing.position.y = this.diorama.getGroundHeight(agent.object.position.x, agent.object.position.z) + 0.03;
+
+        // Pulsing scale & opacity
+        const time = performance.now() * 0.0035;
+        const scale = 1.0 + Math.sin(time) * 0.15;
+        agent.glowRing.scale.set(scale, scale, 1);
+        
+        const mat = agent.glowRing.material as THREE.MeshBasicMaterial;
+        mat.opacity = 0.5 + Math.sin(time) * 0.25;
+      }
+
+      // Update sparkles floating up
+      if (agent.sparkles && agent.sparkleData) {
+        agent.sparkleData.forEach((s) => {
+          // Float up locally
+          s.mesh.position.y += s.speedY * dt;
+          
+          // Sway in local space
+          const time = performance.now() * 0.001;
+          s.mesh.position.x += Math.sin(time * s.swaySpeed + s.swayOffset) * 0.003;
+          s.mesh.position.z += Math.cos(time * s.swaySpeed + s.swayOffset) * 0.003;
+
+          // Fade out as it rises
+          const ratio = THREE.MathUtils.clamp(s.mesh.position.y / s.limitY, 0, 1);
+          (s.mesh.material as THREE.MeshBasicMaterial).opacity = (1.0 - ratio) * 0.8;
+
+          // Reset to bottom if it exceeds limit
+          if (s.mesh.position.y > s.limitY) {
+            s.mesh.position.y = -0.15;
+            s.mesh.position.x = (Math.random() - 0.5) * 0.45;
+            s.mesh.position.z = (Math.random() - 0.5) * 0.45;
+          }
+        });
+      }
+    });
   }
 
   public destroy(): void {
@@ -194,9 +243,6 @@ export class FishingEngine extends Base3DEngine {
     this.zooHud.setCatchProgress(this.caughtCount, level.targetCatchCount);
     this.zooHud.setProgress(this.levels.length, this.currentIndex);
 
-    const targetTemplate = this.fishTemplates.get(level.targetSpecies.id)!;
-    const rotY = level.targetSpecies.previewRotationY ?? 1.5708;
-    this.zooHud.setTargetPreviewModel(targetTemplate, 1.0, rotY);
     this.speak(text);
 
     for (let i = 0; i < 3; i++) this.spawnFish(level.targetSpecies.id, true);
@@ -234,6 +280,59 @@ export class FishingEngine extends Base3DEngine {
     const swimAction = swimClip ? mixer.clipAction(swimClip) : null;
     swimAction?.play();
 
+    let glowRing: THREE.Mesh | undefined;
+    let sparkles: THREE.Group | undefined;
+    let sparkleData: { mesh: THREE.Mesh; speedY: number; swaySpeed: number; swayOffset: number; limitY: number }[] | undefined;
+
+    if (isTarget) {
+      // Glow Ring on the ground under the fish
+      const ringGeo = new THREE.RingGeometry(0.25, 0.45, 16);
+      const ringMat = new THREE.MeshBasicMaterial({
+        color: 0xffd600, // Golden yellow glow
+        side: THREE.DoubleSide,
+        transparent: true,
+        opacity: 0.7,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending
+      });
+      glowRing = new THREE.Mesh(ringGeo, ringMat);
+      glowRing.rotation.x = -Math.PI / 2;
+      glowRing.position.set(x, this.diorama.getGroundHeight(x, z) + 0.05, z);
+      this.scene.add(glowRing);
+
+      // Sparkles group attached directly to the fish so it automatically translates/rotates with it
+      sparkles = new THREE.Group();
+      sparkleData = [];
+      const sparkleGeo = new THREE.DodecahedronGeometry(0.04, 0); // Gem/star look
+      const sparkleColors = [0xffd600, 0xffffff, 0xffeb3b]; // Gold, white, yellow
+
+      for (let j = 0; j < 6; j++) {
+        const color = sparkleColors[j % sparkleColors.length];
+        const sparkleMat = new THREE.MeshBasicMaterial({
+          color: color,
+          transparent: true,
+          opacity: 0.8,
+          blending: THREE.AdditiveBlending
+        });
+        const sparkleMesh = new THREE.Mesh(sparkleGeo, sparkleMat);
+        sparkleMesh.position.set(
+          (Math.random() - 0.5) * 0.5,
+          (Math.random() - 0.5) * 0.25,
+          (Math.random() - 0.5) * 0.5
+        );
+        sparkles.add(sparkleMesh);
+
+        sparkleData.push({
+          mesh: sparkleMesh,
+          speedY: 0.12 + Math.random() * 0.2,
+          swaySpeed: 1.5 + Math.random() * 3,
+          swayOffset: Math.random() * Math.PI * 2,
+          limitY: 0.35 + Math.random() * 0.25
+        });
+      }
+      instance.add(sparkles);
+    }
+
     const tAngle = Math.random() * Math.PI * 2;
     const tDist = Math.sqrt(Math.random()) * 5.0;
 
@@ -242,7 +341,8 @@ export class FishingEngine extends Base3DEngine {
       state: 'walking',
       target: { x: Math.cos(tAngle) * tDist, z: Math.sin(tAngle) * tDist },
       speed: 0.35 + Math.random() * 0.3, radius: 0.25, idleTimer: 0,
-      baseScale: instance.scale.x, fleeTimer: 0
+      baseScale: instance.scale.x, fleeTimer: 0,
+      glowRing, sparkles, sparkleData
     });
   }
 
@@ -308,6 +408,9 @@ export class FishingEngine extends Base3DEngine {
   }
 
   private animateHookAndReel(agent: FishAgent) {
+    if (agent.glowRing) {
+      this.scene.remove(agent.glowRing);
+    }
     // Hide the idle hang line while the cast line is animating
     this.idleLine.visible = false;
     this.fishingLine.visible = true;
@@ -377,7 +480,12 @@ export class FishingEngine extends Base3DEngine {
   }
 
   private clearCurrentFish() {
-    this.fishAgents.forEach(a => this.scene.remove(a.object));
+    this.fishAgents.forEach(a => {
+      this.scene.remove(a.object);
+      if (a.glowRing) {
+        this.scene.remove(a.glowRing);
+      }
+    });
     this.fishAgents = [];
   }
 
